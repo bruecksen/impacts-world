@@ -1,0 +1,21 @@
+pip # get rid of annoying pip messages
+
+psycopg2==2.6.1
+python-dateutil==2.5.3
+
+pyexcel==0.2.1
+pyexcel-xlsx==0.1.0
+xlsxwriter==0.8.6
+
+requests==2.10.0
+tweepy==3.5.0
+
+Django==1.10.4
+django-environ==0.4.0
+django_compressor==2.0
+django-static-precompiler==1.4
+
+wagtail==1.8
+wagtail-blog==1.6.9
+
+html5lib==0.9999999

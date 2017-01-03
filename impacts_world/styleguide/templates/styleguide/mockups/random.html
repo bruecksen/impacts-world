@@ -1,0 +1,28 @@
+{% extends "styleguide/base.html" %}
+{% load static %}
+
+
+{% block header %}
+	{{ header_output }}
+{% endblock %}
+
+{% block content %}
+
+	<div class="container">
+		<br><br>
+
+		{{ breadcrumb_output }}
+		{{ heading2_output }}
+		<br>
+		{{ heading3_output }}
+
+		{{ table_selector_output }}
+		{{ table_pagination_filter_output }}
+
+		<br><br>
+	</div>
+{% endblock %}
+
+{% block footer %}
+{{ footer_output }}
+{% endblock %}

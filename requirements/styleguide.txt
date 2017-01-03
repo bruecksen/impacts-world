@@ -1,0 +1,3 @@
+# Styleguide dependencies go here
+Django==1.9.7
+wagtail==1.5.2

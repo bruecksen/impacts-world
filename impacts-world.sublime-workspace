@@ -1,0 +1,1865 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pro",
+				"process_slot(slot_item, running_order, spider)	(attribute, function)"
+			],
+			[
+				"even",
+				"event_details	(local, instance)"
+			],
+			[
+				"runnin",
+				"running_order_item	(local, instance)"
+			],
+			[
+				"proce",
+				"process_running_order"
+			],
+			[
+				"runn",
+				"running_order_item	(local, instance)"
+			],
+			[
+				"get",
+				"get_all_answers	(imported, instance)"
+			],
+			[
+				"json_array",
+				"json_array_cities"
+			],
+			[
+				"json_",
+				"json_array_states"
+			],
+			[
+				"local",
+				"localtime  (function)"
+			],
+			[
+				"Partner",
+				"PartnerOrganization	(imported, instance)"
+			],
+			[
+				"gener",
+				"generate_infobox_event  (function)"
+			],
+			[
+				"gen",
+				"generate_infobox_routepoint(routepoint)	(attribute, function)"
+			],
+			[
+				"pr",
+				"PriorityColumnMixin  (class)"
+			],
+			[
+				"P",
+				"ProjectMilestoneTaskForm  (class)"
+			],
+			[
+				"T",
+				"TaskTable  (class)"
+			],
+			[
+				"TY",
+				"TYPE_CHOICES	(local, instance)"
+			],
+			[
+				"PHASE",
+				"PHASE_ACQUISITION	(global, instance)"
+			],
+			[
+				"EM",
+				"EMPLOYMENT_CONTRACTOR	(global, instance)"
+			],
+			[
+				"EMPL",
+				"EMPLOYMENT_FREELANCER"
+			],
+			[
+				"Pri",
+				"PRIORITY_MEDIUM"
+			],
+			[
+				"PRI",
+				"PRIORITY_CHOICES"
+			],
+			[
+				"primar",
+				"primary_investor	(local, instance)"
+			],
+			[
+				"pri",
+				"primary_investor_identifier	(local, instance)"
+			],
+			[
+				"second",
+				"secondary_investors	(local, instance)"
+			],
+			[
+				"get_form",
+				"get_form_initial(step)	(attribute, function)"
+			],
+			[
+				"initi",
+				"initial_data	(local, instance)"
+			],
+			[
+				"Stakeho",
+				"StakeholderProtocol	(imported, instance)"
+			],
+			[
+				"Transn",
+				"TransnationalDealsPlugin	(global, class)"
+			],
+			[
+				"I",
+				"INTENTIONS	(attribute, instance)"
+			],
+			[
+				"acti",
+				"activities	(local, instance)"
+			],
+			[
+				"Activity",
+				"ActivityProtocol	(imported, instance)"
+			],
+			[
+				"draw",
+				"drawCircle  (function)"
+			],
+			[
+				"IMPL",
+				"IMPLEMENTATION_STATUS_ORDER"
+			],
+			[
+				"sub",
+				"sub_columns_sql"
+			],
+			[
+				"name",
+				"name_sql"
+			],
+			[
+				"column",
+				"columns_sql"
+			],
+			[
+				"form",
+				"format_items_for_download"
+			],
+			[
+				"down",
+				"download_format"
+			],
+			[
+				"l",
+				"QUERY_LIMITED_GROUPS  (variable)"
+			],
+			[
+				"negotiation",
+				"negotiation_status"
+			],
+			[
+				"li",
+				"LIST_SQL  (variable)"
+			],
+			[
+				"target_cou",
+				"target_country_sql"
+			],
+			[
+				"implement",
+				"implementation_stati"
+			],
+			[
+				"negot",
+				"negotiation_stati"
+			],
+			[
+				"group",
+				"group_value"
+			],
+			[
+				"SH_key",
+				"SH_Key_Value_Lookup"
+			],
+			[
+				"A_Ke",
+				"A_Key_Value_Lookup"
+			],
+			[
+				"deal_scop",
+				"deal_scope_operation"
+			],
+			[
+				"INTE",
+				"INTENTIONS  (variable)"
+			],
+			[
+				"INTEN",
+				"INTENTIONS_AGRICULTURE  (variable)"
+			],
+			[
+				"NEGO",
+				"NEGOTIATION_STATUS_ORDER"
+			],
+			[
+				"NEG",
+				"NEGOTIATION_STATUS_ORDER"
+			],
+			[
+				"primary",
+				"primary_investor_name"
+			],
+			[
+				"prima",
+				"primary_investor_name"
+			],
+			[
+				"impl",
+				"implementation_status_year"
+			],
+			[
+				"implemen",
+				"implementation_stati"
+			],
+			[
+				"HEC",
+				"HECTARES_SQL"
+			],
+			[
+				"BASE",
+				"BASE_CONDITION_HECTARES"
+			],
+			[
+				"get_top",
+				"get_top_10_target_countries  (function)"
+			],
+			[
+				"data_sour",
+				"data_source_type_sql"
+			],
+			[
+				"data",
+				"data_source_type_sql"
+			],
+			[
+				"Browsecondi",
+				"BrowseConditionForm"
+			],
+			[
+				"BASE_",
+				"BASE_FILTER_MAP"
+			],
+			[
+				"stake",
+				"stakeholder_identifier"
+			],
+			[
+				"re",
+				"remove_from_lookup_table  (function)"
+			],
+			[
+				"fi",
+				"fill_lookup_table  (function)"
+			],
+			[
+				"He",
+				"HECTARES_SQL"
+			],
+			[
+				"collap",
+				"collapsible"
+			],
+			[
+				"base",
+				"base_filter"
+			],
+			[
+				"B",
+				"BASE_CONDITON  (variable)"
+			],
+			[
+				"get_avail",
+				"get_availability_total"
+			],
+			[
+				"get_pr",
+				"get_primary_investor_form"
+			],
+			[
+				"get_a",
+				"get_field_by_a_key_id"
+			],
+			[
+				"DEF",
+				"DEFAULT_GROUP"
+			],
+			[
+				"activi",
+				"activity_identifier"
+			],
+			[
+				"Activ",
+				"ActivityProtocol  (class)"
+			],
+			[
+				"get_",
+				"get_involvements_for_primary_investor"
+			],
+			[
+				"_get",
+				"_get_latest_activity  (function)"
+			],
+			[
+				"secon",
+				"secondary_investors"
+			],
+			[
+				"Stakehol",
+				"StakeholderProtocol"
+			],
+			[
+				"i",
+				"!important  (value)"
+			],
+			[
+				"class",
+				"classmethod"
+			],
+			[
+				"_",
+				"_get_latest_activity"
+			],
+			[
+				"Hidde",
+				"HiddenInput"
+			],
+			[
+				"Choi",
+				"ModelChoiceField  (class)"
+			],
+			[
+				"deal_av",
+				"deal_availability_sql"
+			],
+			[
+				"tables",
+				"tables_from_inv"
+			],
+			[
+				"stor",
+				"storage_prefix  (variable)"
+			],
+			[
+				"identi",
+				"identifier_filter"
+			],
+			[
+				"avail",
+				"availabilities"
+			],
+			[
+				"changese",
+				"changesets_update"
+			],
+			[
+				"changes",
+				"changesets_update"
+			],
+			[
+				"contr",
+				"contract_date"
+			],
+			[
+				"order",
+				"order_by_sql"
+			],
+			[
+				"a_key",
+				"a_key_value_lookup"
+			],
+			[
+				"get_la",
+				"_get_latest_activity"
+			],
+			[
+				"implementati",
+				"implementation_status"
+			],
+			[
+				"implementa",
+				"implementation_status"
+			],
+			[
+				"nego",
+				"negotiation_status"
+			],
+			[
+				"activ",
+				"activity_id"
+			],
+			[
+				"avai",
+				"availabilities"
+			],
+			[
+				"availab",
+				"availability"
+			],
+			[
+				"init",
+				"initial_url_slug"
+			],
+			[
+				"current_form",
+				"current_formset_conditions"
+			],
+			[
+				"get_fi",
+				"get_field_by_a_key_id"
+			],
+			[
+				"render",
+				"render_to_response"
+			],
+			[
+				"where_fil",
+				"where_filter_sql"
+			],
+			[
+				"from_fil",
+				"from_filter_sql"
+			],
+			[
+				"filter_sql",
+				"from_filter_sql"
+			],
+			[
+				"invest",
+				"investment_sectors"
+			],
+			[
+				"get_field",
+				"get_field_by_a_key_id"
+			],
+			[
+				"deleted",
+				"deleted_secondary_investors"
+			],
+			[
+				"get_fiel",
+				"get_field_by_sh_key_id"
+			],
+			[
+				"targ",
+				"target_country_set"
+			],
+			[
+				"target",
+				"target_region_set"
+			],
+			[
+				"INTENT",
+				"INTENTION_TO_INTENTION_MAP"
+			],
+			[
+				"where",
+				"where_sql"
+			],
+			[
+				"limit",
+				"limit_sql"
+			],
+			[
+				"activit",
+				"activity_columns"
+			],
+			[
+				"Letter",
+				"LETTER_TO_INTENTION_MAP"
+			],
+			[
+				"Le",
+				"LETTER_TO_INTENTION_MAP"
+			],
+			[
+				"FILTER_MAP_",
+				"FILTER_MAP_WHERE"
+			],
+			[
+				"hecta",
+				"hectares_to"
+			],
+			[
+				"hectar",
+				"hectares_to"
+			],
+			[
+				"investm",
+				"investment_sectors"
+			],
+			[
+				"limi",
+				"limit_sql"
+			],
+			[
+				"he",
+				"hectares_to"
+			],
+			[
+				"ava",
+				"availability_to"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": ".env",
+			"settings":
+			{
+				"buffer_size": 347,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/settings/common.py",
+			"settings":
+			{
+				"buffer_size": 7610,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Processing/Processing.sublime-build",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/brx/Sites/billing/fabfile.py",
+		"/Users/brx/Sites/billing/projects/models.py",
+		"/Users/brx/Sites/billing/team/models.py",
+		"/Users/brx/Sites/billing/.gitignore",
+		"/Users/brx/Sites/notifhain/scraper/scraper/spiders/berghain.py",
+		"/Users/brx/Sites/notifhain/scraper/scraper/settings.py",
+		"/Users/brx/Sites/notifhain/scraper/scraper/items.py",
+		"/Users/brx/Sites/notifhain/config/settings/common.py",
+		"/Users/brx/Sites/notifhain/berghain/models.py",
+		"/Users/brx/Sites/notifhain/berghain/admin.py",
+		"/Users/brx/Sites/notifhain/scraper/scraper/pipelines.py",
+		"/Users/brx/Sites/notifhain/requirements/base.txt",
+		"/Users/brx/Sites/notifhain/berghain/migrations/0001_initial.py",
+		"/Users/brx/Sites/notifhain/notifhain/scraper/spider.py",
+		"/Users/brx/Sites/notifhain/scrapy.cfg",
+		"/Users/brx/Sites/notifhain/notifhain/models.py",
+		"/Users/brx/Sites/notifhain/notifhain/admin.py",
+		"/Users/brx/Sites/notifhain/config/settings/production.py",
+		"/Users/brx/Sites/notifhain/notifhain/scraper/settings.py",
+		"/Users/brx/Sites/notifhain/notifhain/scraper/pipelines.py",
+		"/Users/brx/Sites/notifhain/env.example",
+		"/Users/brx/Sites/notifhain/config/settings/local.py",
+		"/Users/brx/Sites/notifhain/.env",
+		"/Users/brx/Sites/maurice/maurice.sublime-workspace",
+		"/Users/brx/Sites/notifhain/notifhain/scraper/pipeline.py",
+		"/Users/brx/Sites/notifhain/.gitignore",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/fibl/wsgi.py",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/manage.py",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/frontend/static/js/navigation.js",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/frontend/static/html/right-side-menu.html",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/frontend/static/js/main.js",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/frontend/static/html/measures.html",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/frontend/static/js/backend.js",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/frontend/static/js/score.js",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/frontend/static/js/computed.js",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/fibl/settings.py",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/fibl/local.py",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/csvfile/logic.py",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/frontend/static/css/sfs.css",
+		"/Users/brx/Sites/fibl-nachhaltigkeitscheck/static-collected/js/computed.js",
+		"/Users/brx/Library/Application Support/Sublime Text 2/Packages/User/JavaScript.sublime-settings",
+		"/Users/brx/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/brx/Library/Application Support/Sublime Text 2/Packages/sublime-jslint/sublime-jslint.sublime-settings",
+		"/Users/brx/Sites/start-green/start_green/default_settings.py",
+		"/Users/brx/Sites/start-green/start_green/settings.py",
+		"/Users/brx/Sites/start-green/good_practices/views.py",
+		"/Users/brx/Sites/start-green/award/models.py",
+		"/Users/brx/Sites/start-green/start_green/utils/csv_export.py",
+		"/Users/brx/Sites/start-green/award/admin.py",
+		"/Users/brx/Sites/start-green/award/utils.py",
+		"/Users/brx/Sites/start-green/start_green/views.py",
+		"/Users/brx/Sites/start-green/accounts/templates/accounts/profile_detail.html",
+		"/Users/brx/Sites/start-green/good_practices/models.py",
+		"/Users/brx/Sites/start-green/network/templates/network/add_organisation.html",
+		"/Users/brx/Sites/start-green/award/forms.py",
+		"/Users/brx/Sites/start-green/award/templates/award/_award_box.html",
+		"/Users/brx/Sites/start-green/award/templatetags/award_templatetags.py",
+		"/Users/brx/Sites/start-green/appointments/templates/appointments/appointment_detail.html",
+		"/Users/brx/Sites/start-green/good_practices/templates/good_practices/good_practice_detail.html",
+		"/Users/brx/Sites/start-green/network/templates/network/organisation_detail.html",
+		"/Users/brx/Sites/start-green/news/templates/news/news_detail.html",
+		"/Users/brx/Sites/start-green/news/templates/news/news_list.html",
+		"/Users/brx/Sites/start-green/start_green/models.py",
+		"/Users/brx/Sites/start-green/start_green/templates/pages/start.html",
+		"/Users/brx/Sites/start-green/start_green/templates/pages/landing_page_banner.html",
+		"/Users/brx/Sites/start-green/start_green/admin.py",
+		"/Users/brx/Sites/start-green/award/templates/award/application_detail.html",
+		"/Users/brx/Sites/start-green/award/templates/award/application_pdf.html",
+		"/Users/brx/Sites/start-green/start_green/templates/admin/index.html",
+		"/Users/brx/Sites/start-green/start_green/mixins.py",
+		"/Users/brx/Sites/start-green/start_green/middleware.py",
+		"/Users/brx/Sites/start-green/accounts/models.py",
+		"/Users/brx/Sites/start-green/award/templates/award/plugins/application.html",
+		"/Users/brx/Sites/start-green/fabfile.py",
+		"/Users/brx/Sites/start-green/award/views.py",
+		"/Users/brx/Sites/start-green/start_green/static/js/startgreen.js",
+		"/Users/brx/Sites/start-green/start_green/static/css/startgreen.less",
+		"/Users/brx/Sites/start-green/award/templates/award/founding-supporter_intro.html",
+		"/Users/brx/Sites/start-green/award/templates/award/young-organisation_intro.html",
+		"/Users/brx/Sites/start-green/award/templates/award/start-up_intro.html",
+		"/Users/brx/Sites/start-green/award/templates/award/foundation-concept_intro.html",
+		"/Users/brx/Documents/sinnwerkstatt/publik-ssh-keys.txt",
+		"/Users/brx/Sites/start-green/.gitignore",
+		"/Users/brx/Sites/start-green/award/urls.py",
+		"/Users/brx/Sites/start-green/start_green/urls.py",
+		"/Users/brx/Sites/start-green/mockup/footer.html",
+		"/Users/brx/Sites/start-green/start_green/templates/base.html",
+		"/Users/brx/Sites/start-green/tools/views.py",
+		"/Users/brx/Sites/start-green/award/cms_plugins.py",
+		"/Users/brx/Library/Application Support/Sublime Text 2/Packages/User/Python (Django).sublime-settings",
+		"/Users/brx/Sites/start-green/network/templates/network/startup_promotion_detail.html",
+		"/Users/brx/Sites/start-green/knowledge/templates/knowledge/startup_monitor.html",
+		"/Users/brx/Sites/start-green/start_green/templates/includes/social_share.html",
+		"/Users/brx/Sites/start-green/network/admin.py",
+		"/Users/brx/Downloads/startgreen_applications.20151210111030.csv",
+		"/Users/brx/Downloads/startgreen_applications.20151210102732.csv",
+		"/Users/brx/Downloads/startgreen_applications.20151210102434.csv",
+		"/Users/brx/Downloads/startgreen_applications.20151210102147.csv",
+		"/Users/brx/Sites/start-green/accounts/admin.py",
+		"/Users/brx/Sites/start-green/network/views.py",
+		"/Users/brx/Sites/start-green/network/models.py",
+		"/Users/brx/Sites/start-green/accounts/views.py",
+		"/Users/brx/Sites/start-green/award/locale/de/LC_MESSAGES/django.po",
+		"/Users/brx/Sites/start-green/start_green/forms.py",
+		"/Users/brx/Sites/start-green/cmsplugin_award_candidates/templates/cmsplugin_award_candidates/plugins/award_candidates.html",
+		"/Users/brx/Sites/start-green/cmsplugin_contactform/cms_plugins.py",
+		"/Users/brx/Sites/start-green/cmsplugin_contactform/forms.py",
+		"/Users/brx/Sites/start-green/news/views.py",
+		"/Users/brx/Sites/start-green/accounts/templates/registration/activation_email.txt",
+		"/Users/brx/Sites/start-green/accounts/urls.py",
+		"/Users/brx/Sites/start-green/tools/urls.py",
+		"/Users/brx/Sites/start-green/cmsplugin_award_candidates/cms_plugins.py",
+		"/Users/brx/Sites/start-green/network/templates/network/includes/network_list_object.html",
+		"/Users/brx/Downloads/startgreen_applications.20151210101626.csv",
+		"/Users/brx/Sites/start-green/cmsplugin_contactform/templates/cmsplugin_contactform/plugins/mail.txt",
+		"/Users/brx/Sites/start-green/network/utils/transform.py",
+		"/Users/brx/Sites/start-green/network/templates/network/organisation_form.html",
+		"/Users/brx/Library/Application Support/Sublime Text 2/Packages/User/Python Django.sublime-settings",
+		"/Users/brx/Sites/start-green/network/templates/network/includes/network_list_object_finalist.html",
+		"/Users/brx/Sites/start-green/network/mixins.py",
+		"/Users/brx/Sites/start-green/network/templatetags/network_tags.py",
+		"/Users/brx/Sites/start-green/award/templates/award/vote_button.html",
+		"/Users/brx/Sites/start-green/start_green/templates/pages/award.html",
+		"/Users/brx/Sites/start-green/start_green/templates/pages/default.html",
+		"/Users/brx/Sites/start-green/start_green/templates/pages/2col_right_centred.html",
+		"/Users/brx/Sites/start-green/start_green/templates/pages/2col.html",
+		"/Users/brx/Sites/start-green/start_green/templates/forms/includes/built_form.html",
+		"/Users/brx/Sites/start-green/network/forms.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/brx/Sites/billing/templates",
+			"/Users/brx/Sites/billing",
+			"/Users/brx/Sites/notifhain",
+			"/Users/brx/Sites/fibl-nachhaltigkeitscheck",
+			"/Users/brx/Sites/start-green",
+			"/Users/brx/Sites/yooweedoo-lernplattform",
+			"/Users/brx/Sites/monneta",
+			"/Users/brx/Sites/django-crowdsourcing",
+			"/Users/brx/Sites/european_alternatives/",
+			"/Users/brx/Sites/sinntern/",
+			"/Users/brx/Sites/landmatrix/",
+			"/Users/brx/Sites/landmatrix/editor/templates/editor/public/",
+			"/Users/brx/Sites/landmatrix/editor/templates/editor/change_deal/",
+			"/Users/brx/Sites/landmatrix/editor/templates/editor/add_deal/",
+			"/Users/brx/Sites/landmatrix/",
+			"/Users/brx/Sites/landmatrix/getthepicture/templates",
+			"/Users/brx/Sites/landmatrix/gettheidea/templates",
+			"/Users/brx/Sites/landmatrix/getthepicture/templates",
+			"/Users/brx/Sites/landmatrix/editor/templates",
+			"/Users/brx/Sites/landmatrix/",
+			"/Users/brx/Sites/landmatrix/templates/landmatrix/",
+			"/Users/brx/Sites/landmatrix/templates/landmatrix/pages",
+			"/Users/brx/Sites/landmatrix",
+			"/Users/brx/Sites/lmeditor/templates/landmatrix/getthedetail/table/deal-list/filters",
+			"/Users/brx/Sites/lmeditor/templates/landmatrix/getthedetail/table/group,/Users/brx/Sites/lmeditor/templates/landmatrix/getthedetail/table/deal-list",
+			"",
+			"models.py",
+			"",
+			"db_",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"POSTGRE",
+			"font-size",
+			"Kaffeesatz",
+			"sinnvoice",
+			"avatar",
+			"raven",
+			"sentry",
+			"get_avatar_url",
+			"collaborators",
+			"collaborator",
+			"director",
+			"leader",
+			"lead",
+			"sentry",
+			"celery",
+			"delete",
+			"RoomItem",
+			"RunningOrderItem",
+			"item",
+			"artist",
+			"DancefloorEvent",
+			"dancefloorevent_item",
+			"source",
+			"destination",
+			"Program",
+			"notifhain.config",
+			"s3",
+			"berghain",
+			"storages",
+			"collectfast",
+			"DATABASE",
+			"MAILGUN",
+			"AWS_STORAGE",
+			"AWS",
+			"127.0.0.1",
+			"DJANGO_ALLOWED_HOSTS",
+			"POSTGRES",
+			"boto",
+			"installed_apps",
+			"time_zone",
+			"is_answered",
+			"compute_precise",
+			"is_answered",
+			"is_question_irrelevant",
+			"is_answered",
+			"all_measures",
+			"compute_progress",
+			"irrelevant",
+			"text_question_is_irrelevant",
+			"answers_measures",
+			"is_answered",
+			"all_measures",
+			"compute_progress",
+			"dimensions_progress",
+			"right-side-bar__header",
+			"_retrieve_answers",
+			"answers",
+			"get_note",
+			"get_value",
+			"get_score",
+			"Der StartGreen Award geht ins Pub",
+			"public voting",
+			"SG_AWARD_VOTING_START_DATE",
+			"SG_LOTTERY_START_DATE",
+			"energy_startup",
+			"energie",
+			"smarter_text",
+			"Financing",
+			"getattr",
+			"wie haben sie sich bisher",
+			"Die Bewerbungsphase für den StartGreen Award",
+			"</b>",
+			"<b>",
+			"Produkten und Dienstleistungen",
+			"Alle grünen",
+			"#",
+			"is_voting_enabled",
+			"foundationconceptapplication",
+			"optional_fields",
+			"award",
+			"add_preserved_filters",
+			"datefield",
+			"or</a>d",
+			"Gründungsmo",
+			"tordes",
+			"mod_wsgi",
+			"Mehr information",
+			"gross_income",
+			"required",
+			">',",
+			"optional_fields",
+			"textarea-remaining",
+			"hidden",
+			"Bitte beantworten",
+			"tab-pane",
+			"tab-paen",
+			".questions",
+			"questions",
+			"question_fields",
+			"questions",
+			"category",
+			"2015",
+			"Bewerbungsdea",
+			"foundation-concept-application-create",
+			"{% include \"includes/social_share.html\" %}",
+			"au",
+			"description",
+			"UnicodeWriter",
+			"is_voting_enabled_utils",
+			"This is a preview",
+			"registration_activation_complete",
+			"registration",
+			"DjangoActivationView",
+			"contactform",
+			"contact",
+			"get_user_model",
+			"AUTH_USER_MODEL",
+			"vote_count",
+			"vote",
+			"transform",
+			"embed-responsive-dynamic-margin",
+			"badge",
+			"Junge Organisation",
+			"Jungen Organ",
+			"YoungOrganisationApplication",
+			"ALL_APPLICATION_MODELS",
+			"add_award_button_smart",
+			"award_voting_finalists_intro"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Montserrat",
+			"RoomItem",
+			"event_details_item",
+			"item",
+			"django_model",
+			"DancefloorEvent",
+			"DancefloorEvent\nDancefloorEvent",
+			"\nDancefloorEvent",
+			"</strong>",
+			"<strong>",
+			"award",
+			"or</a> d",
+			"Jetzt bewerben",
+			"http://mein-berlin.org",
+			"http://fsd-stiftung.sinnwerkstatt.com",
+			"http://mein-berlin.org",
+			"media/frontend/",
+			"<h2>$1</h2><p>",
+			"",
+			"\"media/bubble/js",
+			"update crowdsourcing_question set score = '$1' where fieldname = '$2';",
+			"../../fonts/",
+			"SOURCE",
+			"'",
+			"_(u'",
+			"_get_all_active_primary_investors_choices",
+			"li.",
+			"\"ul\"",
+			"Protocol.LANG_DEFAULT",
+			"#$1",
+			"\n#$1",
+			"\n",
+			"",
+			"'$1',",
+			"/srv/pid/$1",
+			"/srv/pid/",
+			"",
+			"/srv/pid/$1",
+			"\\t",
+			"/\\t/",
+			"\\t",
+			"$1",
+			";$1;",
+			"",
+			"group_required(\"Read-only\", \"Research admins\", \"Research assistants\")",
+			"group_required([\"Read-only\", \"Research admins\", \"Research assistants\"])",
+			"",
+			"primary_investor",
+			"negotiation_status",
+			"implementation_status",
+			"deal_size",
+			"contract_size",
+			"intended_size",
+			"deal_size",
+			"\n",
+			"calculate_public_interface_values",
+			"",
+			"\n",
+			"",
+			"\n",
+			"\n\n",
+			"\n",
+			"\n\n",
+			"\n",
+			"",
+			"\"",
+			"",
+			"\n",
+			"\n\n",
+			"\n",
+			"",
+			"_public_deal_logger",
+			"update countries set high_income = $2 where id = $1;",
+			"bar_labels",
+			"bar_data",
+			"'$1',",
+			"intentions",
+			"body",
+			"#$1",
+			"",
+			"46b2bf",
+			"h2",
+			"72",
+			"asia",
+			"oceania",
+			"america",
+			"europe",
+			"africa",
+			"",
+			"<script src=\"/media/js/vendor/jquery.formset.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>",
+			"'$1',",
+			"$1',",
+			"intended_size",
+			"<script src=\"/media/legacy/js/jquery.formset.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>",
+			"def get_taggroups(self, request=None)",
+			"\"",
+			"",
+			"\"editor/base.html\"",
+			"by-intention",
+			"intended_size",
+			"group_slug",
+			"columns",
+			" == column",
+			"investment_size",
+			"intention",
+			"investor_name",
+			"item.target_region",
+			"item.target_country",
+			"investment_size",
+			"deal_count",
+			"intention",
+			"",
+			" == ",
+			"update primary_investors set name = 'Unknown ($1)' where id = $2;",
+			"update primary_investors set name = 'Unknown ($1)' where id = $2",
+			"update primary_investors set name = '$1' where id = $2",
+			")' w",
+			"= 'Unknown (",
+			";\n= 'Unknown (",
+			";\n",
+			"' where id = ",
+			"}, \n",
+			"\\n",
+			"",
+			"\n",
+			"\"availability\": int(i[6]),\n",
+			"/media/landmatrix/",
+			"src=\"/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".env",
+					"settings":
+					{
+						"buffer_size": 347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								347,
+								347
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "config/settings/common.py",
+					"settings":
+					{
+						"buffer_size": 7610,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3305,
+								3305
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1606.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.jslint_result_view":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"fab",
+				"fabfile.py"
+			],
+			[
+				".gi",
+				".gitignore"
+			],
+			[
+				"requre",
+				"requirements/base.txt"
+			],
+			[
+				"settin",
+				"notifhain/scraper/settings.py"
+			],
+			[
+				"git",
+				".gitignore"
+			],
+			[
+				"settings",
+				"config/settings/production.py"
+			],
+			[
+				"logic",
+				"csvfile/logic.py"
+			],
+			[
+				"computed",
+				"static-collected/js/computed.js"
+			],
+			[
+				"man",
+				"manage.py"
+			],
+			[
+				"setting",
+				"start_green/settings.py"
+			],
+			[
+				"default",
+				"start_green/default_settings.py"
+			],
+			[
+				"news",
+				"news/templates/news/news_list.html"
+			],
+			[
+				"organi",
+				"network/templates/network/organisation_detail.html"
+			],
+			[
+				"good",
+				"good_practices/templates/good_practices/good_practice_detail.html"
+			],
+			[
+				"appoint",
+				"appointments/templates/appointments/appointment_detail.html"
+			],
+			[
+				"profile",
+				"accounts/templates/accounts/profile_detail.html"
+			],
+			[
+				"admin",
+				"award/admin.py"
+			],
+			[
+				"startgreen.js",
+				"start_green/static/js/startgreen.js"
+			],
+			[
+				"less",
+				"start_green/static/css/startgreen.less"
+			],
+			[
+				"footer",
+				"mockup/footer.html"
+			],
+			[
+				"page",
+				"start_green/templates/pages/landing_page_banner.html"
+			],
+			[
+				"startup",
+				"network/templates/network/startup_promotion_detail.html"
+			],
+			[
+				"defaul",
+				"start_green/default_settings.py"
+			],
+			[
+				"profi",
+				"accounts/templates/accounts/profile_detail.html"
+			],
+			[
+				"start",
+				"start_green/templates/pages/start.html"
+			],
+			[
+				"prof",
+				"accounts/templates/accounts/profile_detail.html"
+			],
+			[
+				"trans",
+				"network/utils/transform.py"
+			],
+			[
+				"utils",
+				"network/utils/transform.py"
+			],
+			[
+				"course_side",
+				"courses/templates/courses/plugins/course_sidebar.html"
+			],
+			[
+				"brea",
+				"yooweedoo_lernplattform/templates/menu/breadcrumb.html"
+			],
+			[
+				"course_re",
+				"courses/template_mixins/course_registration_button.py"
+			],
+			[
+				"post",
+				"community/templates/community/post_detail.html"
+			],
+			[
+				"page_he",
+				"yooweedoo_lernplattform/template_mixins/page_headline.py"
+			],
+			[
+				"page_head",
+				"yooweedoo_lernplattform/template_mixins/page_headline.py"
+			],
+			[
+				"course_reg",
+				"courses/template_mixins/course_registration_button.py"
+			],
+			[
+				"views",
+				"start_green/views.py"
+			],
+			[
+				"models",
+				"crowdsourcing/models.py"
+			],
+			[
+				"style",
+				"media/css/styles.css"
+			],
+			[
+				"urls",
+				"do-index/urls.py"
+			],
+			[
+				"filter",
+				"templates/includes/filters.html"
+			],
+			[
+				"modal",
+				"templates_mockup/modal.html"
+			],
+			[
+				"styles",
+				"media/css/styles.css"
+			],
+			[
+				"base",
+				"templates/base.html"
+			],
+			[
+				"detail.html",
+				"templates/detail.html"
+			],
+			[
+				"vis.js",
+				"media/bubble/js/vis.js"
+			],
+			[
+				"requ",
+				"requirements.txt"
+			],
+			[
+				"sett",
+				"do-index/settings.py"
+			],
+			[
+				"gloss",
+				"do-index/templates/static/glossar.html"
+			],
+			[
+				"styl",
+				"do-index/media/css/styles.css"
+			],
+			[
+				"logos",
+				"do-index/templates/includes/logos.html"
+			],
+			[
+				"detail",
+				"do-index/templates/detail.html"
+			],
+			[
+				"logo",
+				"do-index/templates/includes/logos.html"
+			],
+			[
+				"vie",
+				"do-index/views.py"
+			],
+			[
+				"view",
+				"crowdsourcing/views.py"
+			],
+			[
+				"fil",
+				"do-index/templates/includes/filters.html"
+			],
+			[
+				"",
+				"do-index/templates/includes/grid.html"
+			],
+			[
+				"giti",
+				".gitignore"
+			],
+			[
+				"dump",
+				"dump-050514.sql"
+			],
+			[
+				"django",
+				"django.wsgi"
+			],
+			[
+				"blog",
+				"european_alternatives/templates/blog.html"
+			],
+			[
+				"base.html",
+				"european_alternatives/templates/base.html"
+			],
+			[
+				"start.h",
+				"european_alternatives/templates/start.html"
+			],
+			[
+				"map.js",
+				"european_alternatives/static/js/map.js"
+			],
+			[
+				"def",
+				"european_alternatives/euroalter/default_settings.py"
+			],
+			[
+				"defaut",
+				"european_alternatives/euroalter/default_settings.py"
+			],
+			[
+				"main.",
+				"european_alternatives/static/sass/main.scss"
+			],
+			[
+				"grid",
+				"european_alternatives/templates/grid.html"
+			],
+			[
+				"main",
+				"european_alternatives/static/sass/main.scss"
+			],
+			[
+				"map",
+				"european_alternatives/static/js/map.js"
+			],
+			[
+				"defau",
+				"european_alternatives/euroalter/default_settings.py"
+			],
+			[
+				"video",
+				"european_alternatives/templates/video-archive.html"
+			],
+			[
+				"inherit",
+				"site-packages/cms/plugins/inherit/cms_plugins.py"
+			],
+			[
+				"main.css",
+				"european_alternatives/static/css/main.css"
+			],
+			[
+				"main.js",
+				"european_alternatives/static/js/main.js"
+			],
+			[
+				"main.sc",
+				"european_alternatives/static/sass/main.scss"
+			],
+			[
+				"maps",
+				"european_alternatives/static/js/map.js"
+			],
+			[
+				"examples.jso",
+				"european_alternatives/euroalter/fixtures/examples.json"
+			],
+			[
+				"cms.j",
+				"european_alternatives/euroalter/fixtures/cms.json"
+			],
+			[
+				"settings.p",
+				"european_alternatives/euroalter/settings.py"
+			],
+			[
+				"req",
+				"european_alternatives/requirements.txt"
+			],
+			[
+				"geoposition",
+				"site-packages/geoposition/widgets.py"
+			],
+			[
+				"rest_frameworkview",
+				"site-packages/rest_framework/viewsets.py"
+			],
+			[
+				"djangotables2uti",
+				"site-packages/django_tables2/utils.py"
+			],
+			[
+				"tasksmodel",
+				"sinntern/tasks/models.py"
+			],
+			[
+				"django_tabletable",
+				"site-packages/django_tables2/templates/django_tables2/table.html"
+			],
+			[
+				"django_filtersfilter",
+				"site-packages/django_filters/filterset.py"
+			],
+			[
+				"django_filter",
+				"site-packages/django_filters/filters.py"
+			],
+			[
+				"django_filterswidg",
+				"site-packages/django_filters/widgets.py"
+			],
+			[
+				"widgets",
+				"sinntern/utils/widgets.py"
+			],
+			[
+				"changepass",
+				"site-packages/django/contrib/auth/management/commands/changepassword.py"
+			],
+			[
+				"djangotablesut",
+				"site-packages/django_tables2/utils.py"
+			],
+			[
+				"djangofiltersfilterset",
+				"site-packages/django_filters/filterset.py"
+			],
+			[
+				"viewsgeneric",
+				"site-packages/django/views/generic/list.py"
+			],
+			[
+				"project",
+				"sinntern/projects/models.py"
+			],
+			[
+				"list",
+				"sinntern/projects/templates/projects/project_list.html"
+			],
+			[
+				"requi",
+				"sinntern/requirements.txt"
+			],
+			[
+				"projectsmode",
+				"sinntern/projects/models.py"
+			],
+			[
+				"managers",
+				"landmatrix/editor/managers.py"
+			],
+			[
+				"widget",
+				"landmatrix/editor/widgets.py"
+			],
+			[
+				"activit",
+				"landmatrix/editor/protocols/activity.py"
+			],
+			[
+				"stakeholder",
+				"landmatrix/editor/protocols/stakeholder.py"
+			],
+			[
+				"investo",
+				"landmatrix/media/js/editor/investor.js"
+			],
+			[
+				"changeprim",
+				"landmatrix/editor/templates/editor/change_primary_investor.html"
+			],
+			[
+				"addea",
+				"landmatrix/editor/forms/adddealwizard.py"
+			],
+			[
+				"settings_lo",
+				"landmatrix/landmatrix/settings_local.py"
+			],
+			[
+				"stakeho",
+				"landmatrix/editor/protocols/stakeholder.py"
+			],
+			[
+				"adddea",
+				"landmatrix/editor/forms/adddealwizard.py"
+			],
+			[
+				"activity",
+				"landmatrix/editor/protocols/activity.py"
+			],
+			[
+				"editor.css",
+				"landmatrix/media/css/editor.css"
+			],
+			[
+				"investor_info",
+				"landmatrix/editor/templates/editor/add_deal/investor_info.html"
+			],
+			[
+				"investor",
+				"landmatrix/editor/templates/editor/change_deal/investor_info.html"
+			],
+			[
+				"cmspagemodel",
+				"site-packages/cms/models/pagemodel.py"
+			],
+			[
+				"cmsplugin",
+				"landmatrix/cmsplugin_blog/cms_plugins.py"
+			],
+			[
+				"about",
+				"landmatrix/templates/pages-tmp/about.html"
+			],
+			[
+				"landmatrixurl",
+				"landmatrix/landmatrix/urls.py"
+			],
+			[
+				"jqueryform",
+				"landmatrix/media/js/vendor/jquery.formset.custom.js"
+			],
+			[
+				"editor",
+				"landmatrix/media/css/editor.css"
+			],
+			[
+				"addeal",
+				"landmatrix/editor/forms/adddealwizard.py"
+			],
+			[
+				"browse.js",
+				"landmatrix/media/js/editor/browse.js"
+			],
+			[
+				"browse",
+				"landmatrix/editor/templates/editor/browse.html"
+			],
+			[
+				"addchange",
+				"landmatrix/media/js/editor/add_change.js"
+			],
+			[
+				"manager",
+				"landmatrix/editor/managers.py"
+			],
+			[
+				"addprima",
+				"landmatrix/editor/templates/editor/add_primary_investor.html"
+			],
+			[
+				"changeprima",
+				"landmatrix/editor/templates/editor/change_primary_investor.html"
+			],
+			[
+				"formset",
+				"landmatrix/media/js/vendor/jquery.formset.custom.js"
+			],
+			[
+				"change",
+				"landmatrix/editor/forms/changedealwizard.py"
+			],
+			[
+				"changedeal",
+				"landmatrix/editor/forms/changedealwizard.py"
+			],
+			[
+				"adddeal",
+				"landmatrix/editor/forms/adddealwizard.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/brx/Sites/landmatrix/landmatrix.sublime-project"
+			],
+			[
+				"title",
+				"/Users/brx/Sites/landmatrix/landmatrix.sublime-project"
+			],
+			[
+				"sd",
+				"/Users/brx/Sites/sdnet/sdnet.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 348.0,
+	"status_bar_visible": true
+}
