@@ -92,4 +92,4 @@ INSTALLED_APPS += ("gunicorn", "email_obfuscator")
 
 DATABASES['default'] = env.db("DATABASE_URL")
 
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['isimip.org'])
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['impacts-world.org'])

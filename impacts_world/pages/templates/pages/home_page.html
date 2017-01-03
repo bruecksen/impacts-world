@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags static %}
+
+{% block content_container %}
+<header>
+<div class="container-fluid header-image">
+	<div class="header-content">
+		<div class="left">
+			<img class="logo" src="{% static "images/logo.png" %}" />
+		</div>
+		<div class="right">
+			<div class="intro">
+				{{ page.first_intro|safe }}
+			</div>
+			<div class="intro">
+				{{ page.second_intro|safe }}
+			</div>
+		</div>
+	</div>
+</div>
+
+</header>
+
+</div>
+<div class="container description">
+	<div class="row">
+		<div class="col-lg-12">
+			{{ page.description|safe }}
+		</div>
+	</div>
+</div>
+<div class="container topic">
+	<div class="row">
+		<div class="col-lg-6 topic1">
+			{{ page.topic1|safe }}
+		</div>
+		<div class="col-lg-6 topic2">
+			{{ page.topic2|safe }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6 topic3">
+			{{ page.topic3|safe }}
+		</div>
+		<div class="col-lg-6 topic4">
+			{{ page.topic4|safe }}
+		</div>
+	</div>
+</div>
+<div class="container types">
+	<div class="row">
+		<div class="col-lg-4">
+			{{ page.plenary|safe }}
+		</div>
+		<div class="col-lg-4">
+			{{ page.discussion|safe }}
+		</div>
+		<div class="col-lg-4">
+			{{ page.poster|safe }}
+		</div>
+	</div>
+	<hr>
+</div>
+<div class="container timeline">
+	{{ page.timeline|safe }}
+</div>
+<div class="container newsletter">
+	{{ page.timeline|safe }}
+</div>
+<div class="container members">
+	{{ page.timeline|safe }}
+</div>
+<footer>
+	<div class="container">
+		<hr>
+			<div class="row">
+				<div class="col-lg-6">
+					<p>The legal provider of this Website is the
+Potsdam Institute for Climate Impact Research (PIK).
+
+Telegrafenberg A 31
+14473 Potsdam
+Germany</p>
+				</div>
+				<div class="col-lg-3">
+				</div>
+				<div class="col-lg-3">
+				</div>
+			</div>
+	</div>
+</footer>
+{% endblock %}

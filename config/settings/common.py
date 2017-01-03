@@ -1,14 +1,14 @@
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (/config/settings/common.py - 3 = /)
-APPS_DIR = ROOT_DIR.path('isi_mip')
+APPS_DIR = ROOT_DIR.path('impacts_world')
 
 env = environ.Env()
 env.read_env(ROOT_DIR('.env'))
 
 
 DJANGO_APPS = (
-    'isi_mip.core',  # override contrib.auth templates
+    'impacts_world.core',  # override contrib.auth templates
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -31,30 +31,18 @@ CMS_APPS = (
     'wagtail.wagtailadmin',
     'wagtail.wagtailcore',
     'wagtail.contrib.settings',
-    # 'wagtail.contrib.wagtailstyleguide',
 
     'modelcluster',
     'compressor',
     'taggit',
 
-    'blog',
     'static_precompiler',
 )
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'isi_mip',
-    'isi_mip.contrib',
-    'isi_mip.styleguide',
-
-    'isi_mip.pages',
-    'isi_mip.climatemodels',
-    # 'isi_mip.search',
-
-    'isi_mip.invitation',
-    'isi_mip.choiceorotherfield',
-    'isi_mip.sciencepaper',
-
-    'isi_mip.twitter',
+    'impacts_world.contrib',
+    'impacts_world.pages',
+    'impacts_world.styleguide',
 
     'impacts_world'
 )
@@ -77,7 +65,7 @@ MIDDLEWARE_CLASSES = (
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-    'sites': 'isi_mip.contrib.sites.migrations'
+    'sites': 'impacts_world.contrib.sites.migrations'
 }
 
 # DEBUG
@@ -103,7 +91,7 @@ DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL', default='django@localhost'
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
-    ("Sinnwerkstatt Admin", 'webmaster@sinnwerkstatt.com'),
+    ("Admin", 'hi@brueck.io'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
@@ -114,7 +102,7 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres:///isimip"),
+    'default': env.db("DATABASE_URL", default="postgres:///impacts-world"),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -171,7 +159,6 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
-                'django.core.context_processors.request',
                 # Your stuff: custom template context processors go here
             ],
             # 'builtins': ['overextends.templatetags.overextends_tags'],
@@ -204,12 +191,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 ADMIN_URL = env('DJANGO_ADMIN_URL', default='admin')
 
-LOGIN_URL='/auth/login/'
-LOGIN_REDIRECT_URL = '/dashboard/'
-
-INVITATION_VALID_DAYS = 7
-
-WAGTAIL_SITE_NAME = 'ISIMIP'
+WAGTAIL_SITE_NAME = 'Impacts World'
 # WAGTAIL_ENABLE_UPDATE_CHECK = False
 
 TWITTER_CREDENTIALS = env.list('DJANGO_TWITTER_CREDENTIALS', default=[None,None,None,None])
