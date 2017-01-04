@@ -3,20 +3,7 @@ from fabvenv import virtualenv
 
 
 def staging():
-    projectname = 'isi-mip'
-
-    basepath = '/srv/isi-mip.sinnwerkstatt.com/%s'
-
-    env.hosts = ['{0}@{0}.sinnwerkstatt.com'.format(projectname)]
-    env.path = basepath % projectname
-    env.virtualenv_path = basepath % (projectname+'env')
-    env.backup_path = basepath % 'backups'
-    env.push_branch = 'staging'
-    env.push_remote = 'origin'
-    env.reload_cmd = 'supervisorctl restart {0}'.format(projectname)
-    env.db_name = projectname
-    env.db_username = projectname
-    env.after_deploy_url = 'http://%s.sinnwerkstatt.com' % projectname
+    pass
 
 
 def production():
@@ -52,12 +39,20 @@ def deploy():
     with cd(env.path):
         run("git pull %(push_remote)s %(push_branch)s" % env)
         with virtualenv(env.virtualenv_path):
-            run("pip install -Ur requirements/production.txt")
             run("./manage.py collectstatic --noinput --settings=config.settings.production")
 
     migrate()
     reload_webserver()
     ping()
+
+
+def pip():
+    with cd(env.path):
+        run("git pull %(push_remote)s %(push_branch)s" % env)
+        with virtualenv(env.virtualenv_path):
+            run("pip install -Ur requirements/production.txt")
+
+    reload_webserver()
 
 #
 # def init_fixtures():
