@@ -3,22 +3,27 @@
 
 {% block content_container %}
 <header>
-<div class="container-fluid header-image">
-	<div class="header-content">
-		<div class="left">
-			<img class="logo" src="{% static "images/logo.png" %}" />
-		</div>
-		<div class="right">
-			<div class="intro">
+<div class="jumbotron header-image">
+	<div class="container">
+			<a href="#newsletter" class="newsletter-link">
+				#iw17<img src="{% static "images/newsletter.png" %}">
+			</a>
+		<div class="row header-content">
+			<div class="col-sm-4 col-xs-12">
+				<img class="logo pull-right" src="{% static "images/logo.png" %}">
+			</div>
+			<div class="col-sm-8 col-xs-12">
+				<div class="intro">
 				{{ page.first_intro|safe }}
 			</div>
+			<br>
 			<div class="intro">
 				{{ page.second_intro|safe }}
+			</div>
 			</div>
 		</div>
 	</div>
 </div>
-
 </header>
 
 </div>
@@ -29,62 +34,85 @@
 		</div>
 	</div>
 </div>
-<div class="container topic">
-	<div class="row">
-		<div class="col-lg-6 topic1">
-			{{ page.topic1|safe }}
+<div class="jumbotron topic">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-xs-12 topic1">
+				<span class="number-circle">1</span>
+				{{ page.topic1|safe }}
+			</div>
+			<div class="col-sm-6 col-xs-12 topic2">
+				<span class="number-circle">2</span>
+				{{ page.topic2|safe }}
+			</div>
 		</div>
-		<div class="col-lg-6 topic2">
-			{{ page.topic2|safe }}
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-6 topic3">
-			{{ page.topic3|safe }}
-		</div>
-		<div class="col-lg-6 topic4">
-			{{ page.topic4|safe }}
+		<div class="row">
+			<div class="col-sm-6 col-xs-12 topic3">
+				<span class="number-circle">3</span>
+				{{ page.topic3|safe }}
+			</div>
+			<div class="col-sm-6 col-xs-12 topic4">
+				<span class="number-circle">4</span>
+				{{ page.topic4|safe }}
+			</div>
 		</div>
 	</div>
 </div>
 <div class="container types">
 	<div class="row">
-		<div class="col-lg-4">
+		<div class="col-md-4 col-sm-12">
+			<img class="img-responsive center-block" src="{% static "images/plenary.png" %}">
 			{{ page.plenary|safe }}
 		</div>
-		<div class="col-lg-4">
+		<div class="col-md-4 col-sm-12">
+			<img class="img-responsive center-block" src="{% static "images/discussion.png" %}">
 			{{ page.discussion|safe }}
 		</div>
-		<div class="col-lg-4">
+		<div class="col-md-4 col-sm-12">
+			<img class="img-responsive center-block" src="{% static "images/poster.png" %}">
 			{{ page.poster|safe }}
 		</div>
 	</div>
+</div>
+<div class="container">
 	<hr>
 </div>
 <div class="container timeline">
 	{{ page.timeline|safe }}
 </div>
 <div class="container newsletter">
-	{{ page.timeline|safe }}
+	{{ page.newsletter|safe }}
 </div>
 <div class="container members">
-	{{ page.timeline|safe }}
+	<div class="row">
+		<div class="col-xs-12 col-sm-4">
+			{{ page.members1|safe }}
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			{{ page.members2|safe }}
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			{{ page.members3|safe }}
+		</div>
+	</div>
 </div>
 <footer>
 	<div class="container">
 		<hr>
 			<div class="row">
 				<div class="col-lg-6">
-					<p>The legal provider of this Website is the
-Potsdam Institute for Climate Impact Research (PIK).
-
-Telegrafenberg A 31
-14473 Potsdam
+					<p>The legal provider of this Website is the<br>
+Potsdam Institute for Climate Impact Research (PIK).</p>
+<p>
+Telegrafenberg A 31<br>
+14473 Potsdam<br>
 Germany</p>
 				</div>
 				<div class="col-lg-3">
+					<img class="img-responsive center-block" src="{% static "images/pik.png"%}">
 				</div>
 				<div class="col-lg-3">
+					<img class="img-responsive center-block" src="{% static "images/ministry.png"%}">
 				</div>
 			</div>
 	</div>

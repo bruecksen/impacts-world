@@ -34,6 +34,11 @@
 
 }
 
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
 
 body {
   /* Der Browser lädt automatisch die Schnitte, deren Stil und Gewicht benötigt werden. */
@@ -41,8 +46,7 @@ body {
 
   // https://stackoverflow.com/questions/6935040/disadvantages-to-using-css-word-wrap-globally
   word-wrap: break-word;
-  max-width: 1100px;
-  margin: 0 auto;
+  color: #4a4a4a;
 }
 
 
@@ -51,7 +55,7 @@ a {
   font-weight: 600;
 
   &:hover, &:focus {
-    color: @color-primary-dark;
+    color: @color-secondary;
   }
 }
 .super a {
@@ -206,9 +210,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     text-transform: inherit;
   }
 }
-h3, .h3 {
-  text-transform: uppercase;
-}
 
 h1, .h1, h2, .h2 {
   // H1 und H2 sehen gleich aus, nur semantisch verschieden.
@@ -221,33 +222,10 @@ h1, .h1, h2, .h2 {
   }
 }
 h3, .h3 {
-  font-weight: 300;
+  font-weight: bold;
   margin-bottom: 15px;
-  font-size: 24px;
-
-  .headerlink {
-    color: @color-primary;
-    text-decoration: none;
-    opacity: 0;
-    transition: opacity 200ms ease-in-out;
-    -moz-transition: opacity 200ms ease-in-out;
-    -o-transition: opacity 200ms ease-in-out;
-    -webkit-transition: opacity 200ms ease-in-out;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-  &:hover > .headerlink {
-    opacity: 1;
-  }
-  &:before {
-    display: block;
-    content: " ";
-    margin-top: -100px;
-    height: 100px;
-    visibility: hidden;
-  }
+  font-size: 18px;
+  color: #4a4a4a;
 }
 h4, .h4 {
   font-weight: 600;
@@ -349,60 +327,70 @@ h4, .h4 {
   }
 }
 
+hr {
+  border-style: solid;
+  border-image-source: linear-gradient(to right, #a9d4a6, #fcbc48);
+  border-image-slice: 1;
+}
+.number-circle {
+  display: inline-block;
+  float: left;
+  margin-right: 15px;
+  margin-top: 6px;
+  margin-left: 6px;
+  border-radius: 50%;
+  behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+  width: 47px;
+  height: 47px;
+  padding: 3px;
+  background: #acd3a3;
+  color: @color-white;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+}
 
 
 // ############# Widgets
-
+.container,
+.jumbotron {
+    margin-bottom: 75px;
+}
 .header-image {
   background: url(../images/header.jpg) no-repeat;
   background-position: center top;
-  height: 500px;
-}
-
-.logo {
+  background-size: cover;
+  min-height: 500px;
 }
 .header-content {
-  .left, .right {
-    float: left;
-  }
-  .left {
-    margin-left: 20%;
-    margin-top: 110px;
-  }
-  .right {
-    margin-left: 20px;
-    margin-top: 175px;
-  }
-
-}
-.intro {
-  border-radius: 1px;
-  background-color: rgba(0, 0, 0, 0.4);
-  // display: block;
-  margin-bottom: 10px;
-  padding: 10px;
-  h2 {
-    opacity: 1;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: 'open_sanscondensed_light';
-    color: @color-white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  p {
-    color: @color-white;
-    opacity: 1;
-    font-size: 16px;
-    line-height: 1.5;
-    &:last-child{
-      margin-bottom: 0;
+  margin-top: 7%;
+  .intro {
+    border-radius: 1px;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px;
+    &:first-child {
+      margin-top: 68px;
+    }
+    h2 {
+      opacity: 1;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: 'open_sanscondensed_light';
+      color: @color-white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    p {
+      color: @color-white;
+      opacity: 1;
+      font-size: 16px;
+      line-height: 1.5;
+      &:last-child{
+        margin-bottom: 0;
+      }
     }
   }
-}
-
-.description {
-  margin-top: 75px;
-  margin-bottom: 75px;
 }
 
 .topic {
@@ -413,55 +401,83 @@ h4, .h4 {
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  .topic1:before {
-      content:"";
-      background: black;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 90%;
-      height: 1px;
-  }
-    .topic2:before {
-      content:"";
-      background: black;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 90%;
-      height: 1px;
-  }
+  .topic3:after,
+  .topic1:after,
+  .topic4:before,
   .topic3:before {
       content:"";
-      background: black;
+      background: rgba(74, 74, 74, 0.6);
       position: absolute;
-      top: 20%;
-      right: 0;
-      height: 90%;
-      width: 1px;
+  }
+  .topic3:after {
+      top: 0;
+      left: 0;
+      width: 93%;
+
   }
   .topic1:after {
-      content:"";
-      background: black;
-      position: absolute;
       top: 0;
       right: 0;
       height: 90%;
       width: 1px;
   }
+  .topic4:before {
+    top: 0;
+    right: 0;
+    width: 93%;
+    height: 1px;
+  }
+  .topic3:before {
+      top: 7%;
+      right: 0;
+      height: 93%;
+      width: 1px;
+  }
   p {
     font-size: 16px;
     color: #4a4a4a;
+    margin: 0;
   }
 }
 
-hr {
-  border-style: solid;
-  border-image-source: linear-gradient(to right, #a9d4a6, #fcbc48);
-  border-image-slice: 1;
+.types {
+  img {
+    margin-bottom: 25px;
+  }
+}
+
+.timeline {
+  .date {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    :after {
+      content:"";
+      position: absolute;
+      z-index: -1;
+      top: 30px;
+      bottom: -27px;
+      left: 50%;
+      border-left: 4px solid #4a4a4a;
+    }
+  }
+  .text {
+    font-size: 18px;
+  }
 }
 
 .newsletter {
     background-image: linear-gradient(165deg, #a9d4a6, #fcbc48);
+}
+.newsletter-link {
+  position: absolute;
+  right: 5%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  img {
+    margin-left: 20px;
+  }
 }
 

@@ -1,6 +1,8 @@
-from wagtail.wagtailcore.fields import RichTextField
+from wagtail.wagtailcore.fields import RichTextField, StreamField
 from wagtail.wagtailcore.models import Page
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, StreamFieldPanel
+
+from .blocks import TimelineBlock
 
 
 class HomePage(Page):
@@ -20,9 +22,11 @@ class HomePage(Page):
     discussion = RichTextField()
     poster = RichTextField()
 
-    timeline = RichTextField()
+    timeline = StreamField([('event', TimelineBlock()), ])
     newsletter = RichTextField()
-    members = RichTextField()
+    members1 = RichTextField()
+    members2 = RichTextField()
+    members3 = RichTextField()
 
     content_panels = Page.content_panels + [
         MultiFieldPanel(
@@ -30,7 +34,7 @@ class HomePage(Page):
                 FieldPanel('first_intro'),
                 FieldPanel('second_intro'),
             ],
-            heading="Header"
+            heading='Header'
         ),
         FieldPanel('description'),
         MultiFieldPanel(
@@ -40,12 +44,19 @@ class HomePage(Page):
                 FieldPanel('topic3'),
                 FieldPanel('topic4'),
             ],
-            heading="Topics"
+            heading='Topics'
         ),
         FieldPanel('plenary'),
         FieldPanel('discussion'),
         FieldPanel('poster'),
-        FieldPanel('timeline'),
+        StreamFieldPanel('timeline'),
         FieldPanel('newsletter'),
-        FieldPanel('members'),
+        MultiFieldPanel(
+            [
+                FieldPanel('members1'),
+                FieldPanel('members2'),
+                FieldPanel('members3'),
+            ],
+            heading='Members'
+        ),
     ]
