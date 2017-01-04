@@ -21,7 +21,7 @@ def staging():
 
 def production():
     projectname = 'isimip'
-    basepath = '/webservice/isimip.org/%s'
+    basepath = '/webservice/impactsworld2017.org/%s'
     env.hosts = ['sws@isimip.pik-potsdam.de']
     env.path = basepath % 'htdocs'
     env.virtualenv_path = basepath % 'virtualenv'
@@ -29,8 +29,8 @@ def production():
     env.push_remote = 'origin'
     env.db_name = projectname
     env.db_username = projectname
-    env.after_deploy_url = 'http://isimip.org'
-    env.reload_cmd = 'sudo supervisorctl restart isimip'
+    env.after_deploy_url = 'http://impactsworld2017.org.org'
+    env.reload_cmd = 'sudo supervisorctl restart iw2017'
 
 
 
