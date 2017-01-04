@@ -24,7 +24,7 @@ def production():
     basepath = '/webservice/impactsworld2017.org/%s'
     env.hosts = ['sws@isimip.pik-potsdam.de']
     env.path = basepath % 'htdocs'
-    env.virtualenv_path = basepath % 'virtualenv'
+    env.virtualenv_path = basepath % 'virtualenv-iw2017'
     env.push_branch = 'master'
     env.push_remote = 'origin'
     env.db_name = projectname
