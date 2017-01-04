@@ -23,88 +23,72 @@ CACHES = {
 
 # INTERNAL_IPS = ('127.0.0.1', '10.0.2.2',)
 
-# INSTALLED_APPS += ('raven.contrib.django.raven_compat', )
-# RAVEN_MIDDLEWARE = (
-#     #'raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware',
-#     'raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware',
-# )
-# MIDDLEWARE_CLASSES += RAVEN_MIDDLEWARE #+ MIDDLEWARE_CLASSES
+INSTALLED_APPS += ('raven.contrib.django.raven_compat', )
+RAVEN_MIDDLEWARE = (
+    #'raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware',
+    'raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware',
+)
+MIDDLEWARE_CLASSES += RAVEN_MIDDLEWARE #+ MIDDLEWARE_CLASSES
 
-# # Sentry Configuration
-# SENTRY_DSN = env('DJANGO_SENTRY_DSN')
-# SENTRY_CLIENT = env('DJANGO_SENTRY_CLIENT', default='raven.contrib.django.raven_compat.DjangoClient')
+# Sentry Configuration
+SENTRY_DSN = env('DJANGO_SENTRY_DSN')
+SENTRY_CLIENT = env('DJANGO_SENTRY_CLIENT', default='raven.contrib.django.raven_compat.DjangoClient')
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        },
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue'
-        }
+    'disable_existing_loggers': True,
+    'root': {
+        'level': 'WARNING',
+        'handlers': ['sentry'],
     },
     'formatters': {
-        'main_formatter': {
-            'format': '%(levelname)s:%(name)s: %(message)s '
-                      '(%(asctime)s; %(filename)s:%(lineno)d)',
-            'datefmt': "%Y-%m-%d %H:%M:%S",
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s '
+                      '%(process)d %(thread)d %(message)s'
         },
     },
     'handlers': {
-        'mail_admins': {
+        'sentry': {
             'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
+            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
         },
         'console': {
             'level': 'DEBUG',
-            'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
-            'formatter': 'main_formatter',
-        },
-        'production_file': {
-            'level': 'INFO',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'logs/main.log',
-            'maxBytes': 1024 * 1024 * 5,  # 5 MB
-            'backupCount': 7,
-            'formatter': 'main_formatter',
-            'filters': ['require_debug_false'],
-        },
-        'debug_file': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'logs/main_debug.log',
-            'maxBytes': 1024 * 1024 * 5,  # 5 MB
-            'backupCount': 7,
-            'formatter': 'main_formatter',
-            'filters': ['require_debug_true'],
-        },
-        'null': {
-            "class": 'django.utils.log.NullHandler',
+            'formatter': 'verbose'
         }
     },
     'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins', 'console'],
+        'django.db.backends': {
             'level': 'ERROR',
-            'propagate': True,
+            'handlers': ['console'],
+            'propagate': False,
         },
-        'django': {
-            'handlers': ['null', ],
+        'raven': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
         },
-        'py.warnings': {
-            'handlers': ['null', ],
+        'sentry.errors': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
         },
-        '': {
-            'handlers': ['console', 'production_file', 'debug_file'],
-            'level': "DEBUG",
+        'django.security.DisallowedHost': {
+            'level': 'ERROR',
+            'handlers': ['console', 'sentry'],
+            'propagate': False,
         },
-    }
+    },
+}
+SENTRY_CELERY_LOGLEVEL = env.int('DJANGO_SENTRY_LOG_LEVEL', logging.INFO)
+RAVEN_CONFIG = {
+    'CELERY_LOGLEVEL': env.int('DJANGO_SENTRY_LOG_LEVEL', logging.INFO),
+    'DSN': SENTRY_DSN
 }
 
-INSTALLED_APPS += ("gunicorn", )
+INVITATION_VALID_DAYS = 365
+
+INSTALLED_APPS += ("gunicorn", "email_obfuscator")
 
 DATABASES['default'] = env.db("DATABASE_URL")
 
