@@ -1,10 +1,19 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags static %}
+{% load wagtailcore_tags bootstrap3 static %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 
 {% block content_container %}
 <header>
 <div class="jumbotron header-image">
 	<div class="container">
+			{% if request.POST %}
+				<div class="alert alert-success alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  {{ page.thank_you_text|safe }}
+				</div>
+			{% endif %}
 			<a href="#newsletter" class="newsletter-link">
 				#iw17<img src="{% static "images/newsletter.png" %}">
 			</a>
@@ -81,9 +90,27 @@
 	{{ page.timeline|safe }}
 </div>
 <div class="container newsletter">
-	{{ page.newsletter|safe }}
+	<div class="row">
+		<div class="col-md-6">
+			{% if not request.POST %}
+			<form action="{% pageurl page %}" method="POST" class="form">
+				{% csrf_token %}
+					{% bootstrap_form form %}
+					{% buttons %}
+						<button type="submit" class="btn btn-primary">Keep me informed!</button>
+					{% endbuttons %}
+			</form>
+			{% else %}
+				{{ page.thank_you_text|safe }}
+			{% endif %}
+		</div>
+		<div class="col-md-6">
+			{{ page.newsletter|safe }}
+		</div>
+	</div>
 </div>
 <div class="container members">
+	<h3>Members of the International Steering Committee</h3>
 	<div class="row">
 		<div class="col-xs-12 col-sm-4">
 			{{ page.members1|safe }}
@@ -100,7 +127,7 @@
 	<div class="container">
 		<hr>
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-sm-6 col-xs-12">
 					<p>The legal provider of this Website is the<br>
 Potsdam Institute for Climate Impact Research (PIK).</p>
 <p>
@@ -108,10 +135,10 @@ Telegrafenberg A 31<br>
 14473 Potsdam<br>
 Germany</p>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-sm-3 col-xs-6">
 					<img class="img-responsive center-block" src="{% static "images/pik.png"%}">
 				</div>
-				<div class="col-lg-3">
+				<div class="col-sm-3 col-xs-6">
 					<img class="img-responsive center-block" src="{% static "images/ministry.png"%}">
 				</div>
 			</div>

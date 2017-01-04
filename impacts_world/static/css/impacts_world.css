@@ -159,6 +159,17 @@ abbr[title]::after {
     padding: 30px;
   }
 }
+.alert {
+  position: absolute;
+  z-index: 999;
+  width: 50%;
+  top: 0;
+  left: 25%;
+  border-radius: 2px;
+}
+.alert p {
+  font-size: 18px;
+}
 .image {
   display: block;
   width: 100%;
@@ -168,7 +179,7 @@ abbr[title]::after {
   border-radius: 4px;
   border-width: 1px;
   border-color: #a4a4a4;
-  height: 50px;
+  height: 40px;
   font-size: 16px;
   font-weight: 600;
   -webkit-transition: border-color 0.5s, background-color 0.5s;
@@ -189,24 +200,17 @@ textarea.form-control.form-control-small {
   height: auto;
 }
 select.form-control {
-  max-width: 300px;
   display: inline-block;
-  height: 50px;
+  height: 40px;
   font-size: 16px;
   font-weight: 600;
-  border-color: #a4a4a4;
-  background-color: #a4a4a4;
-  color: white;
+  border-color: white;
+  background-color: white;
   appearance: none;
   -moz-appearance: none;
   /* Firefox */
   -webkit-appearance: none;
   /* Safari and Chrome */
-}
-select.form-control:focus,
-select.form-control:hover {
-  border-color: #4a4a4a;
-  background-color: #4a4a4a;
 }
 @media (min-width: 768px) {
   select.form-control {
@@ -219,7 +223,7 @@ select.form-control option {
   font-weight: 400;
 }
 .form-group {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 .super {
   background-color: #acd3a3;
@@ -304,7 +308,6 @@ h4,
 }
 .btn {
   border-color: black;
-  text-transform: uppercase;
   padding: 10px 15px;
   font-weight: 600;
   border-radius: 0;
@@ -327,14 +330,14 @@ h4,
   border-color: #4a4a4a;
 }
 .btn.btn-primary {
-  border-color: #acd3a3;
-  background-color: #acd3a3;
+  border-color: #4a4a4a;
+  background-color: #4a4a4a;
   color: white;
 }
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
-  border-color: #436E40;
-  background-color: #436E40;
+  border-color: #979797;
+  background-color: #979797;
   color: white;
 }
 .btn.btn-secondary {
@@ -445,9 +448,9 @@ hr {
   padding-bottom: 40px;
 }
 .topic .topic3:after,
+.topic .topic3:before,
 .topic .topic1:after,
-.topic .topic4:before,
-.topic .topic3:before {
+.topic .topic4:before {
   content: "";
   background: rgba(74, 74, 74, 0.6);
   position: absolute;
@@ -456,6 +459,7 @@ hr {
   top: 0;
   left: 0;
   width: 93%;
+  height: 1px;
 }
 .topic .topic1:after {
   top: 0;
@@ -488,7 +492,7 @@ hr {
   font-weight: bold;
   margin-bottom: 35px;
 }
-.timeline .date :after {
+.timeline .date:after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -501,7 +505,11 @@ hr {
   font-size: 18px;
 }
 .newsletter {
+  padding: 35px;
   background-image: linear-gradient(165deg, #a9d4a6, #fcbc48);
+}
+.newsletter .control-label {
+  display: none;
 }
 .newsletter-link {
   position: absolute;

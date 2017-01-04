@@ -3,13 +3,15 @@
 @color-white: white;
 @color-black: black;
 @color-neutral: #a4a4a4;
-@color-neutral-light: #ccc;
+@color-neutral-light: #979797;
 @color-neutral-dark: #4a4a4a;
 @color-primary: #acd3a3; // green
 @color-primary-light: #a9d4a6; // light green
 @color-primary-dark: #436E40; // dark green
 @color-secondary: #fcbc48; // yellow
 @color-secondary-strong: #fa9a00; // Hover color
+@color-secondary-light: #FFEF7B;
+
 
 
 @import "../vendor/css/open-sans.less";
@@ -103,6 +105,17 @@ abbr[data-original-title], abbr[title] {
   }
 }
 
+.alert {
+  position: absolute;
+  z-index: 999;
+  width: 50%;
+  top: 0;
+  left: 25%;
+  border-radius: 2px;
+  p {
+    font-size: 18px;
+  }
+}
 
 .image {
   display: block;
@@ -116,7 +129,7 @@ abbr[data-original-title], abbr[title] {
   border-width: 1px;
   border-color: @color-neutral;
 
-  height: 50px;
+  height: 40px;
   font-size: 16px;
   font-weight: 600;
 
@@ -141,19 +154,12 @@ textarea.form-control.form-control-small {
 }
 
 select.form-control {
-  max-width: 300px;
   display: inline-block;
-  height: 50px;
+  height: 40px;
   font-size: 16px;
   font-weight: 600;
-  border-color: @color-neutral;
-  background-color: @color-neutral;
-  color: @color-white;
-
-  &:focus, &:hover {
-    border-color: @color-neutral-dark;
-    background-color: @color-neutral-dark;
-  }
+  border-color: @color-white;
+  background-color: @color-white;
 
 
   // Disable arrow down
@@ -173,7 +179,7 @@ select.form-control {
 
 }
 .form-group {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 
@@ -250,7 +256,6 @@ h4, .h4 {
 // Buttons
 .btn {
   border-color: @color-black;
-  text-transform: uppercase;
   padding: 10px 15px;
   font-weight: 600;
   border-radius: 0;
@@ -273,13 +278,13 @@ h4, .h4 {
   }
 
   &.btn-primary {
-    border-color: @color-primary;
-    background-color: @color-primary;
+    border-color: @color-neutral-dark;
+    background-color: @color-neutral-dark;
     color: @color-white;
 
     &:hover, &:focus {
-    border-color: @color-primary-dark;
-    background-color: @color-primary-dark;
+    border-color: @color-neutral-light;
+    background-color: @color-neutral-light;
     color: @color-white;
     }
   }
@@ -402,9 +407,9 @@ hr {
     padding-bottom: 40px;
   }
   .topic3:after,
+  .topic3:before,
   .topic1:after,
-  .topic4:before,
-  .topic3:before {
+  .topic4:before {
       content:"";
       background: rgba(74, 74, 74, 0.6);
       position: absolute;
@@ -413,7 +418,7 @@ hr {
       top: 0;
       left: 0;
       width: 93%;
-
+      height: 1px;
   }
   .topic1:after {
       top: 0;
@@ -451,7 +456,7 @@ hr {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 35px;
-    :after {
+    &:after {
       content:"";
       position: absolute;
       z-index: -1;
@@ -467,7 +472,11 @@ hr {
 }
 
 .newsletter {
+    padding: 35px;
     background-image: linear-gradient(165deg, #a9d4a6, #fcbc48);
+    .control-label {
+      display: none;
+    }
 }
 .newsletter-link {
   position: absolute;
