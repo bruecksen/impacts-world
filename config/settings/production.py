@@ -104,7 +104,7 @@ LOGGING = {
     }
 }
 
-INSTALLED_APPS += ("gunicorn")
+INSTALLED_APPS += ("gunicorn", )
 
 DATABASES['default'] = env.db("DATABASE_URL")
 
