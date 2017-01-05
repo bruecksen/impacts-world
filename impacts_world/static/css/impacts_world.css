@@ -382,6 +382,7 @@ hr {
   border-style: solid;
   border-image-source: linear-gradient(to right, #a9d4a6, #fcbc48);
   border-image-slice: 1;
+  margin-top: 0;
 }
 .number-circle {
   display: inline-block;
@@ -513,7 +514,7 @@ hr {
   margin-bottom: 45px;
   font-family: 'montserratbold';
 }
-.timeline .date:after {
+.timeline .date.vertical-line:after {
   content: "";
   position: absolute;
   z-index: -1;

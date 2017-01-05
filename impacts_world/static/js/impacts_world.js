@@ -11,4 +11,5 @@ $(function() {
       }
     }
   });
+  $('.timeline .date').not(':last').addClass('vertical-line');
 });
