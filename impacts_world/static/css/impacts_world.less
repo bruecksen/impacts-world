@@ -446,8 +446,22 @@ hr {
 }
 
 .types {
-  img {
-    margin-bottom: 25px;
+  .row {
+    margin-bottom: 45px;
+  }
+  .plenary img {
+    width: 120px;
+    height: auto;
+  }
+  .discussion img {
+    width: 77px;
+    height: auto;
+    margin-top: 30px;
+  }
+  .poster img {
+    width: 71px;
+    height: auto;
+
   }
 }
 
@@ -480,7 +494,7 @@ hr {
 }
 .newsletter-link {
   position: absolute;
-  right: 5%;
+  right: 150px;
   color: white;
   font-size: 20px;
   font-weight: bold;
@@ -489,4 +503,19 @@ hr {
     margin-left: 20px;
   }
 }
+.newsletter-icon {
+  width: 65px;
+  height: auto;
+  position: fixed;
+  right: 65px;
+  top: 22px;
+}
 
+.anchor {
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    color: @color-white;
+  }
+}

@@ -483,8 +483,21 @@ hr {
   color: #4a4a4a;
   margin: 0;
 }
-.types img {
-  margin-bottom: 25px;
+.types .row {
+  margin-bottom: 45px;
+}
+.types .plenary img {
+  width: 120px;
+  height: auto;
+}
+.types .discussion img {
+  width: 77px;
+  height: auto;
+  margin-top: 30px;
+}
+.types .poster img {
+  width: 71px;
+  height: auto;
 }
 .timeline .date {
   font-size: 18px;
@@ -512,7 +525,7 @@ hr {
 }
 .newsletter-link {
   position: absolute;
-  right: 5%;
+  right: 150px;
   color: white;
   font-size: 20px;
   font-weight: bold;
@@ -520,4 +533,19 @@ hr {
 }
 .newsletter-link img {
   margin-left: 20px;
+}
+.newsletter-icon {
+  width: 65px;
+  height: auto;
+  position: fixed;
+  right: 65px;
+  top: 22px;
+}
+.anchor {
+  transition: all 0.2s ease-in-out;
+}
+.anchor:hover {
+  transform: scale(1.1);
+  text-decoration: none;
+  color: white;
 }
