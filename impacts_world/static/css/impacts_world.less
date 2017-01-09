@@ -375,6 +375,12 @@ hr {
 .logo {
   width: 190px;
   height: auto;
+  @media(max-width:768px) {
+    width: 150px;
+    float: none!important;
+    margin: 0 auto;
+    display: block;
+  }
 }
 .header-image {
   background: url(../images/header.jpg) no-repeat;
@@ -428,6 +434,9 @@ hr {
       content:"";
       background: rgba(74, 74, 74, 0.6);
       position: absolute;
+      @media(max-width:768px) {
+        content: none;
+      }
   }
   .topic3:after {
       top: 0;
@@ -485,9 +494,6 @@ hr {
     font-size: 18px;
     font-weight: bold;
     font-family: 'montserratbold';
-    &.vertical-line {
-      margin-bottom: 45px;
-    }
     &.vertical-line:after {
       content:"";
       position: absolute;
@@ -496,6 +502,12 @@ hr {
       bottom: -35px;
       left: 50%;
       border-left: 2px solid #4a4a4a;
+      @media(max-width:768px) {
+        content: none;
+      }
+    }
+    &.vertical-line {
+      margin-bottom: 45px;
     }
   }
   .text {
@@ -529,6 +541,14 @@ hr {
   right: 65px;
   top: 22px;
 }
+
+.newsletter-link,
+.newsletter-icon {
+    @media(max-width:768px) {
+      display: none;
+  }
+}
+
 
 .anchor {
   transition: all .2s ease-in-out;
