@@ -534,7 +534,7 @@ hr {
   z-index: -1;
   top: 35px;
   bottom: -35px;
-  left: 30%;
+  left: 33%;
   border-left: 2px solid #4a4a4a;
 }
 @media (max-width: 768px) {
