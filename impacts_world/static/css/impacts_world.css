@@ -281,7 +281,7 @@ h3,
 .h3 {
   font-weight: bold;
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 22px;
   color: #4a4a4a;
   font-family: 'montserratbold';
 }
@@ -535,7 +535,7 @@ hr {
   z-index: -1;
   top: 35px;
   bottom: -35px;
-  left: 50%;
+  left: 30%;
   border-left: 2px solid #4a4a4a;
 }
 @media (max-width: 768px) {
@@ -545,9 +545,6 @@ hr {
 }
 .timeline .date.vertical-line {
   margin-bottom: 45px;
-}
-.timeline .text {
-  font-size: 18px;
 }
 .newsletter {
   padding: 35px;
@@ -564,6 +561,7 @@ hr {
   font-family: 'montserratbold';
   font-weight: bold;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  display: none;
 }
 .newsletter-link img {
   margin-left: 20px;
