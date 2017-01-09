@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Stre",
+				"StreamFieldPanel	(imported, instance)"
+			],
+			[
 				"pro",
 				"process_slot(slot_item, running_order, spider)	(attribute, function)"
 			],
@@ -510,28 +514,59 @@
 			[
 				"he",
 				"hectares_to"
-			],
-			[
-				"ava",
-				"availability_to"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": ".env",
+			"file": "impacts_world/pages/templates/pages/home_page.html",
 			"settings":
 			{
-				"buffer_size": 347,
+				"buffer_size": 4214,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/settings/common.py",
+			"file": "impacts_world/core/templates/base.html",
 			"settings":
 			{
-				"buffer_size": 7610,
+				"buffer_size": 2303,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "impacts_world/static/js/impacts_world.js",
+			"settings":
+			{
+				"buffer_size": 529,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/opt/gitlab/embedded/service/gitlab-rails/public\n\nsudo letsencrypt certonly -a webroot --webroot-path=/opt/gitlab/embedded/service/gitlab-rails/public -d git.brueck.io\n\n\n\n\nletsencrypt certonly --webroot -w /srv/letsencrypt -d git.brueck.io --email hi@brueck.io --agree-tos",
+			"file": "/Users/brx/Downloads/pad.sinnwerkstatt.com",
+			"file_size": 4220,
+			"file_write_time": 1483630009000000,
+			"settings":
+			{
+				"buffer_size": 272,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "impacts_world/static/css/impacts_world.less",
+			"settings":
+			{
+				"buffer_size": 10484,
 				"line_ending": "Unix"
 			}
 		}
@@ -580,6 +615,35 @@
 	},
 	"file_history":
 	[
+		"/Users/brx/Sites/impacts-world/impacts_world/static/vendor/fonts/montserrat_bold_macroman/stylesheet.css",
+		"/Users/brx/Sites/impacts-world/impacts_world/pages/models.py",
+		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/timeline_block.html",
+		"/Users/brx/Sites/impacts-world/impacts_world/pages/blocks.py",
+		"/Users/brx/Sites/impacts-world/config/settings/common.py",
+		"/Users/brx/Sites/impacts-world/requirements/production.txt",
+		"/Users/brx/Sites/impacts-world/requirements/base.txt",
+		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/base.html",
+		"/Users/brx/Sites/impacts-world/fabfile.py",
+		"/Users/brx/Sites/impacts-world/impacts_world/static/css/impacts_world.less",
+		"/Users/brx/Downloads/open-sans-condensed-fontfacekit (1)/web fonts/opensanscondensed_bold_macroman/stylesheet.css",
+		"/Users/brx/Sites/impacts-world/config/settings/production.py",
+		"/Users/brx/Sites/impacts-world/impacts_world/static/css/impacts_world.css",
+		"/Users/brx/Downloads/open-sans-condensed-fontfacekit/web fonts/opensanscondensed_bold_macroman/stylesheet.css",
+		"/Users/brx/Downloads/open-sans-condensed-fontfacekit/web fonts/opensanscondensed_light_macroman/stylesheet.css",
+		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/pages/home_page.html",
+		"/Users/brx/Sites/impacts-world/impacts_world/styleguide/templates/styleguide/base.html",
+		"/Users/brx/Sites/impacts-world/config/urls.py",
+		"/Users/brx/Sites/impacts-world/impacts_world/pages/apps.py",
+		"/Users/brx/Sites/impacts-world/impacts_world/core/models.py",
+		"/Users/brx/Sites/impacts-world/impacts_world/contrib/sites/migrations/0002_set_site_domain_and_name.py",
+		"/Users/brx/Sites/impacts-world/requirements/styleguide.txt",
+		"/Users/brx/Sites/impacts-world/impacts_world/core/apps.py",
+		"/Users/brx/Sites/impacts-world/impacts_world/contrib/blocks.py",
+		"/Users/brx/Sites/impacts-world/impacts_world/static/css/isi_mip.less",
+		"/Users/brx/Sites/impacts-world/impacts_world/static/js/impacts_world.js",
+		"/Users/brx/Sites/impacts-world/impacts_world/static/vendor/css/open-sans.less",
+		"/Users/brx/Sites/impacts-world/impacts_world/static/js/isi_mip.js",
+		"/Users/brx/Sites/impacts-world/.env",
 		"/Users/brx/Sites/billing/fabfile.py",
 		"/Users/brx/Sites/billing/projects/models.py",
 		"/Users/brx/Sites/billing/team/models.py",
@@ -678,36 +742,7 @@
 		"/Users/brx/Downloads/startgreen_applications.20151210102732.csv",
 		"/Users/brx/Downloads/startgreen_applications.20151210102434.csv",
 		"/Users/brx/Downloads/startgreen_applications.20151210102147.csv",
-		"/Users/brx/Sites/start-green/accounts/admin.py",
-		"/Users/brx/Sites/start-green/network/views.py",
-		"/Users/brx/Sites/start-green/network/models.py",
-		"/Users/brx/Sites/start-green/accounts/views.py",
-		"/Users/brx/Sites/start-green/award/locale/de/LC_MESSAGES/django.po",
-		"/Users/brx/Sites/start-green/start_green/forms.py",
-		"/Users/brx/Sites/start-green/cmsplugin_award_candidates/templates/cmsplugin_award_candidates/plugins/award_candidates.html",
-		"/Users/brx/Sites/start-green/cmsplugin_contactform/cms_plugins.py",
-		"/Users/brx/Sites/start-green/cmsplugin_contactform/forms.py",
-		"/Users/brx/Sites/start-green/news/views.py",
-		"/Users/brx/Sites/start-green/accounts/templates/registration/activation_email.txt",
-		"/Users/brx/Sites/start-green/accounts/urls.py",
-		"/Users/brx/Sites/start-green/tools/urls.py",
-		"/Users/brx/Sites/start-green/cmsplugin_award_candidates/cms_plugins.py",
-		"/Users/brx/Sites/start-green/network/templates/network/includes/network_list_object.html",
-		"/Users/brx/Downloads/startgreen_applications.20151210101626.csv",
-		"/Users/brx/Sites/start-green/cmsplugin_contactform/templates/cmsplugin_contactform/plugins/mail.txt",
-		"/Users/brx/Sites/start-green/network/utils/transform.py",
-		"/Users/brx/Sites/start-green/network/templates/network/organisation_form.html",
-		"/Users/brx/Library/Application Support/Sublime Text 2/Packages/User/Python Django.sublime-settings",
-		"/Users/brx/Sites/start-green/network/templates/network/includes/network_list_object_finalist.html",
-		"/Users/brx/Sites/start-green/network/mixins.py",
-		"/Users/brx/Sites/start-green/network/templatetags/network_tags.py",
-		"/Users/brx/Sites/start-green/award/templates/award/vote_button.html",
-		"/Users/brx/Sites/start-green/start_green/templates/pages/award.html",
-		"/Users/brx/Sites/start-green/start_green/templates/pages/default.html",
-		"/Users/brx/Sites/start-green/start_green/templates/pages/2col_right_centred.html",
-		"/Users/brx/Sites/start-green/start_green/templates/pages/2col.html",
-		"/Users/brx/Sites/start-green/start_green/templates/forms/includes/built_form.html",
-		"/Users/brx/Sites/start-green/network/forms.py"
+		"/Users/brx/Sites/start-green/accounts/admin.py"
 	],
 	"find":
 	{
@@ -718,6 +753,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/Users/brx/Sites/impacts-world",
 			"/Users/brx/Sites/billing/templates",
 			"/Users/brx/Sites/billing",
 			"/Users/brx/Sites/notifhain",
@@ -755,6 +791,27 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"js",
+			"types",
+			"logo",
+			"open_sans_cond",
+			"email_obfuscator",
+			"DJANGO_SENTRY_DSN",
+			"alert",
+			"btn",
+			"\"",
+			"img",
+			"3333",
+			";\n",
+			"top",
+			";\n",
+			"color-secondary-strong",
+			"dark",
+			"\n",
+			"django.core.context_processors",
+			"isi_mip",
+			"p ",
+			"isi_mip",
 			"POSTGRE",
 			"font-size",
 			"Kaffeesatz",
@@ -861,28 +918,7 @@
 			"foundation-concept-application-create",
 			"{% include \"includes/social_share.html\" %}",
 			"au",
-			"description",
-			"UnicodeWriter",
-			"is_voting_enabled_utils",
-			"This is a preview",
-			"registration_activation_complete",
-			"registration",
-			"DjangoActivationView",
-			"contactform",
-			"contact",
-			"get_user_model",
-			"AUTH_USER_MODEL",
-			"vote_count",
-			"vote",
-			"transform",
-			"embed-responsive-dynamic-margin",
-			"badge",
-			"Junge Organisation",
-			"Jungen Organ",
-			"YoungOrganisationApplication",
-			"ALL_APPLICATION_MODELS",
-			"add_award_button_smart",
-			"award_voting_finalists_intro"
+			"description"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -890,6 +926,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"'",
+			"impacts_world",
 			"Montserrat",
 			"RoomItem",
 			"event_details_item",
@@ -1015,9 +1053,7 @@
 			"\\n",
 			"",
 			"\n",
-			"\"availability\": int(i[6]),\n",
-			"/media/landmatrix/",
-			"src=\"/"
+			"\"availability\": int(i[6]),\n"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1028,23 +1064,498 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": ".env",
+					"file": "impacts_world/pages/templates/pages/home_page.html",
 					"settings":
 					{
-						"buffer_size": 347,
+						"buffer_size": 4214,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								347,
-								347
+								243,
+								246
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "impacts_world/core/templates/base.html",
+					"settings":
+					{
+						"buffer_size": 2303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2171,
+								2171
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 767.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "impacts_world/static/js/impacts_world.js",
+					"settings":
+					{
+						"buffer_size": 529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								529,
+								529
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 27.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/brx/Downloads/pad.sinnwerkstatt.com",
+					"settings":
+					{
+						"buffer_size": 272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								272,
+								272
 							]
 						],
 						"settings":
@@ -1151,19 +1662,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "config/settings/common.py",
+					"buffer": 5,
+					"file": "impacts_world/static/css/impacts_world.less",
 					"settings":
 					{
-						"buffer_size": 7610,
+						"buffer_size": 10484,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3305,
-								3305
+								7277,
+								7277
 							]
 						],
 						"settings":
@@ -1208,7 +1719,7 @@
 								"vendor-prefix": true,
 								"zero-units": "warning"
 							},
-							"encoding_helper_confidence": 1.0,
+							"encoding_helper_confidence": 0.895971917061,
 							"encoding_helper_encoding": "UTF-8",
 							"encoding_helper_encoding_sublime": "UTF-8",
 							"gjslint_ignore":
@@ -1261,10 +1772,10 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1606.0,
+						"translation.y": 5827.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1322,8 +1833,24 @@
 		"selected_items":
 		[
 			[
+				"base.html",
+				"impacts-world/impacts_world/core/templates/base.html"
+			],
+			[
+				"less",
+				"impacts-world/impacts_world/static/css/impacts_world.less"
+			],
+			[
 				"fab",
-				"fabfile.py"
+				"impacts-world/fabfile.py"
+			],
+			[
+				"production",
+				"impacts-world/requirements/production.txt"
+			],
+			[
+				"common",
+				"impacts-world/config/settings/common.py"
 			],
 			[
 				".gi",
@@ -1392,10 +1919,6 @@
 			[
 				"startgreen.js",
 				"start_green/static/js/startgreen.js"
-			],
-			[
-				"less",
-				"start_green/static/css/startgreen.less"
 			],
 			[
 				"footer",
@@ -1560,10 +2083,6 @@
 			[
 				"blog",
 				"european_alternatives/templates/blog.html"
-			],
-			[
-				"base.html",
-				"european_alternatives/templates/base.html"
 			],
 			[
 				"start.h",
@@ -1824,14 +2343,6 @@
 			[
 				"change",
 				"landmatrix/editor/forms/changedealwizard.py"
-			],
-			[
-				"changedeal",
-				"landmatrix/editor/forms/changedealwizard.py"
-			],
-			[
-				"adddeal",
-				"landmatrix/editor/forms/adddealwizard.py"
 			]
 		],
 		"width": 0.0
@@ -1860,6 +2371,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 348.0,
+	"side_bar_width": 270.0,
 	"status_bar_visible": true
 }

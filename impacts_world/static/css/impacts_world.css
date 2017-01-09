@@ -511,8 +511,10 @@ hr {
 .timeline .date {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 45px;
   font-family: 'montserratbold';
+}
+.timeline .date.vertical-line {
+  margin-bottom: 45px;
 }
 .timeline .date.vertical-line:after {
   content: "";
