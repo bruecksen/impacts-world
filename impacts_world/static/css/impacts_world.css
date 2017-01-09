@@ -410,6 +410,9 @@ hr {
 .jumbotron {
   margin-bottom: 75px;
 }
+.jumbotron .container {
+  margin-bottom: 0;
+}
 .logo {
   width: 190px;
   height: auto;
