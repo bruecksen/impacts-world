@@ -1,4 +1,4 @@
-{% load compile_static static i18n wagtailuserbar %}<!DOCTYPE html>
+{% load compile_static static i18n wagtailuserbar header %}<!DOCTYPE html>
 <html lang="de">
 <head>
 	<meta charset="utf-8">
@@ -33,6 +33,10 @@
 <body>
 {% wagtailuserbar %}
 
+{% block header %}
+	{% header show_banner=True %}
+{% endblock %}
+
 {% block messages %}
 
 {% endblock %}
@@ -42,6 +46,9 @@
 	{% endblock %}
 {% endblock %}
 
+{% block footer %}
+	{# {% footer %} #}
+{% endblock %}
 
 
 {% block javascript %}

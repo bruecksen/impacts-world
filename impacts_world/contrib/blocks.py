@@ -1,4 +1,3 @@
-from blog.models import BlogPage, BlogIndexPage
 from django import forms
 from django.contrib.contenttypes.models import ContentType
 from django.utils.functional import cached_property
@@ -31,10 +30,6 @@ def smart_truncate(text: str, min_length: int, max_length: int) -> str:
             return text
 
 
-class SpecificPageChooserBlock(PageChooserBlock):
-    page_model = BlogIndexPage
-
-
 class IntegerBlock(FieldBlock):
     def __init__(self, required=True, help_text=None, max_value=None, min_value=None, **kwargs):
         self.field = forms.IntegerField(required=required, help_text=help_text, max_value=max_value,
@@ -46,52 +41,6 @@ class EmailBlock(FieldBlock):
     def __init__(self, required=True, help_text=None, **kwargs):
         self.field = forms.EmailField(required=required, help_text=help_text)
         super().__init__(**kwargs)
-
-
-class BlogBlock(blocks.StructBlock):
-    blog_index = SpecificPageChooserBlock(required=False, help_text='Select blog index page.')
-    title = CharBlock(required=False, help_text='Per default, the title of the blog index will be used.')
-    entry_count = IntegerBlock(required=True, min_value=1, max_value=5, default=4,
-                               help_text='How many blog entries should be displayed?')
-
-    class Meta:
-        classname = 'blog'
-        icon = 'image'
-        template = 'blocks/blog_block.html'
-
-    def get_context(self, value):
-        context = super().get_context(value)
-        blog_index = value.get('blog_index')
-        title = value.get('title') or (blog_index.title if blog_index else 'Blog')
-        entry_count = value.get('entry_count')
-
-        entries = blog_index.blogs if blog_index else BlogPage.objects.all().order_by('-date')
-        entries = entries[:entry_count]
-        # context['teaser_template'] = 'widgets/page-teaser.html'
-        context['count'] = entry_count
-        context['title'] = title
-        context['slug'] = blog_index.slug if blog_index else ''
-        context['outter_col'] = int(3 * entry_count)
-        context['inner_col'] = int(12 / entry_count)
-
-        context['entries'] = []
-        for entry in entries:
-            entry_context = {
-                'date': entry.date,
-                'href': entry.url,
-                'description': smart_truncate(entry.body, 300, 350),
-                'title': entry.title,
-                'arrow_right_link': True
-            }
-            try:
-                rendition = entry.header_image.get_rendition('fill-640x360-c100')
-                entry_context['image'] = {'url': rendition.url, 'name': entry.header_image.title}
-                entry_context['description'] = smart_truncate(entry.body, 0, 100)
-            except:
-                pass
-
-            context['entries'] += [entry_context]
-        return context
 
 
 class HeadingBlock(CharBlock):
@@ -128,7 +77,7 @@ class ImageBlock(ImageChooserBlock):
 class RichTextBlock(_RichTextBlock):
     class Meta:
         icon = 'pilcrow'
-        template = 'widgets/richtext-content.html'
+        template = 'blocks/richtext_block.html'
 
     def get_context(self, value):
         context = super().get_context(value)

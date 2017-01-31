@@ -49,6 +49,8 @@ DEBUG_TOOLBAR_CONFIG = {
 # ------------------------------------------------------------------------------
 INSTALLED_APPS += ('django_extensions', )
 
+INSTALLED_APPS += ('wagtail.contrib.wagtailstyleguide', )
+
 # TESTING
 # ------------------------------------------------------------------------------
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'

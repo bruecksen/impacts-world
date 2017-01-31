@@ -1,0 +1,136 @@
+{% extends "pages/default_page.html" %}
+{% load wagtailcore_tags bootstrap3 static %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content_container %}
+<header>
+</header>
+
+</div>
+<div class="container description">
+	<div class="row">
+		<div class="col-lg-12">
+			{{ page.description|safe }}
+		</div>
+	</div>
+</div>
+<div class="jumbotron topic">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-xs-12 topic1">
+				<span class="number-circle">1</span>
+				{{ page.topic1|safe }}
+			</div>
+			<div class="col-sm-6 col-xs-12 topic2">
+				<span class="number-circle">2</span>
+				{{ page.topic2|safe }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-xs-12 topic3">
+				<span class="number-circle">3</span>
+				{{ page.topic3|safe }}
+			</div>
+			<div class="col-sm-6 col-xs-12 topic4">
+				<span class="number-circle">4</span>
+				{{ page.topic4|safe }}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container timeline">
+	<div class="row">
+		<div class="col-xs-12"><h3>Key Dates</h3></div>
+	</div>
+	{{ page.timeline|safe }}
+</div>
+<div class="container">
+	<hr>
+</div>
+<div class="container types">
+	<div class="row plenary">
+		<div class="col-md-3">
+			<img class="img-responsive center-block" src="{% static "images/plenary.png" %}">
+		</div>
+		<div class="col-md-9">
+			{{ page.plenary|safe }}
+		</div>
+	</div>
+	<div class="row discussion">
+		<div class="col-md-3">
+			<img class="img-responsive center-block" src="{% static "images/discussion.png" %}">
+		</div>
+		<div class="col-md-9">
+			{{ page.discussion|safe }}
+		</div>
+	</div>
+	<div class="row poster">
+		<div class="col-md-3">
+			<img class="img-responsive center-block" src="{% static "images/poster.png" %}">
+		</div>
+		<div class="col-md-9">
+			{{ page.poster|safe }}
+		</div>
+	</div>
+</div>
+<div id="newsletter" class="container newsletter">
+	<div class="row">
+		<div class="col-md-6">
+			{% if not request.POST %}
+			<form action="{% pageurl page %}" method="POST" class="form">
+				{% csrf_token %}
+					{% bootstrap_form form %}
+					{% buttons %}
+						<button type="submit" class="btn btn-primary">Keep me informed!</button>
+					{% endbuttons %}
+			</form>
+			{% else %}
+				{{ page.thank_you_text|safe }}
+			{% endif %}
+		</div>
+		<div class="col-md-6">
+			{{ page.newsletter|safe }}
+		</div>
+	</div>
+</div>
+<div class="container members">
+	<h3>Members of the International Steering Committee</h3>
+	<div class="row">
+		<div class="col-xs-12 col-sm-4">
+			{{ page.members1|safe }}
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			{{ page.members2|safe }}
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			{{ page.members3|safe }}
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<hr>
+			<div class="row">
+				<div class="col-sm-6 col-xs-12">
+					<p>The legal provider of this Website is the<br>
+Potsdam Institute for Climate Impact Research (PIK).</p>
+<p>Photo of flood in Thailand in November, 2011 from <a href="https://www.flickr.com/photos/ebvimages/6332025020/" target="_blank">ebvImages</a> and used under the <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">Creative Commons 2.0 license</a>.
+</p>
+<p>
+Telegrafenberg A 31<br>
+14473 Potsdam<br>
+Germany</p>
+				</div>
+				<div class="col-sm-3 col-xs-6">
+					<a href="https://www.pik-potsdam.de/pik-frontpage?set_language=en" target="_blank"><img class="img-responsive center-block" src="{% static "images/pik.png"%}">
+					</a>
+				</div>
+				<div class="col-sm-3 col-xs-6">
+					<a href="https://www.bmbf.de/en/index.html" target="_blank"><img class="img-responsive center-block" src="{% static "images/ministry.png"%}"></a>
+				</div>
+			</div>
+	</div>
+</footer>
+{% endblock %}

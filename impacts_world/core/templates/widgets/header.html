@@ -1,0 +1,65 @@
+{% load staticfiles i18n %}
+<div class="widget-header">
+	{% if show_banner %}
+	<div class="jumbotron header-image" style="background-image:url('{{ banner.image }}');">
+		<div class="container">
+			<div class="row header-content">
+				<div class="col-sm-3 col-xs-12">
+					<img class="logo pull-right" src="{% static "images/logo.png" %}">
+				</div>
+				<div class="col-sm-9 col-xs-12">
+					<div class="intro">
+					{{ banner.first_intro|safe }}
+				</div>
+				<br>
+				<div class="intro">
+					{{ banner.second_intro|safe }}
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+	<nav class="navbar navbar-default{% if noborder %} navbar-noborder{% endif %}">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#widget-header-{{ id }}" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">
+					<img src="{% static 'images/logo-white.png' %}">
+				</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="widget-header-{{ id }}">
+				<ul class="nav navbar-nav">
+					{% for link in links %}
+						<li{% if link.active %} class="active"{% endif %}>
+							<a href="{{ link.url }}">{{ link.text }}</a>
+							{% if link.sublinks %}
+								<ul>
+								{% for sublink in link.sublinks %}
+									<li{% if sublink.active %} class="active"{% endif %}>
+										<a href="{{ sublink.url }}">{{ sublink.text }}</a>
+									</li>
+								{% endfor %}
+								</ul>
+							{% endif %}
+						</li>
+					{% endfor %}
+				</ul>
+				{% if participate %}
+				<ul class="nav navbar-nav">
+					<li{% if participate.active %} class="active"{% endif %}>
+						<a href="{{ participate.url }}">{{ participate.text }}</a>
+					</li>
+				</ul>
+				{% endif %}
+			</div><!-- navbar-collapse -->
+		</div><!-- container -->
+	</nav>
+</div><!-- widget-header -->

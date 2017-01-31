@@ -5,19 +5,19 @@
 		[
 			[
 				"Stre",
-				"StreamFieldPanel	(imported, instance)"
+				"StreamFieldPanel\t(imported, instance)"
 			],
 			[
 				"pro",
-				"process_slot(slot_item, running_order, spider)	(attribute, function)"
+				"process_slot(slot_item, running_order, spider)\t(attribute, function)"
 			],
 			[
 				"even",
-				"event_details	(local, instance)"
+				"event_details\t(local, instance)"
 			],
 			[
 				"runnin",
-				"running_order_item	(local, instance)"
+				"running_order_item\t(local, instance)"
 			],
 			[
 				"proce",
@@ -25,11 +25,11 @@
 			],
 			[
 				"runn",
-				"running_order_item	(local, instance)"
+				"running_order_item\t(local, instance)"
 			],
 			[
 				"get",
-				"get_all_answers	(imported, instance)"
+				"get_all_answers\t(imported, instance)"
 			],
 			[
 				"json_array",
@@ -45,7 +45,7 @@
 			],
 			[
 				"Partner",
-				"PartnerOrganization	(imported, instance)"
+				"PartnerOrganization\t(imported, instance)"
 			],
 			[
 				"gener",
@@ -53,7 +53,7 @@
 			],
 			[
 				"gen",
-				"generate_infobox_routepoint(routepoint)	(attribute, function)"
+				"generate_infobox_routepoint(routepoint)\t(attribute, function)"
 			],
 			[
 				"pr",
@@ -69,15 +69,15 @@
 			],
 			[
 				"TY",
-				"TYPE_CHOICES	(local, instance)"
+				"TYPE_CHOICES\t(local, instance)"
 			],
 			[
 				"PHASE",
-				"PHASE_ACQUISITION	(global, instance)"
+				"PHASE_ACQUISITION\t(global, instance)"
 			],
 			[
 				"EM",
-				"EMPLOYMENT_CONTRACTOR	(global, instance)"
+				"EMPLOYMENT_CONTRACTOR\t(global, instance)"
 			],
 			[
 				"EMPL",
@@ -93,43 +93,43 @@
 			],
 			[
 				"primar",
-				"primary_investor	(local, instance)"
+				"primary_investor\t(local, instance)"
 			],
 			[
 				"pri",
-				"primary_investor_identifier	(local, instance)"
+				"primary_investor_identifier\t(local, instance)"
 			],
 			[
 				"second",
-				"secondary_investors	(local, instance)"
+				"secondary_investors\t(local, instance)"
 			],
 			[
 				"get_form",
-				"get_form_initial(step)	(attribute, function)"
+				"get_form_initial(step)\t(attribute, function)"
 			],
 			[
 				"initi",
-				"initial_data	(local, instance)"
+				"initial_data\t(local, instance)"
 			],
 			[
 				"Stakeho",
-				"StakeholderProtocol	(imported, instance)"
+				"StakeholderProtocol\t(imported, instance)"
 			],
 			[
 				"Transn",
-				"TransnationalDealsPlugin	(global, class)"
+				"TransnationalDealsPlugin\t(global, class)"
 			],
 			[
 				"I",
-				"INTENTIONS	(attribute, instance)"
+				"INTENTIONS\t(attribute, instance)"
 			],
 			[
 				"acti",
-				"activities	(local, instance)"
+				"activities\t(local, instance)"
 			],
 			[
 				"Activity",
-				"ActivityProtocol	(imported, instance)"
+				"ActivityProtocol\t(imported, instance)"
 			],
 			[
 				"draw",
@@ -523,7 +523,8 @@
 			"file": "impacts_world/pages/templates/pages/home_page.html",
 			"settings":
 			{
-				"buffer_size": 4291,
+				"buffer_size": 4565,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -544,21 +545,11 @@
 			}
 		},
 		{
-			"contents": "/opt/gitlab/embedded/service/gitlab-rails/public\n\nsudo letsencrypt certonly -a webroot --webroot-path=/opt/gitlab/embedded/service/gitlab-rails/public -d git.brueck.io\n\n\n\n\nletsencrypt certonly --webroot -w /srv/letsencrypt -d git.brueck.io --email hi@brueck.io --agree-tos",
-			"file": "/Users/brx/Downloads/pad.sinnwerkstatt.com",
-			"file_size": 4220,
-			"file_write_time": 1483630009000000,
-			"settings":
-			{
-				"buffer_size": 272,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "impacts_world/static/css/impacts_world.less",
 			"settings":
 			{
-				"buffer_size": 10942,
+				"buffer_size": 10976,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -566,17 +557,27 @@
 			"file": "impacts_world/pages/templates/blocks/timeline_block.html",
 			"settings":
 			{
-				"buffer_size": 174,
+				"buffer_size": 192,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "Packages/Processing/Processing.sublime-build",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
-		"height": 47.0,
+		"height": 375.0,
+		"last_filter": "package",
 		"selected_items":
 		[
+			[
+				"package",
+				"Package Control: Install Package"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -592,17 +593,16 @@
 			[
 				"Package Control: install",
 				"Package Control: Install Package"
-			],
-			[
-				"package",
-				"Package Control: Install Package"
 			]
 		],
-		"width": 602.0
+		"width": 471.0
 	},
 	"console":
 	{
-		"height": 125.0
+		"height": 125.0,
+		"history":
+		[
+		]
 	},
 	"distraction_free":
 	{
@@ -613,8 +613,19 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/brx/Sites/impacts-world",
+		"/Users/brx/Sites/impacts-world/impacts_world",
+		"/Users/brx/Sites/impacts-world/impacts_world/pages",
+		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates",
+		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks",
+		"/Users/brx/Sites/impacts-world/impacts_world/static"
+	],
 	"file_history":
 	[
+		"/Users/brx/Downloads/pad.sinnwerkstatt.com",
+		"/Users/brx/Sites/impacts-world/impacts_world/static/css/impacts_world.less",
 		"/Users/brx/Sites/impacts-world/impacts_world/static/vendor/fonts/montserrat_bold_macroman/stylesheet.css",
 		"/Users/brx/Sites/impacts-world/impacts_world/pages/models.py",
 		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/timeline_block.html",
@@ -624,7 +635,6 @@
 		"/Users/brx/Sites/impacts-world/requirements/base.txt",
 		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/base.html",
 		"/Users/brx/Sites/impacts-world/fabfile.py",
-		"/Users/brx/Sites/impacts-world/impacts_world/static/css/impacts_world.less",
 		"/Users/brx/Downloads/open-sans-condensed-fontfacekit (1)/web fonts/opensanscondensed_bold_macroman/stylesheet.css",
 		"/Users/brx/Sites/impacts-world/config/settings/production.py",
 		"/Users/brx/Sites/impacts-world/impacts_world/static/css/impacts_world.css",
@@ -741,12 +751,11 @@
 		"/Users/brx/Downloads/startgreen_applications.20151210111030.csv",
 		"/Users/brx/Downloads/startgreen_applications.20151210102732.csv",
 		"/Users/brx/Downloads/startgreen_applications.20151210102434.csv",
-		"/Users/brx/Downloads/startgreen_applications.20151210102147.csv",
-		"/Users/brx/Sites/start-green/accounts/admin.py"
+		"/Users/brx/Downloads/startgreen_applications.20151210102147.csv"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -1064,23 +1073,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
 					"file": "impacts_world/pages/templates/pages/home_page.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4291,
+						"buffer_size": 4565,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								159,
-								159
+								4101,
+								4101
 							]
 						],
 						"settings":
@@ -1182,14 +1192,16 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1903.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
 					"file": "impacts_world/core/templates/base.html",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 2850,
@@ -1199,8 +1211,8 @@
 						"selection":
 						[
 							[
-								1992,
-								1992
+								2014,
+								2014
 							]
 						],
 						"settings":
@@ -1305,11 +1317,13 @@
 						"translation.y": 497.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
 					"file": "impacts_world/static/js/impacts_world.js",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 529,
@@ -1420,264 +1434,56 @@
 							"sublimelinter_wrap_find": true,
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 27.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "/Users/brx/Downloads/pad.sinnwerkstatt.com",
+					"file": "impacts_world/static/css/impacts_world.less",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 272,
+						"buffer_size": 10976,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								272,
-								272
+								2412,
+								2412
 							]
 						],
 						"settings":
 						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"devel": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": "load-save",
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 916.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "impacts_world/static/css/impacts_world.less",
-					"settings":
-					{
-						"buffer_size": 10942,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7787,
-								7787
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"encoding_helper_confidence": 0.895971917061,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"devel": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": "load-save",
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 6432.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "impacts_world/pages/templates/blocks/timeline_block.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 174,
+						"buffer_size": 192,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								68,
-								68
+								192,
+								192
 							]
 						],
 						"settings":
@@ -1781,6 +1587,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1821,10 +1628,16 @@
 	{
 		"height": 100.0
 	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
 	"output.jslint_result_view":
 	{
 		"height": 100.0
 	},
+	"pinned_build_system": "",
+	"project": "impacts-world.sublime-project",
 	"replace":
 	{
 		"height": 64.0
@@ -1833,6 +1646,7 @@
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -2353,6 +2167,7 @@
 	"select_project":
 	{
 		"height": 500.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -2370,10 +2185,26 @@
 		],
 		"width": 380.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 270.0,
-	"status_bar_visible": true
+	"side_bar_width": 249.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }

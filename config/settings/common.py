@@ -103,7 +103,7 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres:///impacts-world"),
+    'default': env.db("DATABASE_URL", default="postgres://localhost:5432/impacts-world"),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -181,7 +181,7 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
     'static_precompiler.finders.StaticPrecompilerFinder',
 )
-STATIC_PRECOMPILER_OUTPUT_DIR='.'
+STATIC_PRECOMPILER_OUTPUT_DIR = '.'
 
 MEDIA_ROOT = str(APPS_DIR('media'))
 MEDIA_URL = '/media/'
