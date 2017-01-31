@@ -37,7 +37,7 @@ class HeaderSettings(ClusterableModel, BaseSetting):
             ],
             heading="Banner",
         ),
-        InlinePanel('header_links', label="Link"),
+        InlinePanel('header_links', label="Link", classname="collapsed"),
         MultiFieldPanel(
             [
                 FieldPanel('show_participate'),

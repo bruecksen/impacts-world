@@ -34,18 +34,6 @@
 	font-style: normal;
 }
 
-@font-face {
-	font-family: 'montserratbold';
-	src: url('../vendor/fonts/montserrat_bold_macroman/Montserrat-Bold-webfont.eot');
-	src: url('../vendor/fonts/montserrat_bold_macroman/Montserrat-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('../vendor/fonts/montserrat_bold_macroman/Montserrat-Bold-webfont.woff') format('woff'),
-		 url('../vendor/fonts/montserrat_bold_macroman/Montserrat-Bold-webfont.ttf') format('truetype'),
-		 url('../vendor/fonts/montserrat_bold_macroman/Montserrat-Bold-webfont.svg#montserratbold') format('svg');
-	font-weight: normal;
-	font-style: normal;
-
-}
-
 
 
 
@@ -190,38 +178,34 @@ select.form-control {
 
 // Headlines
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-  color: @color-black;
+  color: @color-neutral;
   margin-top: 0; // Undo this in richtext fields
-
+  font-weight: bold;
   a {
 	font-weight: inherit;
 	text-transform: inherit;
-  }
+	}
 }
 
-h1, .h1, h2, .h2 {
+h1, .h1 {
   // H1 und H2 sehen gleich aus, nur semantisch verschieden.
   font-weight: 400;
-  font-size: 22px;
-  color: @color-neutral-dark;
+  font-size: 30px;
 
   @media(min-width:768px) {
 	font-size: 28px;
   }
 }
+h2, .h2 {
+  font-size: 26px;
+}
 h3, .h3 {
-  font-weight: bold;
   margin-bottom: 30px;
-  font-size: 22px;
-  color: #4a4a4a;
-  font-family: 'montserratbold';
+  font-size: 20px;
 }
 h4, .h4 {
-  font-weight: bold;
   margin-bottom: 15px;
   font-size: 18px;
-  color: #4a4a4a;
-  font-family: 'montserratbold';
 }
 .super {
   h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
@@ -353,22 +337,22 @@ hr {
 
 // Wagtail responsive embeds http://docs.wagtail.io/en/latest/topics/writing_templates.html?highlight=responsive#responsive-embeds
 .rich-text img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 .responsive-object {
-    position: relative;
+	position: relative;
 }
 
 .responsive-object iframe,
 .responsive-object object,
 .responsive-object embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 // ############# Widgets
@@ -773,9 +757,12 @@ hr {
 }
 
 .block-teaser {
-	h1, .h1, h2, .h2, h3, .h3, h4, .h4, p, .fa{
-		color: @color-white;
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, p{
 		margin: 0;
+		font-size: 26px;
+		font-weight: bold;
+		line-height: 1.5;
+		color: @color-white;
 	}
 	.widget-richtext-content {
 		padding: 30px;
@@ -783,8 +770,12 @@ hr {
 	}
 	.fa {
 		position: absolute;
-		right: 10%;
-		top: 30%;
+		right: 30px;
+		top: 50%;
+		transform: translate(0, -50%);
+		font-size: 60px;
+		font-weight: normal;
+		color: @color-white;
 	}
 }
 
@@ -802,9 +793,64 @@ hr {
 .block-challenge {
 	.intro {
 		background-color: @color-secondary;
+		padding-top: 30px;
+		padding-bottom: 20px;
+		p {
+			font-size: 14px;
+		}
 	}
 	.challenges {
+		.container {
+			padding-top:20px;
+			padding-bottom: 20px;
+		}
 		background-color: @color-secondary-light;
+		h3 {
+			margin-top: 20px;
+		}
+		p {
+			font-size: 18px;
+		}
+		.row > div{
+			padding-top: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		.challenge3:after,
+		.challenge3:before,
+		.challenge1:after,
+		.challenge4:before {
+			content:"";
+			background: rgba(74, 74, 74, 0.6);
+			position: absolute;
+			@media(max-width:768px) {
+				content: none;
+			}
+		}
+		.challenge3:after {
+			top: 0;
+			left: 0;
+			width: 93%;
+			height: 1px;
+		}
+		.challenge1:after {
+			top: 0;
+			right: 0;
+			height: 90%;
+			width: 1px;
+		}
+		.challenge4:before {
+			top: 0;
+			right: 0;
+			width: 93%;
+			height: 1px;
+		}
+		.challenge3:before {
+			top: 10%;
+			right: 0;
+			height: 90%;
+			width: 1px;
+		}
 	}
 }
 
@@ -821,41 +867,7 @@ hr {
 	padding-top: 40px;
 	padding-bottom: 40px;
   }
-  .topic3:after,
-  .topic3:before,
-  .topic1:after,
-  .topic4:before {
-	  content:"";
-	  background: rgba(74, 74, 74, 0.6);
-	  position: absolute;
-	  @media(max-width:768px) {
-		content: none;
-	  }
-  }
-  .topic3:after {
-	  top: 0;
-	  left: 0;
-	  width: 93%;
-	  height: 1px;
-  }
-  .topic1:after {
-	  top: 0;
-	  right: 0;
-	  height: 90%;
-	  width: 1px;
-  }
-  .topic4:before {
-	top: 0;
-	right: 0;
-	width: 93%;
-	height: 1px;
-  }
-  .topic3:before {
-	  top: 10%;
-	  right: 0;
-	  height: 90%;
-	  width: 1px;
-  }
+
   p {
 	font-size: 16px;
 	color: #4a4a4a;

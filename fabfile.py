@@ -3,7 +3,18 @@ from fabvenv import virtualenv
 
 
 def staging():
-    pass
+    projectname = 'iw2017'
+    basepath = '/srv/iw2017.brueck.io/%s'
+    env.hosts = ['{0}@{0}.brueck.io'.format(projectname)]
+    env.path = basepath % projectname
+    env.virtualenv_path = basepath % (projectname+'env')
+    env.backup_path = basepath % 'backups'
+    env.push_branch = 'staging'
+    env.push_remote = 'origin'
+    env.reload_cmd = 'supervisorctl restart {0}'.format(projectname)
+    env.db_name = projectname
+    env.db_username = projectname
+    env.after_deploy_url = 'http://%s.brueck.io' % projectname
 
 
 def production():
