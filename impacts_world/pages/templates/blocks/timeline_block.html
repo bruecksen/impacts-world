@@ -3,7 +3,7 @@
 	<div class="container-fluid">
 		<div class="row">
 		{% for item in timeline.timeline_items.all %}
-		<div class="col-md-2">
+		<div class="col-md-2 timeline-item{% if item.is_active %} active{% endif %}">
 			<p><b>{{ item.title }}</b><br>
 			{{ item.date }}</p>
 		</div>

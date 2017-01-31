@@ -1,0 +1,15 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<div class="container">
+	<div class="row">
+	{% for item in value %}
+		<div class="col-md-4 text-center">
+			{% image item.picture fill-120x120 %}
+			<h3>{{ item.name }}</h4>
+			<h4>{{ item.institute }}</h4>
+			<blockquote>
+				<p>{{ item.testimonial }}</p>
+			</blockquote>
+		</div>
+	{% endfor %}
+	</div>
+</div>

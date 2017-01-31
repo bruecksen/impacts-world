@@ -1,0 +1,10 @@
+{% load wagtailcore_tags %}
+<div class="container">
+	<div class="widget-richtext-content">
+		<div class="media-container">
+		{{ value.video }}
+		</div>
+		{{ value.text|richtext }}
+		<div class="clearfix"></div>
+	</div><!-- widget-richtext-content -->
+</div>

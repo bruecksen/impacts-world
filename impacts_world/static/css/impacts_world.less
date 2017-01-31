@@ -3,10 +3,10 @@
 @color-white: white;
 @color-black: black;
 @color-neutral: #4a4a4a;
-@color-neutral-light: white;
+@color-neutral-light: #F1F1F1;
 @color-neutral-dark: black;
 @color-primary: #fcbc48; // yellow
-@color-primary-light: #fcd794; // light yellow
+@color-primary-light: #FDD88F; // light yellow
 @color-secondary: #e4f1e4; // green
 @color-secondary-light: #f6faf6; 
 
@@ -71,7 +71,6 @@ a {
 
   &:hover, &:focus {
 	text-decoration: underline;
-	color: @color-secondary;
   }
 }
 .super a {
@@ -348,6 +347,29 @@ hr {
 	background-image: linear-gradient(165deg, #a9d4a6, #fcbc48);
 }
 
+.jumbotron {
+	background-color: @color-white;
+}
+
+// Wagtail responsive embeds http://docs.wagtail.io/en/latest/topics/writing_templates.html?highlight=responsive#responsive-embeds
+.rich-text img {
+    max-width: 100%;
+    height: auto;
+}
+
+.responsive-object {
+    position: relative;
+}
+
+.responsive-object iframe,
+.responsive-object object,
+.responsive-object embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 // ############# Widgets
 
@@ -541,32 +563,46 @@ hr {
 			border-width: 0;
 		}
 		border: none;
-		background-color: @color-primary-light;
+		background: linear-gradient(
+						to right, 
+						@color-primary 0%, 
+						@color-primary 50%, 
+						@color-neutral-light 50%, 
+						@color-neutral-light 100%
+					);
 		min-height: 60px;
 
 		.navbar-header {
+			background-image: url(../images/navbar-left.png);
+			background-repeat: no-repeat;
+			background-position: center right;
 			.navbar-brand {
-				padding: 14px 0 0 15px;
+				// padding: 14px 0 0 15px;
 				height: 60px;
+				color: @color-white;
 
 				@media(min-width:992px) {
-					padding-top: 20px;
+					padding-top: 10px;
 					margin-right: 60px;
-				}
-				-webkit-transition: opacity 0.5s;
-				transition: opacity 0.5s;
-
-				&:hover, &:focus {
-					opacity: 0.7;
 				}
 
 				img {
-					width: 120px;
-					@media(min-width:992px) {
-						width: 140px;
-					}
+					width: 32px;
+					// @media(min-width:992px) {
+					// 	width: 37px;
+					// }
 					display: block;
 					height: auto;
+					float: left;
+				}
+				span {
+					float: left;
+					font-size: 18px;
+					font-weight: 300;
+					margin-left: 5px;
+					b {
+						font-weight: bold;
+					}
 				}
 			}
 
@@ -602,26 +638,24 @@ hr {
 		}
 		.navbar-collapse {
 			ul.navbar-nav {
+				background-color: @color-primary-light;
+				padding-left: 20px;
+				padding-right: 20px;
 				> li {
 					> a {
 						font-weight: 700;
-						padding: 15px 15px 15px 15px;
-						@media(min-width:992px) {
-							padding: 20px 15px 20px 15px;
-						}
+						padding: 5px;
+						margin-top: 14px;
+						margin-bottom: 14px;
+						margin-right: 15px;
+						// @media(min-width:992px) {
+						// 	padding: 20px 15px 20px 15px;
+						// }
 
 						text-align: center;
 
 						text-transform: uppercase;
-						color: @color-black;
-
-						-webkit-transition: color 0.5s;
-						transition: color 0.5s;
-
-						&:focus, &:hover {
-							color: @color-primary;
-						}
-
+						color: @color-neutral;
 					}
 
 					// Line between links in hamburger nav
@@ -636,13 +670,10 @@ hr {
 
 					&.active {
 						> a {
-							color: @color-primary;
 							background-color: transparent;
 							position: relative;
+							border: 1px solid @color-neutral;
 
-							&:focus, &:hover {
-								// color: @color-black;
-							}
 
 							@media(min-width:992px) {
 								// &::after {
@@ -661,13 +692,37 @@ hr {
 				}
 			}
 		}
+		.navbar-footer {
+			background-image: url(../images/navbar-right.png);
+			background-repeat: no-repeat;
+			background-position: center left;
+			background-color: @color-neutral-light;
+			font-weight: 800;
+			float: left;
+			ul.navbar-nav {
+				background-color: transparent !important;
+				padding-left: 50px;
+			}
+			.fa {
+				font-size: 20px;
+				position: absolute;
+				top: 50%;
+				right: -8px;
+				transform: translate(0, -50%);
+			}
+		}
 	}
 }
 
+.block-video_teaser,
+.block-teaser,
+.block-rich_text,
+.block-challenge,
+.block-testimonial {
+	margin-top: 60px;
+}
+
 .block-timeline {
-	p {
-		font-size: 14px;
-	}
 	.jumbotron {
 		background-color: @color-secondary-light;
 		padding-left: 48px;
@@ -675,6 +730,45 @@ hr {
 		padding-top: 0;
 		padding-bottom: 0;
 		margin-bottom: 0;
+		.container-fluid {
+			.timeline-item {
+				margin-top: 40px;
+				margin-bottom: 35px;
+				padding-left: 0;
+				padding-top: 10px;
+					p {
+					font-size: 14px;
+					margin-bottom: 0;
+				}
+				&:not(:last-child) {
+					border-top: 1px solid #979797;
+				}
+				&:before {
+					content: '';
+					display: inline-block;
+					position: absolute;
+					top: -4px;
+					left: 0;
+					width: 8px;
+					height: 8px;
+					background: @color-white;
+					border: 1px solid #979797;
+					-moz-border-radius: 8px;
+					-webkit-border-radius: 8px;
+					border-radius: 8px;
+				}
+				&.active:before {
+						top: -7px;
+						left: 0;
+						width: 14px;
+						height: 14px;
+						background-color: #fcbc48;
+						-moz-border-radius: 14px;
+						-webkit-border-radius: 14px;
+						border-radius: 14px;
+				}
+			}
+		}
 	}
 }
 
@@ -694,6 +788,25 @@ hr {
 	}
 }
 
+.block-video_teaser {
+	font-size: 16px;
+	line-height: 1.44;
+	.media-container {
+		width: 50%;
+		float: left;
+		margin-right: 30px;
+	}
+}
+
+
+.block-challenge {
+	.intro {
+		background-color: @color-secondary;
+	}
+	.challenges {
+		background-color: @color-secondary-light;
+	}
+}
 
 
 

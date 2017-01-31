@@ -30,7 +30,8 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="/">
-					<img src="{% static 'images/logo-white.png' %}">
+					<img src="{% static 'images/pentagon.png' %}">
+					<span><b>#impacts</b><br>world<b>2017</b></span>
 				</a>
 			</div>
 
@@ -52,13 +53,15 @@
 						</li>
 					{% endfor %}
 				</ul>
+				<div class="navbar-footer">
 				{% if participate %}
 				<ul class="nav navbar-nav">
 					<li{% if participate.active %} class="active"{% endif %}>
-						<a href="{{ participate.url }}">{{ participate.text }}</a>
+						<a href="{{ participate.url }}">{{ participate.text }}</a><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
 					</li>
 				</ul>
 				{% endif %}
+				</div>
 			</div><!-- navbar-collapse -->
 		</div><!-- container -->
 	</nav>

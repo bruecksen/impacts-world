@@ -1,8 +1,10 @@
 from wagtail.wagtailcore import blocks
 from wagtail.wagtailsnippets.blocks import SnippetChooserBlock
+from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 from impacts_world.core.models import TimelineSnippet
 from impacts_world.contrib.blocks import RichTextBlock
+from wagtail.wagtailembeds.blocks import EmbedBlock
 
 
 class TimelineBlock(blocks.StructBlock):
@@ -19,8 +21,8 @@ class TimelineBlock(blocks.StructBlock):
 
 
 class TeaserBlock(blocks.StructBlock):
-    text = blocks.RichTextBlock()
-    page = blocks.PageChooserBlock()
+    text = blocks.RichTextBlock(required=True)
+    page = blocks.PageChooserBlock(required=True)
 
     class Meta:
         icon = 'pick'
@@ -33,17 +35,32 @@ class TeaserBlock(blocks.StructBlock):
         return context
 
 
+class VideoTeaserBlock(blocks.StructBlock):
+    video = EmbedBlock(required=True)
+    text = blocks.RichTextBlock(required=True)
+
+    class Meta:
+        icon = 'media'
+        template = 'blocks/video_teaser_block.html'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['text'] = value.get('text')
+        context['video'] = value.get('video')
+        return context
+
+
 class ChallengeBlock(blocks.StructBlock):
     name = blocks.CharBlock(required=True)
     short_description = RichTextBlock(required=True)
 
 
 class ChallengesBlock(blocks.StructBlock):
-    intro = blocks.RichTextBlock()
-    challenge1 = ChallengeBlock()
-    challenge2 = ChallengeBlock()
-    challenge3 = ChallengeBlock()
-    challenge4 = ChallengeBlock()
+    intro = blocks.RichTextBlock(required=True)
+    challenge1 = ChallengeBlock(required=True)
+    challenge2 = ChallengeBlock(required=True)
+    challenge3 = ChallengeBlock(required=True)
+    challenge4 = ChallengeBlock(required=True)
 
     class Meta:
         icon = 'grip'
@@ -51,16 +68,29 @@ class ChallengesBlock(blocks.StructBlock):
 
     def get_context(self, value):
         context = super().get_context(value)
-        context['text'] = value.get('text')
-        context['page_url'] = value.get('page').url
+        context['intro'] = value.get('intro')
+        context['challenge1'] = value.get('challenge1')
+        context['challenge2'] = value.get('challenge2')
+        context['challenge3'] = value.get('challenge3')
+        context['challenge4'] = value.get('challenge4')
         return context
+
+
+class Testimonial(blocks.StructBlock):
+    name = blocks.CharBlock(required=True)
+    institute = blocks.CharBlock(required=False)
+    picture = ImageChooserBlock(required=True)
+    testimonial = blocks.TextBlock(required=True)
 
 
 BASE_BLOCKS = [
     ('timeline', TimelineBlock()),
     ('rich_text', RichTextBlock()),
     ('teaser', TeaserBlock()),
+    ('video_teaser', VideoTeaserBlock()),
     ('challenge', ChallengesBlock()),
+    ('testimonial', blocks.ListBlock(Testimonial(), icon='openquote', template='blocks/testimonials_block.html'))
+
     # ('horizontal_ruler', HRBlock()),
     # ('embed', EmbedBlock()),
     # ('image', ImageBlock()),
