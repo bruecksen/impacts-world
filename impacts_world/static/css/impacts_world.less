@@ -333,12 +333,19 @@ hr {
 
 .jumbotron {
 	background-color: @color-white;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 // Wagtail responsive embeds http://docs.wagtail.io/en/latest/topics/writing_templates.html?highlight=responsive#responsive-embeds
-.rich-text img {
-	max-width: 100%;
-	height: auto;
+.rich-text {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .responsive-object {
@@ -707,7 +714,7 @@ footer {
 .block-teaser,
 .block-rich_text,
 .block-challenge,
-.block-testimonial {
+.block-testimonials {
 	margin-top: 60px;
 }
 
