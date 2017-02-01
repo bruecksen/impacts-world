@@ -1,6 +1,6 @@
 {% load wagtailcore_tags %}
 <div class="jumbotron">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
 		{% for item in timeline.timeline_items.all %}
 		<div class="col-md-2 timeline-item{% if item.is_active %} active{% endif %}">
