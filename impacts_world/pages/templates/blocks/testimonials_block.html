@@ -1,15 +1,34 @@
 {% load wagtailcore_tags wagtailimages_tags %}
-<div class="container">
-	<div class="row">
-	{% for item in value %}
-		<div class="col-md-4 text-center">
-			{% image item.picture fill-120x120 %}
-			<h3>{{ item.name }}</h4>
-			<h4>{{ item.institute }}</h4>
-			<blockquote>
-				<p>{{ item.testimonial }}</p>
-			</blockquote>
+<div id="carousel-testimonials" class="carousel slide" data-ride="carousel" data-interval="false">
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner" role="listbox">
+		{% for chunk in testimonials %}
+		<div class="item{% if forloop.first %} active{% endif %}">
+			<div class="container">
+				<div class="row">
+				{% for testimonial in chunk %}
+					<div class="col-md-4 text-center">
+						{% image testimonial.picture fill-120x120 %}
+						<blockquote>
+							<p>{{ testimonial.testimonial }}</p>
+						</blockquote>
+						<h4><b>{{ testimonial.name }}</b><br>
+						{{ testimonial.institute }}</h4>
+					</div>
+				{% endfor %}
+				</div>
+			</div>
 		</div>
-	{% endfor %}
+		{% endfor %}
 	</div>
+
+	<!-- Controls -->
+	<a class="left carousel-control" href="#carousel-testimonials" role="button" data-slide="prev">
+	<i class="fa fa-chevron-left" aria-hidden="true"></i>
+	<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#carousel-testimonials" role="button" data-slide="next">
+	<i class="fa fa-chevron-right" aria-hidden="true"></i>
+	<span class="sr-only">Next</span>
+	</a>
 </div>

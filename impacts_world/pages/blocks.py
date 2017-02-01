@@ -79,8 +79,24 @@ class ChallengesBlock(blocks.StructBlock):
 class Testimonial(blocks.StructBlock):
     name = blocks.CharBlock(required=True)
     institute = blocks.CharBlock(required=False)
-    picture = ImageChooserBlock(required=True)
     testimonial = blocks.TextBlock(required=True)
+    picture = ImageChooserBlock(required=True)
+
+
+class Testimonials(blocks.StructBlock):
+    testimonials = blocks.ListBlock(Testimonial)
+
+    class Meta:
+        icon = 'openquote'
+        template = 'blocks/testimonials_block.html'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        testimonials = value.get('testimonials')
+        # split testimonials in chunks of 3 to make it work with the slider
+        chunks = [testimonials[i:i + 3] for i in range(0, len(testimonials), 3)]
+        context['testimonials'] = chunks
+        return context
 
 
 BASE_BLOCKS = [
@@ -89,7 +105,7 @@ BASE_BLOCKS = [
     ('teaser', TeaserBlock()),
     ('video_teaser', VideoTeaserBlock()),
     ('challenge', ChallengesBlock()),
-    ('testimonial', blocks.ListBlock(Testimonial(), icon='openquote', template='blocks/testimonials_block.html'))
+    ('testimonials', Testimonials())
 
     # ('horizontal_ruler', HRBlock()),
     # ('embed', EmbedBlock()),
