@@ -31,7 +31,6 @@ def production():
     env.reload_cmd = 'sudo supervisorctl restart iw2017'
 
 
-
 def reload_webserver():
     run("%(reload_cmd)s" % env)
 
@@ -64,6 +63,14 @@ def pip():
             run("pip install -Ur requirements/production.txt")
 
     reload_webserver()
+
+
+def soft_deploy():
+    with cd(env.path):
+        run("git pull %(push_remote)s %(push_branch)s" % env)
+
+    reload_webserver()
+    ping()
 
 #
 # def init_fixtures():
