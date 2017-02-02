@@ -1,8 +1,10 @@
 {% extends "pages/default_page.html" %}
 {% load wagtailcore_tags static header %}
 
+{% block body_class %}{% endblock %}
+
 {% block header %}
-	{% header show_banner=True %}
+	{% header show_banner=True fixed_top=False %}
 {% endblock %}
 
 {% block content_container %}

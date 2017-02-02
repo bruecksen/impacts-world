@@ -101,6 +101,7 @@ class RichTextContainerBlock(_RichTextBlock):
     class Meta:
         icon = 'pilcrow'
         template = 'widgets/richtext_container_block.html'
+        label = 'Rich text'
 
     def get_context(self, value):
         context = super().get_context(value)

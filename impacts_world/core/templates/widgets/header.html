@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	{% endif %}
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default{% if fixed_top %} navbar-fixed-top{% endif %}">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#widget-header-{{ id }}" aria-expanded="false">
