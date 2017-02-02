@@ -113,6 +113,11 @@ class GoogleMapBlock(StructBlock):
         icon = 'tag'
         label = 'Google Map'
 
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['GOOGLE_MAPS_V3_APIKEY'] = settings.GOOGLE_MAPS_V3_APIKEY
+        return context
+
 
 BASE_BLOCKS = [
     ('heading', HeadingBlock()),
