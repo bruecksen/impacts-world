@@ -1,3 +1,5 @@
+from django.conf import settings
+
 from wagtail.wagtailcore.blocks import StreamBlock, PageChooserBlock, StructBlock, CharBlock, \
     TextBlock, ListBlock
 from wagtail.wagtailsnippets.blocks import SnippetChooserBlock

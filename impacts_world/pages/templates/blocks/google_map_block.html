@@ -1,4 +1,5 @@
-<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_V3_APIKEY }}"></script>
+
 <script>
 function initialize() {
   var position = new google.maps.LatLng({{ self.map_lat }},{{ self.map_long }});

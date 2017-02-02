@@ -202,3 +202,4 @@ TWITTER_TIMELINE = {
     'access_token': TWITTER_CREDENTIALS[2],
     'access_token_secret': TWITTER_CREDENTIALS[3]
 }
+GOOGLE_MAPS_V3_APIKEY = env('GOOGLE_MAPS_V3_APIKEY', default=None)
