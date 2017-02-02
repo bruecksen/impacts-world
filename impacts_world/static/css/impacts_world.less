@@ -7,8 +7,9 @@
 @color-neutral-dark: black;
 @color-primary: #fcbc48; // yellow
 @color-primary-light: #FDD88F; // light yellow
-@color-secondary: #e4f1e4; // green
-@color-secondary-light: #f6faf6; 
+@color-secondary: #a9d4a6; // green
+@color-secondary-light: #e4f1e4; 
+
 
 
 
@@ -38,10 +39,35 @@
 
 
 
+@media (min-width: 750px) {
+	.sidebar-page {
+		max-width: 750px;
+		.page .container{
+			max-width: 562.5px;
+		}
+		.sidebar .container{
+			max-width: 187.5px;
+		}
+	}
+}
 @media (min-width: 1200px) {
-  .container {
-	width: 970px;
-  }
+	.sidebar-page {
+		max-width: 970px;
+		.page .container{
+			max-width: 727.5px;
+		}
+		.sidebar .container{
+			max-width: 242.5px;
+		}
+	}
+}
+
+.sidebar-page {
+	margin: 0 auto;
+	.page,
+	.sidebar {
+		float:left;
+	}
 }
 
 body {
@@ -50,6 +76,8 @@ body {
 	// https://stackoverflow.com/questions/6935040/disadvantages-to-using-css-word-wrap-globally
 	// word-wrap: break-word;
 	color: @color-neutral;
+	position: relative;
+	padding-top: 60px;
 }
 
 
@@ -188,13 +216,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 h1, .h1 {
-  // H1 und H2 sehen gleich aus, nur semantisch verschieden.
-  font-weight: 400;
   font-size: 30px;
-
-  @media(min-width:768px) {
-	font-size: 28px;
-  }
 }
 h2, .h2 {
   font-size: 26px;
@@ -222,6 +244,12 @@ h4, .h4 {
   }
 }
 
+a.anchor-scroll {
+    display: block;
+    position: relative;
+    top: -120px;
+    visibility: hidden;
+}
 
 
 // Buttons
@@ -642,6 +670,7 @@ hr {
 						// @media(min-width:992px) {
 						// 	padding: 20px 15px 20px 15px;
 						// }
+						border: 1px solid transparent;
 
 						text-align: center;
 
@@ -710,12 +739,39 @@ footer {
 	max-width: 85%;
 }
 
+.block-heading,
 .block-video_teaser,
 .block-teaser,
-.block-rich_text,
+.block-rich_text_container,
 .block-challenge,
-.block-testimonials {
+.block-testimonials,
+.block-image_container,
+.block-google_maps,
+.block-sidebar_page,
+.block-columns_1_to_1,
+.block-columns_1_to_2,
+.block-columns_2_to_1,
+.block-columns_1_to_1_to_1,
+.block-columns_1_to_1_to_1_to_1,
+.widget-toc {
 	margin-top: 60px;
+}
+
+.block-heading + .block-rich_text_container,
+.block-heading + .block-video_teaser,
+.block-heading + .block-teaser,
+.block-heading + .block-rich_text_container,
+.block-heading + .block-challenge,
+.block-heading + .block-testimonials,
+.block-heading + .block-image_container,
+.block-heading + .block-google_maps,
+.block-heading + .block-sidebar_page,
+.block-heading + .block-columns_1_to_1,
+.block-heading + .block-columns_1_to_2,
+.block-heading + .block-columns_2_to_1,
+.block-heading + .block-columns_1_to_1_to_1,
+.block-heading + .block-columns_1_to_1_to_1_to_1 {
+	margin-top: 10px;
 }
 
 .block-timeline {
@@ -775,6 +831,9 @@ footer {
 		font-weight: bold;
 		line-height: 1.5;
 		color: @color-white;
+	}
+	a:hover {
+		text-decoration: none;
 	}
 	.widget-richtext-content {
 		padding: 30px;
@@ -908,7 +967,47 @@ footer {
 	}
 }
 
+.block-google_maps {
+	.map{
+		width: 100%;
+		height: 380px;
+	}
+}
 
+.widget-sidebar-page-header {
+	.intro-text {
+		p {
+			font-size: 18px;
+		}
+	}
+}
+
+.widget-toc {
+	li {
+		margin-bottom: 15px;
+		background-color: @color-neutral;
+		display: inline-block;
+		clear: left;
+		float: left;
+		&.active {
+			background-image: linear-gradient(167deg, @color-secondary, @color-primary);
+		}
+		a {
+			color: @color-white;
+			font-size: 16px;
+			font-weight: 500;
+			padding-top: 8px;
+			padding-bottom: 8px;
+			padding-left: 15px;
+			padding-right: 15px;
+			display: inline-block;
+			&:hover {
+				background-image: linear-gradient(167deg, @color-secondary, @color-primary);
+			}
+		}
+	}
+
+}
 
 
 

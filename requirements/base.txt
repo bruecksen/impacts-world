@@ -9,4 +9,3 @@ django-static-precompiler==1.5
 django-bootstrap3==7.1.0
 
 wagtail==1.8
-

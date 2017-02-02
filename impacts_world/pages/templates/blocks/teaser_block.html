@@ -1,8 +1,10 @@
 {% load wagtailcore_tags %}
 <div class="container">
 	<div class="widget-richtext-content gradient-background">
+		<a href="{{ page_url }}">
 		{{ text|richtext }}
 		<i class="fa fa-arrow-circle-o-right fa-4x" aria-hidden="true"></i>
 		<div class="clearfix"></div>
+		</a>
 	</div><!-- widget-richtext-content -->
 </div>

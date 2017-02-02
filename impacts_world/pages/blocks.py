@@ -1,13 +1,15 @@
-from wagtail.wagtailcore import blocks
+from wagtail.wagtailcore.blocks import StreamBlock, PageChooserBlock, StructBlock, CharBlock, \
+    TextBlock, ListBlock
 from wagtail.wagtailsnippets.blocks import SnippetChooserBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 from impacts_world.core.models import TimelineSnippet
-from impacts_world.contrib.blocks import RichTextBlock
+from impacts_world.contrib.blocks import RichTextBlock, RichTextContainerBlock, ImageBlock, \
+    ImageContainerBlock, HeadingBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
 
 
-class TimelineBlock(blocks.StructBlock):
+class TimelineBlock(StructBlock):
     snippet = SnippetChooserBlock(TimelineSnippet)
 
     class Meta:
@@ -20,9 +22,9 @@ class TimelineBlock(blocks.StructBlock):
         return context
 
 
-class TeaserBlock(blocks.StructBlock):
-    text = blocks.RichTextBlock(required=True)
-    page = blocks.PageChooserBlock(required=True)
+class TeaserBlock(StructBlock):
+    text = RichTextBlock(required=True)
+    page = PageChooserBlock(required=True)
 
     class Meta:
         icon = 'pick'
@@ -35,9 +37,9 @@ class TeaserBlock(blocks.StructBlock):
         return context
 
 
-class VideoTeaserBlock(blocks.StructBlock):
+class VideoTeaserBlock(StructBlock):
     video = EmbedBlock(required=True)
-    text = blocks.RichTextBlock(required=True)
+    text = RichTextBlock(required=True)
 
     class Meta:
         icon = 'media'
@@ -50,13 +52,13 @@ class VideoTeaserBlock(blocks.StructBlock):
         return context
 
 
-class ChallengeBlock(blocks.StructBlock):
-    name = blocks.CharBlock(required=True)
+class ChallengeBlock(StructBlock):
+    name = CharBlock(required=True)
     short_description = RichTextBlock(required=True)
 
 
-class ChallengesBlock(blocks.StructBlock):
-    intro = blocks.RichTextBlock(required=True)
+class ChallengesBlock(StructBlock):
+    intro = RichTextBlock(required=True)
     challenge1 = ChallengeBlock(required=True)
     challenge2 = ChallengeBlock(required=True)
     challenge3 = ChallengeBlock(required=True)
@@ -76,15 +78,15 @@ class ChallengesBlock(blocks.StructBlock):
         return context
 
 
-class Testimonial(blocks.StructBlock):
-    name = blocks.CharBlock(required=True)
-    institute = blocks.CharBlock(required=False)
-    testimonial = blocks.TextBlock(required=True)
+class Testimonial(StructBlock):
+    name = CharBlock(required=True)
+    institute = CharBlock(required=False)
+    testimonial = TextBlock(required=True)
     picture = ImageChooserBlock(required=True)
 
 
-class Testimonials(blocks.StructBlock):
-    testimonials = blocks.ListBlock(Testimonial)
+class Testimonials(StructBlock):
+    testimonials = ListBlock(Testimonial)
 
     class Meta:
         icon = 'openquote'
@@ -99,23 +101,110 @@ class Testimonials(blocks.StructBlock):
         return context
 
 
+class GoogleMapBlock(StructBlock):
+    map_lat = CharBlock(required=True, max_length=255, label='Latitude', default='52.520645')
+    map_long = CharBlock(required=True, max_length=255, label='Longitude', default='13.409779')
+    map_zoom_level = CharBlock(default=14, required=True, max_length=3, label='Map zoom level')
+
+    class Meta:
+        template = 'blocks/google_map_block.html'
+        icon = 'tag'
+        label = 'Google Map'
+
+
 BASE_BLOCKS = [
-    ('timeline', TimelineBlock()),
-    ('rich_text', RichTextBlock()),
+    ('heading', HeadingBlock()),
+    ('rich_text_container', RichTextContainerBlock()),
+    ('image_container', ImageContainerBlock()),
     ('teaser', TeaserBlock()),
     ('video_teaser', VideoTeaserBlock()),
-    ('challenge', ChallengesBlock()),
-    ('testimonials', Testimonials())
-
-    # ('horizontal_ruler', HRBlock()),
-    # ('embed', EmbedBlock()),
-    # ('image', ImageBlock()),
+    ('testimonials', Testimonials()),
+    ('google_map', GoogleMapBlock()),
 ]
 
+FULL_WIDTH_BLOCKS = [
+    ('challenge', ChallengesBlock()),
+    ('timeline', TimelineBlock()),
+]
+
+_COLUMNS_BLOCKS = [
+    ('rich_text', RichTextBlock()),
+    ('image', ImageBlock()),
+    ('google_map', GoogleMapBlock()),
+]
+
+
+class ColumnsBlock(StructBlock):
+    left_column = StreamBlock(_COLUMNS_BLOCKS)
+    right_column = StreamBlock(_COLUMNS_BLOCKS)  # , form_classname='pull-right')
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['left_column'] = value.get('left_column')
+        context['right_column'] = value.get('right_column')
+        return context
+
+    class Meta:
+        icon = 'table'
+        label = 'Columns 1-1'
+        template = None
+
+
+class Columns1To1Block(ColumnsBlock):
+    class Meta:
+        label = 'Columns 1:1'
+        template = 'blocks/columns-1-1.html'
+
+
+class Columns1To2Block(ColumnsBlock):
+    class Meta:
+        label = 'Columns 1:2'
+        template = 'blocks/columns-1-2.html'
+
+
+class Columns2To1Block(ColumnsBlock):
+    class Meta:
+        label = 'Columns 2:1'
+        template = 'blocks/columns-2-1.html'
+
+
+class Columns1To1To1Block(ColumnsBlock):
+    center_column = StreamBlock(_COLUMNS_BLOCKS)
+
+    class Meta:
+        label = 'Columns 1:1:1'
+        template = 'blocks/columns-1-1-1.html'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['center_column'] = value.get('center_column')
+        return context
+
+
+class Columns1To1To1To1Block(StructBlock):
+    first_column = StreamBlock(_COLUMNS_BLOCKS)
+    second_column = StreamBlock(_COLUMNS_BLOCKS)
+    third_column = StreamBlock(_COLUMNS_BLOCKS)
+    fourth_column = StreamBlock(_COLUMNS_BLOCKS)
+
+    class Meta:
+        label = 'Columns 1:1:1:1'
+        template = 'widgets/columns-1-1-1-1.html'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['first_column'] = value.get('first_column')
+        context['second_column'] = value.get('second_column')
+        context['third_column'] = value.get('third_column')
+        context['fourth_column'] = value.get('fourth_column')
+        return context
+
+
 COLUMNS_BLOCKS = [
-    # ('columns_1_to_1', Columns1To1Block()),
-    # ('columns_1_to_2', Columns1To2Block()),
-    # ('columns_2_to_1', Columns2To1Block()),
-    # ('columns_1_to_1_to_1', Columns1To1To1Block()),
-    # ('columns_1_to_1_to_1_to_1', Columns1To1To1To1Block()),
+    ('columns_1_to_1', Columns1To1Block()),
+    ('columns_1_to_2', Columns1To2Block()),
+    ('columns_2_to_1', Columns2To1Block()),
+    ('columns_1_to_1_to_1', Columns1To1To1Block()),
+    ('columns_1_to_1_to_1_to_1', Columns1To1To1To1Block()),
+
 ]

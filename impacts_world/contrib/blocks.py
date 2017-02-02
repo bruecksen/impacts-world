@@ -4,7 +4,7 @@ from django.utils.functional import cached_property
 from django.utils.html import strip_tags
 from django.utils.text import slugify
 from wagtail.wagtailcore import blocks
-from wagtail.wagtailcore.blocks import FieldBlock, PageChooserBlock, CharBlock, StreamBlock, \
+from wagtail.wagtailcore.blocks import FieldBlock, PageChooserBlock, CharBlock, StreamBlock, BooleanBlock, \
     RichTextBlock as _RichTextBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
@@ -47,7 +47,7 @@ class HeadingBlock(CharBlock):
     class Meta:
         classname = 'full title'
         icon = 'title'
-        template = 'widgets/heading3.html'
+        template = 'widgets/heading.html'
 
     def get_context(self, value):
         context = super().get_context(value)
@@ -74,10 +74,33 @@ class ImageBlock(ImageChooserBlock):
         return context
 
 
+class ImageContainerBlock(ImageChooserBlock):
+    class Meta:
+        icon = 'image'
+        template = 'widgets/image-container.html'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['url'] = value.get_rendition('max-1200x1200').url
+        context['name'] = value.title
+        return context
+
+
 class RichTextBlock(_RichTextBlock):
     class Meta:
         icon = 'pilcrow'
-        template = 'blocks/richtext_block.html'
+        template = 'widgets/richtext_block.html'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['content'] = value
+        return context
+
+
+class RichTextContainerBlock(_RichTextBlock):
+    class Meta:
+        icon = 'pilcrow'
+        template = 'widgets/richtext_container_block.html'
 
     def get_context(self, value):
         context = super().get_context(value)

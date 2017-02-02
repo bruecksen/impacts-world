@@ -1,0 +1,13 @@
+{% if toc %}
+<div class="widget-toc">
+	<div class="container">
+	<nav class="affix" id="navbar-sidebar">
+		<ul class="toc nav">
+		{% for entry in toc %}
+			<li><a href="{{ entry.href }}">{{ entry.text }}</a></li>
+		{% endfor %}
+		</ul>
+	</nav>
+	</div>
+</div>
+{% endif %}
