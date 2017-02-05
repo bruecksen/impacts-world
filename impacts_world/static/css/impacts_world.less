@@ -68,6 +68,10 @@
 	.sidebar {
 		float:left;
 	}
+	.affix {
+		max-width: inherit;
+		padding-right: 25px;
+	}
 }
 
 body {
@@ -225,11 +229,9 @@ h2, .h2 {
   font-size: 26px;
 }
 h3, .h3 {
-  margin-bottom: 30px;
   font-size: 20px;
 }
 h4, .h4 {
-  margin-bottom: 15px;
   font-size: 18px;
 }
 .super {
@@ -366,6 +368,10 @@ hr {
 	background-color: @color-white;
 	padding-top: 0;
 	padding-bottom: 0;
+}
+
+.image-circled {
+	border-radius: 50%;
 }
 
 // Wagtail responsive embeds http://docs.wagtail.io/en/latest/topics/writing_templates.html?highlight=responsive#responsive-embeds
@@ -746,6 +752,7 @@ footer {
 }
 
 .block-heading,
+.block-sub_heading,
 .block-video_teaser,
 .block-teaser,
 .block-rich_text_container,
@@ -756,6 +763,7 @@ footer {
 .block-sidebar_page,
 .block-columns_1_to_1,
 .block-columns_1_to_2,
+.block-columns_1_to_3,
 .block-columns_2_to_1,
 .block-columns_1_to_1_to_1,
 .block-columns_1_to_1_to_1_to_1,
@@ -763,6 +771,7 @@ footer {
 	margin-top: 60px;
 }
 
+.block-heading + .block-sub_heading,
 .block-heading + .block-rich_text_container,
 .block-heading + .block-video_teaser,
 .block-heading + .block-teaser,
@@ -774,10 +783,43 @@ footer {
 .block-heading + .block-sidebar_page,
 .block-heading + .block-columns_1_to_1,
 .block-heading + .block-columns_1_to_2,
+.block-heading + .block-columns_1_to_3,
 .block-heading + .block-columns_2_to_1,
 .block-heading + .block-columns_1_to_1_to_1,
 .block-heading + .block-columns_1_to_1_to_1_to_1 {
 	margin-top: 10px;
+}
+
+.block-sub_heading + .block-rich_text_container,
+.block-sub_heading + .block-video_teaser,
+.block-sub_heading + .block-teaser,
+.block-sub_heading + .block-rich_text_container,
+.block-sub_heading + .block-challenge,
+.block-sub_heading + .block-testimonials,
+.block-sub_heading + .block-image_container,
+.block-sub_heading + .block-google_maps,
+.block-sub_heading + .block-sidebar_page,
+.block-sub_heading + .block-columns_1_to_1,
+.block-sub_heading + .block-columns_1_to_2,
+.block-sub_heading + .block-columns_1_to_3,
+.block-sub_heading + .block-columns_2_to_1,
+.block-sub_heading + .block-columns_1_to_1_to_1,
+.block-sub_heading + .block-columns_1_to_1_to_1_to_1 {
+	margin-top: 5px;
+}
+
+.block-columns_1_to_1,
+.block-columns_1_to_1_to_1 {
+	text-align: center;
+	font-size: 14px;
+	img {
+		width: 60%;
+		margin: 0 auto;
+	}
+}
+
+.block-columns_1_to_1_to_1_to_1 {
+	font-size: 14px;
 }
 
 .block-timeline {

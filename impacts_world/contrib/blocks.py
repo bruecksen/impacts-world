@@ -4,7 +4,7 @@ from django.utils.functional import cached_property
 from django.utils.html import strip_tags
 from django.utils.text import slugify
 from wagtail.wagtailcore import blocks
-from wagtail.wagtailcore.blocks import FieldBlock, PageChooserBlock, CharBlock, StreamBlock, BooleanBlock, \
+from wagtail.wagtailcore.blocks import StructBlock, FieldBlock, PageChooserBlock, CharBlock, StreamBlock, BooleanBlock, \
     RichTextBlock as _RichTextBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
@@ -56,21 +56,39 @@ class HeadingBlock(CharBlock):
         return context
 
 
+class SubHeadingBlock(CharBlock):
+    class Meta:
+        icon = 'title'
+        template = 'widgets/sub-heading.html'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['text'] = value
+        return context
+
+
 class HRBlock(StreamBlock):
     class Meta:
         icon = 'horizontalrule'
         template = 'widgets/horizontal-ruler.html'
 
 
-class ImageBlock(ImageChooserBlock):
+class ImageBlock(StructBlock):
+    image = ImageChooserBlock(required=True)
+    is_circled_image = BooleanBlock(required=False, default=False)
+
     class Meta:
         icon = 'image'
         template = 'widgets/image.html'
 
     def get_context(self, value):
         context = super().get_context(value)
-        context['url'] = value.get_rendition('max-1200x1200').url
-        context['name'] = value.title
+        if value.get('is_circled_image'):
+            context['url'] = value.get('image').get_rendition('fill-1200x1200').url
+        else:
+            context['url'] = value.get('image').get_rendition('max-1200x1200').url
+        context['name'] = value.get('image').title
+        context['is_circled_image'] = value.get('is_circled_image')
         return context
 
 

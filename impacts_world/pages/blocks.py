@@ -7,7 +7,7 @@ from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 from impacts_world.core.models import TimelineSnippet
 from impacts_world.contrib.blocks import RichTextBlock, RichTextContainerBlock, ImageBlock, \
-    ImageContainerBlock, HeadingBlock
+    ImageContainerBlock, HeadingBlock, SubHeadingBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
 
 
@@ -121,6 +121,7 @@ class GoogleMapBlock(StructBlock):
 
 BASE_BLOCKS = [
     ('heading', HeadingBlock()),
+    ('sub_heading', SubHeadingBlock()),
     ('rich_text_container', RichTextContainerBlock()),
     ('image_container', ImageContainerBlock()),
     ('teaser', TeaserBlock()),
@@ -169,14 +170,22 @@ class Columns1To2Block(ColumnsBlock):
         template = 'blocks/columns-1-2.html'
 
 
+class Columns1To3Block(ColumnsBlock):
+    class Meta:
+        label = 'Columns 1:3'
+        template = 'blocks/columns-1-3.html'
+
+
 class Columns2To1Block(ColumnsBlock):
     class Meta:
         label = 'Columns 2:1'
         template = 'blocks/columns-2-1.html'
 
 
-class Columns1To1To1Block(ColumnsBlock):
+class Columns1To1To1Block(StructBlock):
+    left_column = StreamBlock(_COLUMNS_BLOCKS)
     center_column = StreamBlock(_COLUMNS_BLOCKS)
+    right_column = StreamBlock(_COLUMNS_BLOCKS)
 
     class Meta:
         label = 'Columns 1:1:1'
@@ -184,7 +193,9 @@ class Columns1To1To1Block(ColumnsBlock):
 
     def get_context(self, value):
         context = super().get_context(value)
+        context['left_column'] = value.get('left_column')
         context['center_column'] = value.get('center_column')
+        context['right_column'] = value.get('right_column')
         return context
 
 
@@ -196,7 +207,7 @@ class Columns1To1To1To1Block(StructBlock):
 
     class Meta:
         label = 'Columns 1:1:1:1'
-        template = 'widgets/columns-1-1-1-1.html'
+        template = 'blocks/columns-1-1-1-1.html'
 
     def get_context(self, value):
         context = super().get_context(value)
@@ -210,6 +221,7 @@ class Columns1To1To1To1Block(StructBlock):
 COLUMNS_BLOCKS = [
     ('columns_1_to_1', Columns1To1Block()),
     ('columns_1_to_2', Columns1To2Block()),
+    ('columns_1_to_3', Columns1To3Block()),
     ('columns_2_to_1', Columns2To1Block()),
     ('columns_1_to_1_to_1', Columns1To1To1Block()),
     ('columns_1_to_1_to_1_to_1', Columns1To1To1To1Block()),
