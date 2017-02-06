@@ -35,7 +35,8 @@ class TeaserBlock(StructBlock):
     def get_context(self, value):
         context = super().get_context(value)
         context['text'] = value.get('text')
-        context['page_url'] = value.get('page').url
+        if value.get('page'):
+            context['page_url'] = value.get('page').url
         return context
 
 
