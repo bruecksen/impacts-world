@@ -203,3 +203,10 @@ TWITTER_TIMELINE = {
     'access_token_secret': TWITTER_CREDENTIALS[3]
 }
 GOOGLE_MAPS_V3_APIKEY = env('GOOGLE_MAPS_V3_APIKEY', default=None)
+
+BOOTSTRAP3 = {
+    'field_renderers': {
+        'default': 'impacts_world.contrib.forms.LabelFieldRenderer',
+        'inline': 'bootstrap3.renderers.InlineFieldRenderer',
+    },
+}

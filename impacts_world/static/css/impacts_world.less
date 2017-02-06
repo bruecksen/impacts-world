@@ -139,11 +139,10 @@ abbr[data-original-title], abbr[title] {
 .form-control {
   border-radius: 4px;
   border-width: 1px;
-  border-color: @color-neutral;
+  max-width: 50%;
 
   height: 40px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
 
   -webkit-transition: border-color 0.5s, background-color 0.5s;
   transition: border-color 0.5s, background-color 0.5s;
@@ -182,12 +181,15 @@ select.form-control {
 	color: @color-black;
 	font-weight: 400;
   }
-
 }
 .form-group {
   margin-bottom: 15px;
 }
 
+input[type="checkbox"]:checked + label {
+	background-color: @color-white;
+	color: @color-black;
+}
 
 
 .super {
@@ -260,17 +262,13 @@ a.anchor-scroll {
 
 // Buttons
 .btn {
-  border-color: @color-black;
+  border-color: @color-neutral-dark;
   padding: 10px 15px;
   font-weight: 600;
-  border-radius: 0;
+  font-size: 18px;
+  border-radius: 3;
   -webkit-transition: color 0.5s, border-color 0.5s, background-color 0.5s;
   transition: color 0.5s, border-color 0.5s, background-color 0.5s;
-
-  @media(min-width:992px) {
-	font-size: 16px;
-	padding: 15px 25px;
-  }
 
   &.btn-default {
 	border-color: @color-black;
@@ -283,14 +281,14 @@ a.anchor-scroll {
   }
 
   &.btn-primary {
-	border-color: @color-neutral-dark;
-	background-color: @color-neutral-dark;
+	border-color: @color-neutral;
+	background-color: @color-neutral;
 	color: @color-white;
 
 	&:hover, &:focus {
-	border-color: @color-neutral-light;
-	background-color: @color-neutral-light;
-	color: @color-white;
+	border-color: @color-secondary;
+	background-color: @color-secondary;
+	// color: @color-secondary;
 	}
   }
 
@@ -761,14 +759,15 @@ footer {
 .block-testimonials,
 .block-image_container,
 .block-google_maps,
-.block-sidebar_page,
 .block-columns_1_to_1,
 .block-columns_1_to_2,
 .block-columns_1_to_3,
 .block-columns_2_to_1,
 .block-columns_1_to_1_to_1,
 .block-columns_1_to_1_to_1_to_1,
-.widget-toc {
+.block-form,
+.widget-toc,
+.widget-page-header {
 	margin-top: 60px;
 }
 
@@ -781,7 +780,6 @@ footer {
 .block-heading + .block-testimonials,
 .block-heading + .block-image_container,
 .block-heading + .block-google_maps,
-.block-heading + .block-sidebar_page,
 .block-heading + .block-columns_1_to_1,
 .block-heading + .block-columns_1_to_2,
 .block-heading + .block-columns_1_to_3,
@@ -1022,7 +1020,7 @@ footer {
 	}
 }
 
-.widget-sidebar-page-header {
+.widget-page-header {
 	.intro-text {
 		p {
 			font-size: 18px;
@@ -1057,6 +1055,17 @@ footer {
 
 }
 
-
-
+.block-form {
+	// background-image: linear-gradient(177deg, #a9d4a6, #fcbc48);
+	padding: 30px;
+	.form-control {
+		max-width: 50%;
+	}
+	.help-block {
+		font-size: 14px;
+	}
+	h3, .btn {
+		margin-top: 40px;
+	}
+}
 

@@ -1,0 +1,19 @@
+{% extends "pages/default_page.html" %}
+{% load wagtailcore_tags static header bootstrap3 %}
+
+{% block content %}
+	{% include 'widgets/page-header.html' %}
+	<div class="container">
+	<form action="{% pageurl page %}" method="POST" class="block-form gradient-background ">
+		{% if page.form_title %}
+		<h2>{{ page.form_title }}</h2>
+		{% endif %}
+		{% csrf_token %}
+		{% bootstrap_form form show_label=False %}
+			{% buttons %}
+				<button type="submit" class="btn btn-primary">{{ page.button_name }}</button>
+		{% endbuttons %}
+	</form>
+	</div>
+	<div class="form-page-bottom-content">{{ page.bottom_content }}</div>
+{% endblock %}
