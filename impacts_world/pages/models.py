@@ -4,11 +4,13 @@ from django.db import models
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField, StreamField
 from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel, RichTextFieldPanel, InlinePanel, FieldPanel, MultiFieldPanel
+from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 from wagtail.wagtailforms.models import AbstractEmailForm
 from modelcluster.fields import ParentalKey
 
-from .blocks import BASE_BLOCKS, FULL_WIDTH_BLOCKS, COLUMNS_BLOCKS
+from impacts_world.pages.blocks import BASE_BLOCKS, FULL_WIDTH_BLOCKS, COLUMNS_BLOCKS
 from impacts_world.contrib.forms import HeadingFormBuilder, HeadingAbstractFormField
+from impacts_world.core.models import TimelineSnippet
 
 
 class HomePage(Page):
@@ -56,7 +58,7 @@ class FormPage(AbstractEmailForm):
     form_builder = HeadingFormBuilder
     landing_page_template = 'pages/form_page_confirmation.html'
     subpage_types = []
-
+    timeline_snippet = models.ForeignKey(TimelineSnippet, null=True, blank=True, on_delete=models.SET_NULL, related_name='+')
     intro = RichTextField(null=True, blank=True)
     confirmation_text = RichTextField(default='The form was submitted successfully. We will get back to you soon.')
 
@@ -64,6 +66,7 @@ class FormPage(AbstractEmailForm):
     button_name = models.CharField(max_length=500, verbose_name='Button name', default='Submit')
 
     content_panels = AbstractEmailForm.content_panels + [
+        SnippetChooserPanel('timeline_snippet'),
         FieldPanel('intro'),
         MultiFieldPanel([
             FieldPanel('form_title'),

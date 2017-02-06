@@ -1,7 +1,12 @@
 {% extends "pages/default_page.html" %}
 {% load wagtailcore_tags static header bootstrap3 %}
 
-{% block content %}
+{% block content_container %}
+	{% if page.timeline_snippet %}
+		<div class="block-timeline">
+		{% include 'blocks/timeline_block.html' with timeline=page.timeline_snippet %}
+		</div>
+	{% endif %}
 	{% include 'widgets/page-header.html' %}
 	<div class="container">
 	<form action="{% pageurl page %}" method="POST" class="block-form gradient-background ">
