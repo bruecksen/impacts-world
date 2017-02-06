@@ -4,7 +4,7 @@ import django.forms
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.forms.widgets import Widget
-from django.forms import (CheckboxInput, RadioSelect)
+from django.forms import (CheckboxSelectMultiple, RadioSelect)
 from django.utils.html import format_html
 from django.utils.encoding import force_str
 
@@ -22,7 +22,7 @@ FORM_FIELD_CHOICES = (
 
 class LabelFieldRenderer(FieldRenderer):
     WIDGETS_SHOW_LABEL = (
-        CheckboxInput,
+        CheckboxSelectMultiple,
         RadioSelect,
     )
 
