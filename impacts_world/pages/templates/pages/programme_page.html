@@ -1,0 +1,22 @@
+{% extends "pages/default_page.html" %}
+{% load wagtailcore_tags static %}
+
+{% block content_container %}
+<div class="sidebar-page clearfix">
+	<div class="sidebar">
+		<div class="container">
+		<h3>Sidebar</h3>
+		</div>
+	</div>
+	<div class="page">
+	{% block content %}
+		<div class="block-sidebar_page">
+			{% include 'widgets/page-header.html' %}
+			<div class="panel-group" id="programm-accordion" role="tablist" aria-multiselectable="true">
+			{{ page.content }}
+			</div>
+		</div>
+	{% endblock %}
+	</div>
+</div>
+{% endblock %}

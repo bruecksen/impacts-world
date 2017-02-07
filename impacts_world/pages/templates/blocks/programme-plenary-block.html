@@ -1,0 +1,8 @@
+<div class="container">
+	<div class="panel">
+		{% include "widgets/collapse-header.html" %}
+		{% if is_collapsible %}
+			{% include "widgets/collapse-body.html" %}
+		{% endif %}
+	</div>
+</div>

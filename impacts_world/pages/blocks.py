@@ -1,7 +1,9 @@
+import uuid
 from django.conf import settings
+from django.utils.text import slugify
 
 from wagtail.wagtailcore.blocks import StreamBlock, PageChooserBlock, StructBlock, CharBlock, \
-    TextBlock, ListBlock
+    TextBlock, ListBlock, TimeBlock, DateBlock, BooleanBlock
 from wagtail.wagtailsnippets.blocks import SnippetChooserBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
@@ -226,5 +228,81 @@ COLUMNS_BLOCKS = [
     ('columns_2_to_1', Columns2To1Block()),
     ('columns_1_to_1_to_1', Columns1To1To1Block()),
     ('columns_1_to_1_to_1_to_1', Columns1To1To1To1Block()),
+]
 
+
+class DayBlock(StructBlock):
+    title = CharBlock(required=True)
+    date = DateBlock(required=True)
+
+    class Meta:
+        label = 'Day'
+        template = 'blocks/programme-day-block.html'
+        icon = 'title'
+
+
+class PanelBlock(StructBlock):
+    time = TimeBlock(required=True)
+    title = CharBlock(required=True)
+    description = RichTextBlock(required=False)
+    is_collapsible = BooleanBlock(default=True, required=False)
+
+    class Meta:
+        abstract = True
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['description'] = value.get('description', '')
+        context['title'] = value.get('title', '')
+        context['time'] = value.get('time', None)
+        context['panel_id'] = self.get_unique_identifier()
+        context['is_collapsible'] = value.get('is_collapsible', None)
+        return context
+
+    def get_unique_identifier(self):
+        return uuid.uuid4()
+
+
+class PlenaryBlock(PanelBlock):
+    class Meta:
+        label = 'Planery'
+        template = 'blocks/programme-plenary-block.html'
+        icon = 'user'
+
+
+class WorkshopBlock(PanelBlock):
+    class Meta:
+        label = 'Workshop'
+        template = 'blocks/programme-plenary-block.html'
+        icon = 'group'
+
+
+class PosterBlock(PanelBlock):
+    class Meta:
+        label = 'Poster'
+        template = 'blocks/programme-plenary-block.html'
+        icon = 'doc-full-inverse'
+
+
+class SpecialEventBlock(PanelBlock):
+    class Meta:
+        label = 'Special event'
+        template = 'blocks/programme-plenary-block.html'
+        icon = 'pick'
+
+
+class RefreshmentBlock(PanelBlock):
+    class Meta:
+        label = 'Refreshment'
+        template = 'blocks/programme-plenary-block.html'
+        icon = 'time'
+
+
+PANEL_BLOCKS = [
+    ('day', DayBlock()),
+    ('refreshment', RefreshmentBlock()),
+    ('plenary', PlenaryBlock()),
+    ('workshop', WorkshopBlock()),
+    ('poster', PosterBlock()),
+    ('special_event', SpecialEventBlock()),
 ]
