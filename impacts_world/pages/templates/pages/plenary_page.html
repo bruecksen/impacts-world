@@ -1,0 +1,25 @@
+{% extends "pages/default_page.html" %}
+{% load wagtailcore_tags static %}
+
+{% block content_container %}
+<div class="sidebar-page clearfix">
+	<div class="sidebar">
+		<div class="container">
+		<h3>Sidebar</h3>
+		</div>
+	</div>
+	<div class="page">
+	{% block content %}
+		<div class="block-sidebar_page">
+			{% include 'widgets/page-header.html' %}
+			{% for page in self.get_children %}
+				{% include 'widgets/plenary-header.html' with page=page %}
+				{% for plenary in page.specific.content %}
+					{{plenary}}
+				{% endfor %}
+			{% endfor %}
+		</div>
+	{% endblock %}
+	</div>
+</div>
+{% endblock %}

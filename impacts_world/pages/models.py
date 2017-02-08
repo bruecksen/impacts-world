@@ -5,13 +5,15 @@ from django.db import models
 
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField, StreamField
+from wagtail.wagtailcore.blocks import ListBlock
 from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel, RichTextFieldPanel, InlinePanel, FieldPanel, MultiFieldPanel
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailforms.models import AbstractEmailForm
 from modelcluster.fields import ParentalKey
 
-from impacts_world.pages.blocks import BASE_BLOCKS, FULL_WIDTH_BLOCKS, COLUMNS_BLOCKS, PANEL_BLOCKS
+from impacts_world.pages.blocks import (
+    BASE_BLOCKS, FULL_WIDTH_BLOCKS, COLUMNS_BLOCKS, PANEL_BLOCKS, DayBlock, KeynoteBlock)
 from impacts_world.contrib.forms import HeadingFormBuilder, HeadingAbstractFormField
 from impacts_world.core.models import TimelineSnippet
 
@@ -27,7 +29,6 @@ class HomePage(Page):
 
 class SidebarPage(Page):
     intro = RichTextField(null=True, blank=True)
-    landing_page_template = 'pages/home_page.html'
     parent_page_types = ['wagtailcore.Page', HomePage]
     content = StreamField(BASE_BLOCKS + COLUMNS_BLOCKS, null=True, blank=True)
     content_panels = Page.content_panels + [
@@ -102,11 +103,13 @@ TIMELINE_ITEM_TYPES = [
 ]
 
 
-class ProgrammePage(Page):
+class ProgramOverviewPage(Page):
     parent_page_types = ['HomePage', ]
     subpage_types = ['PlenaryOverviewPage', 'WorkshopOverviewPage', 'PosterOverviewPage']
     intro = RichTextField(null=True, blank=True)
-    content = StreamField(PANEL_BLOCKS, null=True, blank=True)
+    content = StreamField([
+        ('day_list', ListBlock(DayBlock, template='blocks/day-list-block.html')),
+    ], null=True, blank=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('intro'),
@@ -136,7 +139,7 @@ class ProgrammeItemPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    parent_page_types = ['ProgrammePage', ]
+    parent_page_types = ['ProgramOverviewPage', ]
 
     content_panels = Page.content_panels + [
         FieldPanel('date_time'),
@@ -150,7 +153,24 @@ class ProgrammeItemPage(Page):
 
 
 class PlenaryItemPage(ProgrammeItemPage):
-    pass
+    content = StreamField([
+        ('plenary_list', ListBlock(KeynoteBlock, template='blocks/keynote-list-block.html', icon='password', label='Keynotes')),
+    ], null=True, blank=True)
+
+    content_panels = ProgrammeItemPage.content_panels + [
+        StreamFieldPanel('content'),
+    ]
+
+    def get_keynotes(self):
+        keynotes = []
+        for block in self.content:
+            for keynote in block.value:
+                keynotes.append({
+                    'title': keynote.get('title'),
+                    'name': keynote.get('name'),
+                    'institute': keynote.get('institute'),
+                })
+        return keynotes
 
 
 class WorkshopItemPage(ProgrammeItemPage):
@@ -167,9 +187,9 @@ class PosterItemPage(ProgrammeItemPage):
     pass
 
 
-class TimelineOverviewPage(Page):
+class AbstractOverviewPage(Page):
     intro = RichTextField(null=True, blank=True)
-    parent_page_types = ['ProgrammePage', ]
+    parent_page_types = ['ProgramOverviewPage', ]
 
     content_panels = Page.content_panels + [
         FieldPanel('intro'),
@@ -179,11 +199,16 @@ class TimelineOverviewPage(Page):
         abstract = True
 
 
-class PlenaryOverviewPage(TimelineOverviewPage):
+class PlenaryOverviewPage(AbstractOverviewPage):
     subpage_types = ['PlenaryItemPage', ]
+    template = 'pages/plenary_page.html'
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        return context
 
 
-class WorkshopOverviewPage(TimelineOverviewPage):
+class WorkshopOverviewPage(AbstractOverviewPage):
     subpage_types = ['WorkshopChallengePage', ]
 
 
@@ -204,5 +229,5 @@ class WorkshopChallengePage(Page):
     subpage_types = ['WorkshopItemPage', ]
 
 
-class PosterOverviewPage(TimelineOverviewPage):
+class PosterOverviewPage(AbstractOverviewPage):
     subpage_types = ['PosterItemPage', ]

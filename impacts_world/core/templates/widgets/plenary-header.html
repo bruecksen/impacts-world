@@ -1,0 +1,8 @@
+{% load wagtailcore_tags %}
+<div class="widget-plenary-header">
+	<div class="container">
+		<h3>{{ page.title }}</h3>
+		<h4>{{ page.specific.date_time }}, {{ page.specific.room }}</h4>
+		<div class="intro-text">{{ page.specific.description|richtext }}</div>
+	</div>
+</div>

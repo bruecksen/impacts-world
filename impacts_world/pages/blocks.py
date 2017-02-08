@@ -7,6 +7,7 @@ from wagtail.wagtailcore.blocks import StreamBlock, PageChooserBlock, StructBloc
 from wagtail.wagtailsnippets.blocks import SnippetChooserBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
+# from impacts_world.pages.models import PlenaryItemPage
 from impacts_world.core.models import TimelineSnippet
 from impacts_world.contrib.blocks import RichTextBlock, RichTextContainerBlock, ImageBlock, \
     ImageContainerBlock, HeadingBlock, SubHeadingBlock
@@ -231,67 +232,98 @@ COLUMNS_BLOCKS = [
 ]
 
 
-class DayBlock(StructBlock):
-    title = CharBlock(required=True)
-    date = DateBlock(required=True)
-
-    class Meta:
-        label = 'Day'
-        template = 'blocks/programme-day-block.html'
-        icon = 'title'
-
-
-class PanelBlock(StructBlock):
-    time = TimeBlock(required=True)
-    title = CharBlock(required=True)
-    description = RichTextBlock(required=False)
-    is_collapsible = BooleanBlock(default=True, required=False)
+class AbstractPanelBlock(StructBlock):
 
     class Meta:
         abstract = True
 
     def get_context(self, value):
         context = super().get_context(value)
-        context['description'] = value.get('description', '')
+        description = value.get('description')
+        context['is_collapsible'] = True
+        if not description:
+            context['is_collapsible'] = False
+        context['description'] = description
         context['title'] = value.get('title', '')
         context['time'] = value.get('time', None)
         context['panel_id'] = self.get_unique_identifier()
-        context['is_collapsible'] = value.get('is_collapsible', None)
         return context
 
     def get_unique_identifier(self):
         return uuid.uuid4()
 
 
-class PlenaryBlock(PanelBlock):
+class PlenaryBlock(AbstractPanelBlock):
+    title = CharBlock(required=True, classname='title-field')
+    description = RichTextBlock(required=False)
+    plenary_page = PageChooserBlock(required=True, target_model='pages.PlenaryItemPage')
+
     class Meta:
         label = 'Planery'
         template = 'blocks/programme-plenary-block.html'
         icon = 'user'
 
+    def get_context(self, value):
+        context = super().get_context(value)
+        plenary_page = value.get('plenary_page')
+        context['time'] = plenary_page.date_time
+        keynotes = plenary_page.get_keynotes()
+        context['keynotes'] = keynotes
+        context['plenary_url'] = plenary_page.get_parent().url
+        description = value.get('description')
+        if not description and not keynotes:
+            context['is_collapsible'] = False
+        return context
 
-class WorkshopBlock(PanelBlock):
+
+class WorkshopBlock(AbstractPanelBlock):
+    title = CharBlock(required=True, classname='title-field')
+    description = RichTextBlock(required=False)
+    workshop_page = PageChooserBlock(required=True, target_model='pages.WorkshopItemPage')
+
     class Meta:
         label = 'Workshop'
         template = 'blocks/programme-plenary-block.html'
         icon = 'group'
 
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['time'] = value.get('workshop_page').date_time
+        return context
 
-class PosterBlock(PanelBlock):
+
+class PosterBlock(AbstractPanelBlock):
+    title = CharBlock(required=True, classname='title-field')
+    description = RichTextBlock(required=False)
+    poster_page = PageChooserBlock(required=True, target_model='pages.PosterItemPage')
+
     class Meta:
         label = 'Poster'
         template = 'blocks/programme-plenary-block.html'
         icon = 'doc-full-inverse'
 
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['time'] = value.get('poster_page').date_time
+        return context
 
-class SpecialEventBlock(PanelBlock):
+
+class SpecialEventBlock(AbstractPanelBlock):
+    time = TimeBlock(required=True, classname='time-field')
+    title = CharBlock(required=True, classname='title-field')
+    description = RichTextBlock(required=False)
+
     class Meta:
         label = 'Special event'
         template = 'blocks/programme-plenary-block.html'
         icon = 'pick'
 
 
-class RefreshmentBlock(PanelBlock):
+class RefreshmentBlock(AbstractPanelBlock):
+    time = TimeBlock(required=True, classname='time-field')
+    title = CharBlock(required=True, classname='title-field')
+    description = RichTextBlock(required=False)
+
     class Meta:
         label = 'Refreshment'
         template = 'blocks/programme-plenary-block.html'
@@ -299,10 +331,49 @@ class RefreshmentBlock(PanelBlock):
 
 
 PANEL_BLOCKS = [
-    ('day', DayBlock()),
     ('refreshment', RefreshmentBlock()),
     ('plenary', PlenaryBlock()),
     ('workshop', WorkshopBlock()),
     ('poster', PosterBlock()),
     ('special_event', SpecialEventBlock()),
 ]
+
+
+class DayBlock(StructBlock):
+    date = DateBlock(required=True, classname='date-field')
+    title = CharBlock(required=True, classname='title-field')
+    panels = StreamBlock(PANEL_BLOCKS)
+
+    class Meta:
+        label = 'Day'
+        template = 'blocks/programme-day-block.html'
+        icon = 'title'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['title'] = value.get('title')
+        context['date'] = value.get('date')
+        context['panels'] = value.get('panels')
+        return context
+
+
+class KeynoteBlock(StructBlock):
+    title = CharBlock(required=True)
+    description = RichTextBlock(required=True)
+    name = CharBlock(required=True)
+    institute = CharBlock(required=True)
+    picture = ImageChooserBlock(required=True)
+
+    class Meta:
+        label = 'Keynote'
+        template = 'blocks/keynote-block.html'
+        icon = 'password'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['title'] = value.get('title')
+        context['description'] = value.get('description')
+        context['name'] = value.get('name')
+        context['institute'] = value.get('institute')
+        context['image'] = value.get('image')
+        return context

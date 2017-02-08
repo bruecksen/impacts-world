@@ -1,8 +1,12 @@
 {% load timestamp %}
 <div class="panel-heading" role="tab" id="plenary-heading-{{ panel_id }}">
 	<h4 class="panel-title">
-		<a class="{% if is_collapsible %}accordion-toggle collapsed{% endif %}" role="button" data-toggle="collapse" data-parent="#programme-accordion" href="#plenary-{{ panel_id }}" aria-expanded="true" aria-controls="plenary-{{ panel_id }}">
-		<span class="time">{{ time|date:'g:iA' }}</span>{{ title }}
-		</a>
+		{% if is_collapsible %}
+			<a class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#programme-accordion" href="#plenary-{{ panel_id }}" aria-expanded="true" aria-controls="plenary-{{ panel_id }}">
+			<span class="time">{{ time|date:'g:iA' }}</span>{{ title }}
+			</a>
+		{% else %}
+			<span class="time">{{ time|date:'g:iA' }}</span>{{ title }}
+		{% endif %}
 	</h4>
 </div>

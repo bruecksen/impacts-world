@@ -1,0 +1,11 @@
+{% load wagtailcore_tags %}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4 block-center text-center">
+			<p><b>{{ name }}</b><br>{{ institute }}</p>
+		</div>
+		<div class="col-sm-8">
+			{{ description|richtext }}
+		</div>
+	</div><!-- widget-richtext-content -->
+</div>

@@ -98,12 +98,11 @@ body {
 
 
 a {
-  color: @color-primary;
-
-  &:hover, &:focus {
+	color: @color-neutral;
 	text-decoration: underline;
-	color: @color-primary;
-  }
+
+	&:hover, &:focus {
+	}
 }
 .super a {
   color: @color-white;
@@ -1099,7 +1098,6 @@ footer {
 .block-refreshment {
 	.panel,
 	.row {
-		padding: 8px;
 		border-radius: 0;
 	}
 	h4 {
@@ -1121,22 +1119,36 @@ footer {
 		}
 	}
 	.panel-heading {
+		padding: 8px 10px;
 		a,
 		a:hover,
 		a:active {
 			color: @color-neutral;
+			text-decoration: none;
 		}
 		.accordion-toggle:after {
+			content: "\f077"; // arrow up
 			font: normal normal normal 14px/1 FontAwesome;
-			content: "\f077 ";
 			float: right;
 		}
 		.accordion-toggle.collapsed:after {
-			content: "\f078";
+			content: "\f078"; // arrow down
 		}
 	}
 	.panel-body {
 		border-top: none;
+		font-size: 14px;
+		padding: 0 0 0 10px;
+		.rich-text {
+			padding-left: 15%;
+			padding-top: 8px;
+			padding-right: 10px;
+			padding-bottom: 8px;
+			&:last-child {
+				padding-top: 0;
+				padding-bottom: 15px;
+			}
+		}
 	}
 }
 
