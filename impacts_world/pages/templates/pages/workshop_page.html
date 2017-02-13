@@ -1,5 +1,5 @@
 {% extends "pages/default_page.html" %}
-{% load wagtailcore_tags static %}
+{% load wagtailcore_tags wagtailimages_tags static %}
 
 {% block content_container %}
 <div class="sidebar-page clearfix">
@@ -12,7 +12,10 @@
 	{% block content %}
 		<div class="block-sidebar_page">
 			{% include 'widgets/page-header.html' %}
-			{% include 'widgets/plenary_workshop-list.html' with children=self.get_children %}
+			{% for challenge in self.get_children %}
+				{% include 'widgets/page-challenge-header.html' with icon=challenge.specific.icon title=challenge.title description=challenge.specific.description %}
+			{% include 'widgets/plenary_workshop-list.html' with children=challenge.get_children %}
+			{% endfor %}
 		</div>
 	{% endblock %}
 	</div>

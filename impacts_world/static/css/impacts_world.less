@@ -225,13 +225,20 @@ input[type="checkbox"]:checked + label {
 
 // Headlines
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-  color: @color-neutral;
-  margin-top: 0; // Undo this in richtext fields
-  font-weight: bold;
-  a {
-	font-weight: inherit;
-	text-transform: inherit;
+	color: @color-neutral;
+	margin-top: 0; // Undo this in richtext fields
+	font-weight: bold;
+	a {
+		font-weight: inherit;
+		text-transform: inherit;
 	}
+	img {
+		width: 30px;
+		height: auto;
+		vertical-align: bottom;
+		margin-right: 5px;
+	}
+	
 }
 
 h1, .h1 {
@@ -759,6 +766,70 @@ footer {
 	max-width: 85%;
 }
 
+// collapsible element
+.panel {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	.panel-heading {
+		padding: 8px 0;
+		h4, p {
+			max-width: 80%;
+			margin-bottom: 0;
+		}
+		h4 {
+			font-size: 18px;
+			font-weight: 800;
+			display: inline-block;
+		}
+		span.time,
+		span.number {
+			font-size: 16px;
+			font-weight: 300;
+			width: 15%;
+			display: inline-block;
+			float: left;
+		}
+		span.number {
+			width: 10%;
+		}
+		a,
+		a:hover,
+		a:active {
+			color: @color-neutral;
+			text-decoration: none;
+		}
+		.panel-title {
+			position: relative;
+		}
+		.accordion-toggle:after {
+			content: "\f077"; // arrow up
+			font: normal normal normal 14px/1 FontAwesome;
+			position: absolute;
+			right: 0;
+			top: 6px;
+		}
+		.accordion-toggle.collapsed:after {
+			content: "\f078"; // arrow down
+		}
+	}
+	.panel-body {
+		border-top: none;
+		font-size: 14px;
+		padding: 0;
+		.rich-text {
+			padding-left: 15%;
+			padding-top: 8px;
+			padding-right: 10px;
+			padding-bottom: 8px;
+			&:last-child {
+				padding-top: 0;
+				padding-bottom: 15px;
+			}
+		}
+	}
+}
+
 .block-heading,
 .block-sub_heading,
 .block-video_teaser,
@@ -776,7 +847,8 @@ footer {
 .block-columns_1_to_1_to_1_to_1,
 .block-form,
 .widget-toc,
-.widget-page-header {
+.widget-page-header,
+.widget-page-challenge-header {
 	margin-top: 60px;
 }
 
@@ -1122,6 +1194,7 @@ footer {
 	}
 }
 
+
 .block-plenary,
 .block-poster,
 .block-workshop,
@@ -1137,59 +1210,6 @@ footer {
 	.panel,
 	.row {
 		border-radius: 0;
-	}
-	.panel-heading {
-		padding: 8px 0;
-		h4 {
-			font-size: 18px;
-			font-weight: 800;
-			margin-bottom: 0;
-			max-width: 80%;
-			display: inline-block;
-		}
-		span.time {
-			font-size: 16px;
-			font-weight: 300;
-			width: 15%;
-			display: inline-block;
-			float: left;
-		}
-		span.toggle {
-			float: right;
-			.fa {
-				font-size: 18px;
-				font-weight: normal;
-			}
-		}
-		a,
-		a:hover,
-		a:active {
-			color: @color-neutral;
-			text-decoration: none;
-		}
-		.accordion-toggle:after {
-			content: "\f077"; // arrow up
-			font: normal normal normal 14px/1 FontAwesome;
-			float: right;
-		}
-		.accordion-toggle.collapsed:after {
-			content: "\f078"; // arrow down
-		}
-	}
-	.panel-body {
-		border-top: none;
-		font-size: 14px;
-		padding: 0;
-		.rich-text {
-			padding-left: 15%;
-			padding-top: 8px;
-			padding-right: 10px;
-			padding-bottom: 8px;
-			&:last-child {
-				padding-top: 0;
-				padding-bottom: 15px;
-			}
-		}
 	}
 }
 
@@ -1290,13 +1310,16 @@ footer {
 	}
 }
 
+.widget-plenary_workshops + .widget-plenary_workshops {
+	margin-top: 60px;
+}
 
-.widget-plenary {
+.widget-plenary_workshops {
 	margin-top: 30px;
 	.container {
 		border-left: 8px solid @color-yellow;
 		padding-left: 0;
-		.plenary-header {
+		.header {
 			padding: 15px 10px 15px 10px;
 			background-color: @color-brown;
 			img {
@@ -1336,6 +1359,69 @@ footer {
 			h4 {
 				font-size: 16px;
 			}
+		}
+		.panel {
+			margin-bottom: 0;
+			background-color: @color-brown-light;
+			position: relative;
+			.panel-heading {
+				padding-top: 15px;
+				padding-bottom: 15px;
+				padding-left: 10px;
+				padding-right: 10px;
+				border: 0;
+				h4, p {
+					font-size: 16px;
+				}
+				h4 {
+					font-weight: 700;
+				}
+				p {
+					font-weight: 300;
+				}
+			}
+			.panel-body .rich-text {
+				padding-left: 10px;
+				padding-right: 30px;
+				font-size: 16px;
+			}
+			.divider {
+				border-bottom: 1px solid #979797;
+				position: absolute;
+				left: 5px;
+				right: 5px;
+			}
+		}
+	}
+}
+
+.widget-poster_contribution {
+	margin-top: 30px;
+	position: relative;
+	.divider {
+		border-bottom: 1px solid #979797;
+		position: absolute;
+		left: 5px;
+		right: 5px;
+	}
+	.panel-title {
+		h4 {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+		.rich-text {
+			padding-left: 10%;
+			color: #9b9b9b;
+			font-weight: 300;
+			font-size: 14px;
+		}
+		span.number {
+			font-size: 16px;
+		}
+	}
+	.panel-body {
+		.rich-text {
+			padding-left: 10%;
 		}
 	}
 }

@@ -1,13 +1,18 @@
-{% load timestamp %}
-<div class="panel-heading" role="tab" id="plenary-heading-{{ panel_id }}">
+{% load wagtailcore_tags timestamp %}
+<div class="panel-heading" role="tab" id="collapsible-{{ panel_id }}">
 	<div class="panel-title">
-		<span class="time">{{ time|date:'g:iA'|lower }}</span>
+		{% if time %}<span class="time">{{ time|date:'g:iA'|lower }}</span>{% endif %}
+		{% if number %}<span class="number">{{ number }}</span>{% endif %}
 		{% if is_collapsible %}
 			<a class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#programme-accordion" href="#plenary-{{ panel_id }}" aria-expanded="true" aria-controls="plenary-{{ panel_id }}">
 			<h4>{{ title }}</h4>
+			{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}
+			{% if authors %}{{ authors|richtext }}{% endif %}
 			</a>
 		{% else %}
 			<h4>{{ title }}</h4>
+			{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}
+			{% if authors %}<p>{{ authors|richtext }}</p>{% endif %}
 		{% endif %}
 	</div>
 </div>

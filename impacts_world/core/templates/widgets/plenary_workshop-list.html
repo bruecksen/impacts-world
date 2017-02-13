@@ -1,17 +1,21 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 {% for page in children %}
-	<div class="widget-plenary">
+	<div class="widget-plenary_workshops">
 		<div class="container">
-			<div class="plenary-header">
+			<div class="header">
 				{% image page.specific.icon fill-60x60 %}
 				<div class="heading">
 					<h3>{{ page.title }}</h3>
 					<p class="meta">{{ page.specific.date_time|date:'l d F' }}, {{ page.specific.date_time|date:'H:iA'|lower }}, {{ page.specific.room }}</p>
 				</div>
+				{% if page.specific.convenor_name %}
+				<p>Convenor: <b>{{ page.specific.convenor_name }}</b> ({{ page.specific.convenor_institute }})</p>
+				{% endif %}
 				<div class="intro-text">{{ page.specific.description|richtext }}</div>
 			</div>
-			{% for keynote in page.specific.content %}
-				{% include_block keynote %}
+			{{page.specific.content}}
+			{% for block in page.specific.content %}
+				{% include_block block with is_last=forloop.last %}
 			{% endfor %}
 		</div>
 	</div>

@@ -1,5 +1,3 @@
-from itertools import chain
-
 from django.utils.text import slugify
 from django.db import models
 
@@ -13,7 +11,7 @@ from wagtail.wagtailforms.models import AbstractEmailForm
 from modelcluster.fields import ParentalKey
 
 from impacts_world.pages.blocks import (
-    BASE_BLOCKS, FULL_WIDTH_BLOCKS, COLUMNS_BLOCKS, PANEL_BLOCKS, DayBlock, KeynoteBlock)
+    BASE_BLOCKS, FULL_WIDTH_BLOCKS, COLUMNS_BLOCKS, DayBlock, KeynoteBlock, ContributionBlock, PosterContributionBlock)
 from impacts_world.contrib.forms import HeadingFormBuilder, HeadingAbstractFormField
 from impacts_world.core.models import TimelineSnippet
 
@@ -116,17 +114,6 @@ class ProgramOverviewPage(Page):
         StreamFieldPanel('content'),
     ]
 
-    # def get_context(self, request, *args, **kwargs):
-    #     context = super().get_context(request, *args, **kwargs)
-    #     plenaries = PlenaryItemPage.objects.all()
-    #     workshops = WorkshopItemPage.objects.all()
-    #     posters = PosterItemPage.objects.all()
-    #     items = list(plenaries) + list(workshops) + list(posters)
-    #     items = sorted(items, key=lambda x: x.date_time)
-    #     raise Exception(items)
-    #     context['timeline_items'] = items
-    #     return context
-
 
 class ProgrammeItemPage(Page):
     description = RichTextField(null=True, blank=True)
@@ -154,7 +141,7 @@ class ProgrammeItemPage(Page):
 
 class PlenaryItemPage(ProgrammeItemPage):
     content = StreamField([
-        ('plenary_list', ListBlock(KeynoteBlock, template='blocks/keynote-list-block.html', icon='password', label='Keynotes')),
+        ('keynote', KeynoteBlock()),
     ], null=True, blank=True)
 
     content_panels = ProgrammeItemPage.content_panels + [
@@ -176,15 +163,25 @@ class PlenaryItemPage(ProgrammeItemPage):
 class WorkshopItemPage(ProgrammeItemPage):
     convenor_name = models.CharField(max_length=500, blank=True, null=True)
     convenor_institute = models.CharField(max_length=500, blank=True, null=True)
+    content = StreamField([
+        ('contribution', ContributionBlock()),
+    ], null=True, blank=True)
 
     content_panels = ProgrammeItemPage.content_panels + [
         FieldPanel('convenor_name'),
         FieldPanel('convenor_institute'),
+        StreamFieldPanel('content'),
     ]
 
 
 class PosterItemPage(ProgrammeItemPage):
-    pass
+    content = StreamField([
+        ('contribution', PosterContributionBlock()),
+    ], null=True, blank=True)
+
+    content_panels = ProgrammeItemPage.content_panels + [
+        StreamFieldPanel('content'),
+    ]
 
 
 class AbstractOverviewPage(Page):
@@ -210,6 +207,7 @@ class PlenaryOverviewPage(AbstractOverviewPage):
 
 class WorkshopOverviewPage(AbstractOverviewPage):
     subpage_types = ['WorkshopChallengePage', ]
+    template = 'pages/workshop_page.html'
 
     def get_workshops(self, date_time):
         pages = WorkshopItemPage.objects.live().filter(date_time=date_time)
@@ -227,7 +225,7 @@ class WorkshopOverviewPage(AbstractOverviewPage):
 
 
 class WorkshopChallengePage(Page):
-    intro = RichTextField(null=True, blank=True)
+    description = RichTextField(null=True, blank=True)
     icon = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -236,7 +234,7 @@ class WorkshopChallengePage(Page):
         related_name='+'
     )
     content_panels = Page.content_panels + [
-        FieldPanel('intro'),
+        FieldPanel('description'),
         ImageChooserPanel('icon'),
     ]
     parent_page_types = ['WorkshopOverviewPage', ]
@@ -245,3 +243,4 @@ class WorkshopChallengePage(Page):
 
 class PosterOverviewPage(AbstractOverviewPage):
     subpage_types = ['PosterItemPage', ]
+    template = 'pages/poster_page.html'

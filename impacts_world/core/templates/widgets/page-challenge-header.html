@@ -1,0 +1,8 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<div class="widget-page-header">
+	<div class="container">
+		<h2>{% image icon fill-60x60 %}{{ title }}</h2>
+		{% if room %}<p>{{ room }}</p>{% endif %}
+		{{ description|richtext }}
+	</div>
+</div>

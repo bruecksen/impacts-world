@@ -246,11 +246,8 @@ class AbstractPanelBlock(StructBlock):
         context['description'] = description
         context['title'] = value.get('title', '')
         context['time'] = value.get('time', None)
-        context['panel_id'] = self.get_unique_identifier()
+        context['panel_id'] = uuid.uuid4()
         return context
-
-    def get_unique_identifier(self):
-        return uuid.uuid4()
 
 
 class PlenaryBlock(AbstractPanelBlock):
@@ -381,4 +378,45 @@ class KeynoteBlock(StructBlock):
         context['name'] = value.get('name')
         context['institute'] = value.get('institute')
         context['picture'] = value.get('picture')
+        return context
+
+
+class ContributionBlock(StructBlock):
+    title = CharBlock(required=True)
+    name = CharBlock(required=True)
+    institute = CharBlock(required=True)
+    description = RichTextBlock(required=True)
+
+    class Meta:
+        label = 'Contribution'
+        template = 'blocks/contribution-block.html'
+        icon = 'password'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['title'] = value.get('title')
+        context['subtitle'] = "(%s, %s)" % (value.get('name'), value.get('institute'))
+        context['description'] = value.get('description')
+        context['panel_id'] = uuid.uuid4()
+        return context
+
+
+class PosterContributionBlock(StructBlock):
+    number = CharBlock(required=True)
+    title = CharBlock(required=True)
+    authors = RichTextBlock(required=True)
+    description = RichTextBlock(required=True)
+
+    class Meta:
+        label = 'Contribution'
+        template = 'blocks/poster-contribution-block.html'
+        icon = 'password'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['number'] = value.get('number')
+        context['title'] = value.get('title')
+        context['authors'] = value.get('authors')
+        context['description'] = value.get('description')
+        context['panel_id'] = uuid.uuid4()
         return context
