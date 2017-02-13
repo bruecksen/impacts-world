@@ -139,7 +139,7 @@ class ProgrammeItemPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    parent_page_types = ['ProgramOverviewPage', ]
+    parent_page_types = ['ProgramOverviewPage', 'WorkshopChallengePage']
 
     content_panels = Page.content_panels + [
         FieldPanel('date_time'),
@@ -210,6 +210,20 @@ class PlenaryOverviewPage(AbstractOverviewPage):
 
 class WorkshopOverviewPage(AbstractOverviewPage):
     subpage_types = ['WorkshopChallengePage', ]
+
+    def get_workshops(self, date_time):
+        pages = WorkshopItemPage.objects.live().filter(date_time=date_time)
+        workshops = []
+        for page in pages:
+            workshops.append({
+                'title': page.title,
+                'name': page.convenor_name,
+                'institute': page.convenor_institute,
+                'slug': slugify(page.title),
+                'icon': page.icon,
+                'room': page.room,
+            })
+        return workshops
 
 
 class WorkshopChallengePage(Page):

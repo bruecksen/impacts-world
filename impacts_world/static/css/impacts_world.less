@@ -691,7 +691,7 @@ hr {
 						border: 1px solid transparent;
 
 						text-align: center;
-
+						text-decoration: none;
 						text-transform: uppercase;
 						color: @color-neutral;
 					}
@@ -878,14 +878,12 @@ footer {
 }
 
 .block-teaser {
-	h1, .h1, h2, .h2, h3, .h3, h4, .h4, p{
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, p, a{
 		margin: 0;
 		font-size: 26px;
 		font-weight: bold;
 		line-height: 1.5;
 		color: @color-white;
-	}
-	a:hover {
 		text-decoration: none;
 	}
 	.widget-richtext-content {
@@ -1100,26 +1098,29 @@ footer {
 	.row {
 		border-radius: 0;
 	}
-	h4 {
-		font-size: 16px;
-		font-weight: 300;
-		margin-bottom: 0;
-	}
-	span.time {
-		font-size: 16px;
-		font-weight: 300;
-		width: 15%;
-		display: inline-block;
-	}
-	span.toggle {
-		float: right;
-		.fa {
-			font-size: 18px;
-			font-weight: normal;
-		}
-	}
 	.panel-heading {
 		padding: 8px 10px;
+		h4 {
+			font-size: 18px;
+			font-weight: 800;
+			margin-bottom: 0;
+			max-width: 80%;
+			display: inline-block;
+		}
+		span.time {
+			font-size: 16px;
+			font-weight: 300;
+			width: 15%;
+			display: inline-block;
+			float: left;
+		}
+		span.toggle {
+			float: right;
+			.fa {
+				font-size: 18px;
+				font-weight: normal;
+			}
+		}
 		a,
 		a:hover,
 		a:active {
@@ -1152,6 +1153,11 @@ footer {
 	}
 }
 
+.block-refreshment .panel-heading h4 {
+	font-size: 16px;
+	font-weight: 300;
+}
+
 .panel-group .panel-heading+.panel-collapse>.panel-body {
 	border-top: none;
 }
@@ -1161,11 +1167,14 @@ footer {
 .block-poster,
 .block-workshop,
 .block-special_event {
-	h4 {
-		font-size: 18px;
-		font-weight: 800;
-		margin-bottom: 0;
-	}
+	margin-top: 5px;
+}
+
+.block-refreshment + .block-plenary,
+.block-refreshment + .block-poster,
+.block-refreshment + .block-workshop,
+.block-refreshment + .block-special_event {
+	margin-top: 0;
 }
 
 .block-plenary {
@@ -1186,7 +1195,45 @@ footer {
 	.panel {
 		border: 3px solid @color-green;
 		background-color: @color-green-light;
+		.panel-body {
+			padding: 0;
+			.rich-text {
+				padding-left: 10px;
+			}
+			.row {
+				padding-top: 15px;
+				padding-bottom: 15px;
+				margin-left: 0;
+				margin-right: 0;
+				&:nth-child(even) {
+					background-color: @color-white;
+				}
+				.icon {
+					float: left;
+					display: block;
+					width: 40px;
+					height: 40px;
+				}
+				.text {
+					float: left;
+					max-width: 90%;
+				}
+				p {
+					font-weight: 300;
+					margin-bottom: 0;
+				}
+			}
+			span.room {
+				display: inline-block;
+				background-color: @color-green;
+				color: @color-white;
+				font-weight: 500;
+				padding: 3px 6px 3px 6px;
+				border-radius: 2px;
+			}
+		}
 	}
+
 }
 
 .block-special_event {

@@ -1,12 +1,13 @@
+{% load wagtailcore_tags %}
 <div class="container">
-	<div class="row">
-		<div class="col-sm-2">
-			<span class="time">{{ value.time|date:'g:iA' }}</span>
-		</div>
-		<div class="col-sm-8">
-			<h4>{{ value.title }}</h4>
-		</div>
-		<div class="col-sm-2">
-		</div>
+	<div class="panel">
+		{% include "widgets/collapse-header.html" %}
+		{% if is_collapsible %}
+			<div id="plenary-{{ panel_id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="plenary-{{ panel_id }}">
+				<div class="panel-body">
+					{{ description|richtext }}
+				</div>
+			</div>
+		{% endif %}
 	</div>
 </div>

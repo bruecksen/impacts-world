@@ -240,9 +240,9 @@ class AbstractPanelBlock(StructBlock):
     def get_context(self, value):
         context = super().get_context(value)
         description = value.get('description')
-        context['is_collapsible'] = True
-        if not description:
-            context['is_collapsible'] = False
+        context['is_collapsible'] = False
+        if description:
+            context['is_collapsible'] = True
         context['description'] = description
         context['title'] = value.get('title', '')
         context['time'] = value.get('time', None)
@@ -270,9 +270,8 @@ class PlenaryBlock(AbstractPanelBlock):
         keynotes = plenary_page.get_keynotes()
         context['keynotes'] = keynotes
         context['plenary_url'] = plenary_page.get_parent().url
-        description = value.get('description')
-        if not description and not keynotes:
-            context['is_collapsible'] = False
+        if keynotes:
+            context['is_collapsible'] = True
         return context
 
 
@@ -283,12 +282,18 @@ class WorkshopBlock(AbstractPanelBlock):
 
     class Meta:
         label = 'Workshop'
-        template = 'blocks/programme-plenary-block.html'
+        template = 'blocks/programme-workshop-block.html'
         icon = 'group'
 
     def get_context(self, value):
         context = super().get_context(value)
-        context['time'] = value.get('workshop_page').date_time
+        workshop_page = value.get('workshop_page')
+        date_time = workshop_page.date_time
+        context['time'] = date_time
+        workshops = workshop_page.get_parent().get_parent().specific.get_workshops(date_time)
+        context['workshops'] = workshops
+        if workshops:
+            context['is_collapsible'] = True
         return context
 
 
@@ -299,7 +304,7 @@ class PosterBlock(AbstractPanelBlock):
 
     class Meta:
         label = 'Poster'
-        template = 'blocks/programme-plenary-block.html'
+        template = 'blocks/programme-poster-block.html'
         icon = 'doc-full-inverse'
 
     def get_context(self, value):
