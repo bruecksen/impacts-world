@@ -19,6 +19,8 @@
 @color-blue-light: rgba(135, 218, 252, 0.1);
 @color-gray: #e1e1e1;;
 @color-gray-light: rgba(225, 225, 225, 0.1);
+@color-brown: rgba(180, 149, 77, 0.07);
+@color-brown-light: rgba(180, 149, 77, 0.03);
 
 
 
@@ -1089,17 +1091,55 @@ footer {
 	}
 }
 
+.widget-legend {
+	margin-top:10px;
+	.circle-plenary,
+	.circle-workshop,
+	.circle-poster,
+	.circle-special {
+		width: 22px;
+		height: 22px;
+		display: inline-block;
+		border-radius: 12px;
+		margin-right: 5px;
+		vertical-align: bottom;
+	}
+	.circle-plenary {
+		background-color: @color-yellow-light;
+		border: 3px solid @color-yellow;
+	}
+	.circle-workshop {
+		background-color: @color-green-light;
+		border: 3px solid @color-green;
+	}
+	.circle-poster {
+		background-color: @color-gray-light;
+		border: 3px solid @color-gray;
+	}
+	.circle-special {
+		background-color: @color-blue-light;
+		border: 3px solid @color-blue;
+	}
+}
+
 .block-plenary,
 .block-poster,
 .block-workshop,
 .block-special_event,
 .block-refreshment {
+	.container {
+			padding-right: 12px;
+			padding-left: 12px;
+	}
+	.panel {
+		background-color: transparent;
+	}
 	.panel,
 	.row {
 		border-radius: 0;
 	}
 	.panel-heading {
-		padding: 8px 10px;
+		padding: 8px 0;
 		h4 {
 			font-size: 18px;
 			font-weight: 800;
@@ -1139,7 +1179,7 @@ footer {
 	.panel-body {
 		border-top: none;
 		font-size: 14px;
-		padding: 0 0 0 10px;
+		padding: 0;
 		.rich-text {
 			padding-left: 15%;
 			padding-top: 8px;
@@ -1153,9 +1193,14 @@ footer {
 	}
 }
 
-.block-refreshment .panel-heading h4 {
-	font-size: 16px;
-	font-weight: 300;
+.block-refreshment {
+	.container {
+		border: 3px solid transparent;
+	}
+	.panel-heading h4 {
+		font-size: 16px;
+		font-weight: 300;
+	}
 }
 
 .panel-group .panel-heading+.panel-collapse>.panel-body {
@@ -1178,33 +1223,35 @@ footer {
 }
 
 .block-plenary {
-	.panel {
+	.container {
 		border: 3px solid @color-yellow;
 		background-color: @color-yellow-light;
 	}
 }
 
 .block-poster {
-	.panel {
+	.container {
 		border: 3px solid @color-gray;
 		background-color: @color-gray-light;
 	}
 }
 
 .block-workshop {
-	.panel {
+	.container {
 		border: 3px solid @color-green;
 		background-color: @color-green-light;
+	}
+	.panel {
 		.panel-body {
 			padding: 0;
 			.rich-text {
-				padding-left: 10px;
+				padding-left:0;
 			}
 			.row {
 				padding-top: 15px;
 				padding-bottom: 15px;
-				margin-left: 0;
-				margin-right: 0;
+				margin-left: -13px,;
+				margin-right: -13px;
 				&:nth-child(even) {
 					background-color: @color-white;
 				}
@@ -1237,8 +1284,58 @@ footer {
 }
 
 .block-special_event {
-	.panel {
+	.container {
 		border: 3px solid @color-blue;
 		background-color: @color-blue-light;
+	}
+}
+
+
+.widget-plenary {
+	margin-top: 30px;
+	.container {
+		border-left: 8px solid @color-yellow;
+		padding-left: 0;
+		.plenary-header {
+			padding: 15px 10px 15px 10px;
+			background-color: @color-brown;
+			img {
+				width: 30px;
+				height: auto;
+				display: inline-block;
+				float: left;
+				margin-top: -5px;
+				margin-right: 8px;
+			}
+			.heading {
+				display: inline-block;
+				h3 {
+					font-weight: 800;
+					margin-bottom: 5px;
+				}
+				p.meta {
+					color: #9b9b9b;
+					font-weight: 300;
+					font-size: 16px;
+				}
+			}
+		}
+		.row {
+			background-color: @color-brown-light;
+			margin-left: 0;
+			margin-right: 0;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			.speaker {
+				img {
+					border-radius: 50%;
+					margin-bottom: 10px;
+				}
+				font-size: 14px;
+			}
+			h4 {
+				font-size: 16px;
+			}
+		}
 	}
 }

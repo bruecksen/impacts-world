@@ -380,5 +380,5 @@ class KeynoteBlock(StructBlock):
         context['description'] = value.get('description')
         context['name'] = value.get('name')
         context['institute'] = value.get('institute')
-        context['image'] = value.get('image')
+        context['picture'] = value.get('picture')
         return context

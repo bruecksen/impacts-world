@@ -12,12 +12,7 @@
 	{% block content %}
 		<div class="block-sidebar_page">
 			{% include 'widgets/page-header.html' %}
-			{% for page in self.get_children %}
-				{% include 'widgets/plenary-header.html' with page=page %}
-				{% for plenary in page.specific.content %}
-					{{plenary}}
-				{% endfor %}
-			{% endfor %}
+			{% include 'widgets/plenary-list.html' with children=self.get_children %}
 		</div>
 	{% endblock %}
 	</div>

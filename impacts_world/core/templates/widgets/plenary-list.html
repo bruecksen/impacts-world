@@ -1,0 +1,18 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{% for page in children %}
+	<div class="widget-plenary">
+		<div class="container">
+			<div class="plenary-header">
+				{% image page.specific.icon fill-60x60 %}
+				<div class="heading">
+					<h3>{{ page.title }}</h3>
+					<p class="meta">{{ page.specific.date_time|date:'l d F' }}, {{ page.specific.date_time|date:'H:iA'|lower }}, {{ page.specific.room }}</p>
+				</div>
+				<div class="intro-text">{{ page.specific.description|richtext }}</div>
+			</div>
+			{% for keynote in page.specific.content %}
+				{% include_block keynote %}
+			{% endfor %}
+		</div>
+	</div>
+{% endfor %}
