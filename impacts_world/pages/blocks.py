@@ -252,7 +252,7 @@ class AbstractPanelBlock(StructBlock):
 
 
 class PlenaryBlock(AbstractPanelBlock):
-    title = CharBlock(required=False, classname='title-field')
+    title = CharBlock(required=False, classname='title-field', helptext='If empty automatically uses title of linked plenary page.')
     description = RichTextBlock(required=False)
     plenary_page = PageChooserBlock(required=True, target_model='pages.PlenaryItemPage')
 
@@ -275,7 +275,7 @@ class PlenaryBlock(AbstractPanelBlock):
 
 
 class WorkshopBlock(AbstractPanelBlock):
-    title = CharBlock(required=False, classname='title-field')
+    title = CharBlock(required=False, classname='title-field', helptext='If empty automatically uses title of linked workshop page.')
     description = RichTextBlock(required=False)
     workshop_page = PageChooserBlock(required=True, target_model='pages.WorkshopItemPage')
 
