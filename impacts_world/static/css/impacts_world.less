@@ -1122,7 +1122,9 @@ footer {
 .widget-toc {
 	ul {
 		li {
-			margin-bottom: 15px;
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
 			&.active,
 			&.page-active {
 				a {
