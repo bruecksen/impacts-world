@@ -350,7 +350,7 @@ class DayBlock(StructBlock):
     class Meta:
         label = 'Day'
         template = 'blocks/programme-day-block.html'
-        icon = 'title'
+        icon = 'date'
 
     def get_context(self, value):
         context = super().get_context(value)

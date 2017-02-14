@@ -106,7 +106,7 @@ class ProgramOverviewPage(Page):
     subpage_types = ['PlenaryOverviewPage', 'WorkshopOverviewPage', 'PosterOverviewPage']
     intro = RichTextField(null=True, blank=True)
     content = StreamField([
-        ('day_list', ListBlock(DayBlock, template='blocks/day-list-block.html')),
+        ('day', DayBlock()),
     ], null=True, blank=True)
 
     content_panels = Page.content_panels + [
