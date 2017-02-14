@@ -275,7 +275,7 @@ class PlenaryBlock(AbstractPanelBlock):
 
 
 class WorkshopBlock(AbstractPanelBlock):
-    title = CharBlock(required=False, classname='title-field', help_text='If empty automatically uses title of linked workshop page.')
+    title = CharBlock(required=True, classname='title-field')
     description = RichTextBlock(required=False)
     workshop_page = PageChooserBlock(required=True, target_model='pages.WorkshopItemPage')
 
@@ -289,7 +289,6 @@ class WorkshopBlock(AbstractPanelBlock):
         workshop_page = value.get('workshop_page')
         date_time = workshop_page.date_time
         context['time'] = date_time
-        context['title'] = value.get('title', None) or workshop_page.title
         workshops = workshop_page.get_parent().get_parent().specific.get_workshops(date_time)
         context['workshops'] = workshops
         if workshops:
