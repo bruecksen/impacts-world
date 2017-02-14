@@ -252,7 +252,7 @@ class AbstractPanelBlock(StructBlock):
 
 
 class PlenaryBlock(AbstractPanelBlock):
-    title = CharBlock(required=True, classname='title-field')
+    title = CharBlock(required=False, classname='title-field')
     description = RichTextBlock(required=False)
     plenary_page = PageChooserBlock(required=True, target_model='pages.PlenaryItemPage')
 
@@ -265,6 +265,7 @@ class PlenaryBlock(AbstractPanelBlock):
         context = super().get_context(value)
         plenary_page = value.get('plenary_page')
         context['time'] = plenary_page.date_time
+        context['title'] = value.get('title', None) or plenary_page.title
         keynotes = plenary_page.get_keynotes()
         context['keynotes'] = keynotes
         context['plenary_url'] = "%s#%s" % (plenary_page.get_parent().url, slugify(plenary_page.title))
@@ -274,7 +275,7 @@ class PlenaryBlock(AbstractPanelBlock):
 
 
 class WorkshopBlock(AbstractPanelBlock):
-    title = CharBlock(required=True, classname='title-field')
+    title = CharBlock(required=False, classname='title-field')
     description = RichTextBlock(required=False)
     workshop_page = PageChooserBlock(required=True, target_model='pages.WorkshopItemPage')
 
@@ -288,6 +289,7 @@ class WorkshopBlock(AbstractPanelBlock):
         workshop_page = value.get('workshop_page')
         date_time = workshop_page.date_time
         context['time'] = date_time
+        context['title'] = value.get('title', None) or workshop_page.title
         workshops = workshop_page.get_parent().get_parent().specific.get_workshops(date_time)
         context['workshops'] = workshops
         if workshops:
