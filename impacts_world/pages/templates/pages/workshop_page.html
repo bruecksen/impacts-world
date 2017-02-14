@@ -4,17 +4,15 @@
 {% block content_container %}
 <div class="sidebar-page clearfix">
 	<div class="sidebar">
-		<div class="container">
-		<h3>Sidebar</h3>
-		</div>
+		{% include 'widgets/sidebar-menu.html' %}
 	</div>
 	<div class="page">
 	{% block content %}
 		<div class="block-sidebar_page">
 			{% include 'widgets/page-header.html' %}
 			{% for challenge in self.get_children %}
-				{% include 'widgets/page-challenge-header.html' with icon=challenge.specific.icon title=challenge.title description=challenge.specific.description %}
-			{% include 'widgets/plenary_workshop-list.html' with children=challenge.get_children %}
+				{% include 'widgets/page-challenge-header.html' with icon=challenge.specific.challenge_icon title=challenge.title description=challenge.specific.description %}
+			{% include 'widgets/plenary_workshop-list.html' with children=challenge.get_children show_icon=False %}
 			{% endfor %}
 		</div>
 	{% endblock %}

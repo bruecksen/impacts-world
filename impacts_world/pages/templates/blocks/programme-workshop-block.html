@@ -1,4 +1,4 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 <div class="container">
 	<div class="panel">
 		{% include "widgets/collapse-header.html" %}
@@ -13,7 +13,7 @@
 						<div class="row">
 							<div class="col-sm-8">
 								<div class="icon">
-								icon
+								{% image workshop.icon fill-40x40 %}
 								</div>
 								<div class="text">
 									<p><b><a href="">{{workshop.title}}</a></b><br>

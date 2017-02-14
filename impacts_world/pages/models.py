@@ -114,6 +114,33 @@ class ProgramOverviewPage(Page):
         StreamFieldPanel('content'),
     ]
 
+    def get_sidebar_menu(self, active_menu_item=None):
+        sidebar_menu = [{
+            'name': 'Overview',
+            'url': self.url,
+            'is_active': active_menu_item is None,
+        }]
+        for child in self.get_children():
+            children = []
+            for child_child in child.get_children():
+                children.append({
+                    'name': child_child.title,
+                    'url': slugify(child_child.title),
+                    'is_active': False,
+                })
+            sidebar_menu.append({
+                'name': child.title,
+                'url': child.url,
+                'is_active': active_menu_item and isinstance(child.specific, active_menu_item) or False,
+                'children': children,
+            })
+        return sidebar_menu
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context['sidebar_menu'] = self.get_sidebar_menu()
+        return context
+
 
 class ProgrammeItemPage(Page):
     description = RichTextField(null=True, blank=True)
@@ -151,12 +178,11 @@ class PlenaryItemPage(ProgrammeItemPage):
     def get_keynotes(self):
         keynotes = []
         for block in self.content:
-            for keynote in block.value:
-                keynotes.append({
-                    'title': keynote.get('title'),
-                    'name': keynote.get('name'),
-                    'institute': keynote.get('institute'),
-                })
+            keynotes.append({
+                'title': block.value.get('title'),
+                'name': block.value.get('name'),
+                'institute': block.value.get('institute'),
+            })
         return keynotes
 
 
@@ -202,6 +228,7 @@ class PlenaryOverviewPage(AbstractOverviewPage):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
+        context['sidebar_menu'] = self.get_parent().specific.get_sidebar_menu(self.content_type.model_class())
         return context
 
 
@@ -218,15 +245,27 @@ class WorkshopOverviewPage(AbstractOverviewPage):
                 'name': page.convenor_name,
                 'institute': page.convenor_institute,
                 'slug': slugify(page.title),
-                'icon': page.icon,
+                'icon': page.icon or page.get_parent().specific.workshop_icon,
                 'room': page.room,
             })
         return workshops
 
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context['sidebar_menu'] = self.get_parent().specific.get_sidebar_menu(self.content_type.model_class())
+        return context
+
 
 class WorkshopChallengePage(Page):
     description = RichTextField(null=True, blank=True)
-    icon = models.ForeignKey(
+    challenge_icon = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    workshop_icon = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
         blank=True,
@@ -235,7 +274,8 @@ class WorkshopChallengePage(Page):
     )
     content_panels = Page.content_panels + [
         FieldPanel('description'),
-        ImageChooserPanel('icon'),
+        ImageChooserPanel('challenge_icon'),
+        ImageChooserPanel('workshop_icon'),
     ]
     parent_page_types = ['WorkshopOverviewPage', ]
     subpage_types = ['WorkshopItemPage', ]
@@ -244,3 +284,8 @@ class WorkshopChallengePage(Page):
 class PosterOverviewPage(AbstractOverviewPage):
     subpage_types = ['PosterItemPage', ]
     template = 'pages/poster_page.html'
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context['sidebar_menu'] = self.get_parent().specific.get_sidebar_menu(self.content_type.model_class())
+        return context

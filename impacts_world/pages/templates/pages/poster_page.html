@@ -4,9 +4,7 @@
 {% block content_container %}
 <div class="sidebar-page clearfix">
 	<div class="sidebar">
-		<div class="container">
-		<h3>Sidebar</h3>
-		</div>
+		{% include 'widgets/sidebar-menu.html' %}
 	</div>
 	<div class="page">
 	{% block content %}

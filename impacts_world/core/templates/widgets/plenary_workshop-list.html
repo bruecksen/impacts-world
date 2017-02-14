@@ -3,9 +3,14 @@
 	<div class="widget-plenary_workshops">
 		<div class="container">
 			<div class="header">
-				{% image page.specific.icon fill-60x60 %}
+				{% if show_icon %}
+					{% image page.specific.icon fill-60x60 %}
+				{% endif %}
 				<div class="heading">
-					<h3>{{ page.title }}</h3>
+					<h3>
+						{{ page.title }}
+						<a id="{{ page.title|slugify }}" class="headerlink anchor-scroll" href="#{{ page.title|slugify }}" title="Permalink to this headline"></a>
+					</h3>
 					<p class="meta">{{ page.specific.date_time|date:'l d F' }}, {{ page.specific.date_time|date:'H:iA'|lower }}, {{ page.specific.room }}</p>
 				</div>
 				{% if page.specific.convenor_name %}

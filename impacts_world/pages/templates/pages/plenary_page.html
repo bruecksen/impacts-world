@@ -4,15 +4,13 @@
 {% block content_container %}
 <div class="sidebar-page clearfix">
 	<div class="sidebar">
-		<div class="container">
-		<h3>Sidebar</h3>
-		</div>
+		{% include 'widgets/sidebar-menu.html' %}
 	</div>
 	<div class="page">
 	{% block content %}
 		<div class="block-sidebar_page">
 			{% include 'widgets/page-header.html' %}
-			{% include 'widgets/plenary_workshop-list.html' with children=self.get_children %}
+			{% include 'widgets/plenary_workshop-list.html' with children=self.get_children show_icon=True %}
 		</div>
 	{% endblock %}
 	</div>
