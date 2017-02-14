@@ -1,5 +1,5 @@
 {% extends "pages/default_page.html" %}
-{% load wagtailcore_tags static header bootstrap3 %}
+{% load wagtailcore_tags static header crispy_forms_tags %}
 
 {% block content_container %}
 	{% if page.timeline_snippet %}
@@ -14,10 +14,9 @@
 		<h2>{{ page.form_title }}</h2>
 		{% endif %}
 		{% csrf_token %}
-		{% bootstrap_form form show_label=False %}
-			{% buttons %}
-				<button type="submit" class="btn btn-primary">{{ page.button_name }}</button>
-		{% endbuttons %}
+		{# {% bootstrap_form form show_label=False %} #}
+		{{ form|crispy }}
+		<button type="submit" class="btn btn-primary">{{ page.button_name }}</button>
 	</form>
 	</div>
 	<div class="form-page-bottom-content">{{ page.bottom_content }}</div>

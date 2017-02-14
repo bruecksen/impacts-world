@@ -83,6 +83,10 @@ class FormPage(AbstractEmailForm):
         ], "Form Builder"),
     ]
 
+    def get_form(self, *args, **kwargs):
+        form = super().get_form(*args, **kwargs)
+        return form
+
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         return context

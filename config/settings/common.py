@@ -16,7 +16,7 @@ DJANGO_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap3',
+    'crispy_forms',
 )
 
 CMS_APPS = (
@@ -204,9 +204,4 @@ TWITTER_TIMELINE = {
 }
 GOOGLE_MAPS_V3_APIKEY = env('GOOGLE_MAPS_V3_APIKEY', default=None)
 
-BOOTSTRAP3 = {
-    'field_renderers': {
-        'default': 'impacts_world.contrib.forms.LabelFieldRenderer',
-        'inline': 'bootstrap3.renderers.InlineFieldRenderer',
-    },
-}
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
