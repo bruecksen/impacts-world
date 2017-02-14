@@ -18,7 +18,6 @@
 				{% endif %}
 				<div class="intro-text">{{ page.specific.description|richtext }}</div>
 			</div>
-			{{page.specific.content}}
 			{% for block in page.specific.content %}
 				{% include_block block with is_last=forloop.last %}
 			{% endfor %}
