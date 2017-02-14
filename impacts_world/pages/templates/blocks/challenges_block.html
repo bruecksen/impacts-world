@@ -1,4 +1,4 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 <div class="jumbotron">
 	<div class="intro">
 		<div class="container">
@@ -16,24 +16,24 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 col-xs-12 challenge1">
-					<span class="number-circle">1</span>
+					{% image challenge1.icon fill-95x95 %}
 					<h3>{{ challenge1.name }}</h3>
 					{{ challenge1.short_description|safe }}
 				</div>
 				<div class="col-sm-6 col-xs-12 challenge2">
-					<span class="number-circle">2</span>
+					{% image challenge2.icon fill-95x95 %}
 					<h3>{{ challenge2.name }}</h3>
 					{{ challenge2.short_description|safe }}
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-6 col-xs-12 challenge3">
-					<span class="number-circle">3</span>
+					{% image challenge3.icon fill-95x95 %}
 					<h3>{{ challenge3.name }}</h3>
 					{{ challenge3.short_description|safe }}
 				</div>
 				<div class="col-sm-6 col-xs-12 challenge4">
-					<span class="number-circle">4</span>
+					{% image challenge4.icon fill-95x95 %}
 					<h3>{{ challenge4.name }}</h3>
 					{{ challenge4.short_description|safe }}
 				</div>

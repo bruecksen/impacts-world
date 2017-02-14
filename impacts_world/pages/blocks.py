@@ -60,6 +60,7 @@ class VideoTeaserBlock(StructBlock):
 
 class ChallengeBlock(StructBlock):
     name = CharBlock(required=True)
+    icon = ImageChooserBlock(required=True)
     short_description = RichTextBlock(required=True)
 
 
@@ -266,7 +267,7 @@ class PlenaryBlock(AbstractPanelBlock):
         context['time'] = plenary_page.date_time
         keynotes = plenary_page.get_keynotes()
         context['keynotes'] = keynotes
-        context['plenary_url'] = plenary_page.get_parent().url
+        context['plenary_url'] = "%s#%s" % (plenary_page.get_parent().url, slugify(plenary_page.title))
         if keynotes:
             context['is_collapsible'] = True
         return context

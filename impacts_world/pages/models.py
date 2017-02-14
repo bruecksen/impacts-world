@@ -244,7 +244,7 @@ class WorkshopOverviewPage(AbstractOverviewPage):
                 'title': page.title,
                 'name': page.convenor_name,
                 'institute': page.convenor_institute,
-                'slug': slugify(page.title),
+                'url': '%s#%s' % (page.get_parent().get_parent().url, slugify(page.title)),
                 'icon': page.icon or page.get_parent().specific.workshop_icon,
                 'room': page.room,
             })
