@@ -12,3 +12,23 @@
 //     }
 //   });
 // });
+
+$(document).ready(function () {
+
+var menu = $('.navbar-default');
+var origOffsetY = menu.offset().top;
+var is_sticky = menu.hasClass('navbar-fixed-top');
+
+function scroll() {
+	if ($(window).scrollTop() >= origOffsetY) {
+		$('.navbar-default').addClass('navbar-fixed-top');
+		$('body').addClass('navbar-padding');
+	} else {
+		$('.navbar-default').removeClass('navbar-fixed-top');
+		$('body').removeClass('navbar-padding');
+	}
+}
+if (is_sticky === false) {
+	document.onscroll = scroll;
+}
+});
