@@ -153,7 +153,7 @@ class ProgrammeItemPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    parent_page_types = ['ProgramOverviewPage', 'WorkshopChallengePage']
+    parent_page_types = ['ProgramOverviewPage', 'WorkshopChallengePage', 'PosterOverviewPage', 'PlenaryOverviewPage']
 
     content_panels = Page.content_panels + [
         FieldPanel('date_time'),
