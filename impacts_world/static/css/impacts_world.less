@@ -5,8 +5,8 @@
 @color-neutral: #4a4a4a;
 @color-neutral-light: #F1F1F1;
 @color-neutral-dark: black;
-@color-primary: #fcbc48; // yellow
-@color-primary-light: #FDD88F; // light yellow
+@color-primary: #FEBD39; // yellow
+@color-primary-light: #FCD794; // light yellow
 @color-secondary: #a9d4a6; // green
 @color-secondary-light: #e4f1e4; 
 @color-secondary-superlight: #f6faf6; 
@@ -101,14 +101,19 @@ body {
 
 a {
 	color: @color-neutral;
-	text-decoration: underline;
-
-	&:hover, &:focus {
-		color: @color-neutral;
-	}
 }
 .super a {
   color: @color-white;
+}
+
+p a,
+.rich-text a {
+	border-bottom: 1px solid @color-neutral;
+	&:hover, &:focus {
+		text-decoration: none;
+		color: @color-neutral;
+		background-color: @color-yellow;
+	}
 }
 
 
@@ -472,6 +477,7 @@ hr {
 	  }
 	}
 
+
 // ################ Use Hamburger for SM START ####################
 	@media (min-width: 768px) {
 		.navbar-collapse {
@@ -625,7 +631,6 @@ hr {
 			background-image: url(../images/navbar-left.png);
 			background-repeat: no-repeat;
 			background-position: center right;
-			min-width: 320px;
 			.navbar-brand {
 				// padding: 14px 0 0 15px;
 				height: 60px;
@@ -692,12 +697,16 @@ hr {
 				background-color: @color-primary-light;
 				padding-left: 20px;
 				padding-right: 20px;
+				min-width: 50%;
+				@media (min-width: 1200px) {
+					min-width: 65%;
+				}
 				> li {
 					> a {
 						font-weight: 700;
-						padding: 3px 5px;
-						margin-top: 16px;
-						margin-bottom: 16px;
+						padding: 5px 10px;
+						margin-top: 14px;
+						margin-bottom: 14px;
 						margin-right: 15px;
 						// @media(min-width:992px) {
 						// 	padding: 20px 15px 20px 15px;
@@ -725,20 +734,7 @@ hr {
 							background-color: transparent;
 							position: relative;
 							border: 1px solid @color-neutral;
-
-
-							@media(min-width:992px) {
-								// &::after {
-								//     display: block;
-								//     content: " ";
-								//     position: absolute;
-								//     bottom: 25px;
-								//     left: 18px;
-								//     right: 18px;
-								//     height: 3px;
-								//     background-color: @color-neutral;
-								// }
-							}
+							border-radius: 2px;
 						}
 					}
 				}
@@ -749,7 +745,27 @@ hr {
 			background-repeat: no-repeat;
 			background-position: center left;
 			background-color: @color-neutral-light;
-			font-weight: 800;
+			width: 190px;
+			a {
+				font-weight: 800;
+				padding: 5px 10px;
+				margin-top: 14px;
+				margin-bottom: 14px;
+				margin-right: 15px;
+				border: 1px solid transparent;
+				text-align: center;
+				text-decoration: none;
+				text-transform: uppercase;
+				color: @color-neutral;
+				display: inline-block;
+				float: right;
+				&.active {
+						background-color: transparent;
+						position: relative;
+						border: 1px solid @color-neutral;
+						border-radius: 2px;
+				}
+			}
 			float: left;
 			ul.navbar-nav {
 				background-color: transparent !important;
@@ -767,6 +783,7 @@ hr {
 footer {
 	margin: 60px auto 0 auto;
 	max-width: 85%;
+	font-size: 14px;
 }
 
 // collapsible element
@@ -775,7 +792,7 @@ footer {
 	-moz-box-shadow: none;
 	box-shadow: none;
 	.panel-heading {
-		padding: 8px 0;
+		padding: 6px 0;
 		h4, p {
 			max-width: 80%;
 			margin-bottom: 0;
@@ -929,25 +946,25 @@ footer {
 					content: '';
 					display: inline-block;
 					position: absolute;
-					top: -4px;
+					top: -5px;
 					left: 0;
-					width: 8px;
-					height: 8px;
+					width: 10px;
+					height: 10px;
 					background: @color-white;
 					border: 1px solid #979797;
-					-moz-border-radius: 8px;
-					-webkit-border-radius: 8px;
-					border-radius: 8px;
+					-moz-border-radius: 10px;
+					-webkit-border-radius: 10px;
+					border-radius: 10px;
 				}
 				&.active:before {
-						top: -7px;
-						left: 0;
-						width: 14px;
-						height: 14px;
-						background-color: #fcbc48;
-						-moz-border-radius: 14px;
-						-webkit-border-radius: 14px;
-						border-radius: 14px;
+					top: -8px;
+					left: 0;
+					width: 15px;
+					height: 15px;
+					background-color: #fcbc48;
+					-moz-border-radius: 16px;
+					-webkit-border-radius: 16px;
+					border-radius: 16px;
 				}
 			}
 		}
@@ -955,6 +972,11 @@ footer {
 }
 
 .block-teaser {
+	a:hover {
+		h1, .h1, h2, .h2, h3, .h3, h4, .h4, p, a {
+			background-color: @color-yellow;
+		}
+	}
 	h1, .h1, h2, .h2, h3, .h3, h4, .h4, p, a{
 		margin: 0;
 		font-size: 26px;
@@ -962,6 +984,7 @@ footer {
 		line-height: 1.5;
 		color: @color-white;
 		text-decoration: none;
+		display: inline-block;
 	}
 	.widget-richtext-content {
 		padding: 30px;
@@ -995,7 +1018,7 @@ footer {
 		padding-top: 30px;
 		padding-bottom: 20px;
 		p {
-			font-size: 14px;
+			font-size: 18px;
 		}
 	}
 	.challenges {
@@ -1201,9 +1224,19 @@ footer {
 	}
 	.help-block {
 		font-size: 14px;
+		margin-left: 6px;
+		margin-top: -3px;
 	}
 	h3, .btn {
 		margin-top: 40px;
+	}
+	label {
+	    display: inline-block;
+	    max-width: 100%;
+	    margin-bottom: 3px;
+	    font-weight: 400;
+	    margin-top: 5px;
+	    margin-left: 6px;
 	}
 }
 
@@ -1456,7 +1489,7 @@ footer {
 				font-size: 16px;
 			}
 			.divider {
-				border-bottom: 1px solid #979797;
+				border-bottom: 1px solid #CACACA;
 				position: absolute;
 				left: 5px;
 				right: 5px;

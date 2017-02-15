@@ -55,13 +55,8 @@
 				</ul>
 				<div class="navbar-footer">
 				{% if participate %}
-				<ul class="nav navbar-nav">
-					<li{% if participate.active %} class="active"{% endif %}>
-						<a href="{{ participate.url }}">{{ participate.text }} <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-					</li>
-				</ul>
+						<a {% if participate.active %} class="active"{% endif %} href="{{ participate.url }}">{{ participate.text }} <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
 				{% endif %}
-				</div>
 			</div><!-- navbar-collapse -->
 		</div><!-- container -->
 	</nav>
