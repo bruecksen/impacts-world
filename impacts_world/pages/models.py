@@ -1,13 +1,15 @@
+import json
+
+from django.core.serializers.json import DjangoJSONEncoder
 from django.utils.text import slugify
 from django.db import models
 
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtailcore.blocks import ListBlock
 from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel, RichTextFieldPanel, InlinePanel, FieldPanel, MultiFieldPanel
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-from wagtail.wagtailforms.models import AbstractEmailForm
+from wagtail.wagtailforms.models import AbstractEmailForm, AbstractFormSubmission
 from modelcluster.fields import ParentalKey
 
 from impacts_world.pages.blocks import (
@@ -83,13 +85,36 @@ class FormPage(AbstractEmailForm):
         ], "Form Builder"),
     ]
 
-    def get_form(self, *args, **kwargs):
-        form = super().get_form(*args, **kwargs)
-        return form
-
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         return context
+
+    def get_data_fields(self):
+        data_fields = [
+            ('identifier', 'Identifier'),
+        ]
+        data_fields += super(FormPage, self).get_data_fields()
+        return data_fields
+
+    def get_submission_class(self):
+            return CustomFormSubmission
+
+    def process_form_submission(self, form):
+        self.get_submission_class().objects.create(
+            form_data=json.dumps(form.cleaned_data, cls=DjangoJSONEncoder),
+            page=self
+        )
+
+
+class CustomFormSubmission(AbstractFormSubmission):
+
+    def get_data(self):
+        form_data = super(CustomFormSubmission, self).get_data()
+        form_data.update({
+            'identifier': self.pk,
+        })
+
+        return form_data
 
 
 TIMELINE_ITEM_PLENARY = 'plenary'
