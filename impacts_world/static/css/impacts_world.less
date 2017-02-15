@@ -823,14 +823,15 @@ footer {
 			position: relative;
 		}
 		.accordion-toggle:after {
-			content: "\f077"; // arrow up
+			content: "\f106"; // arrow up
 			font: normal normal normal 14px/1 FontAwesome;
 			position: absolute;
 			right: 0;
-			top: 6px;
+			top: 3px;
+			font-size: 18px;
 		}
 		.accordion-toggle.collapsed:after {
-			content: "\f078"; // arrow down
+			content: "\f107"; // arrow down
 		}
 	}
 	.panel-body {
@@ -985,6 +986,9 @@ footer {
 		color: @color-white;
 		text-decoration: none;
 		display: inline-block;
+		&:first-child {
+			margin-bottom: 5px;
+		}
 	}
 	.widget-richtext-content {
 		padding: 30px;
