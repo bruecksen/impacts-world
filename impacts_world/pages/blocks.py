@@ -104,7 +104,8 @@ class Testimonials(StructBlock):
         testimonials = value.get('testimonials')
         # split testimonials in chunks of 3 to make it work with the slider
         chunks = [testimonials[i:i + 3] for i in range(0, len(testimonials), 3)]
-        context['testimonials'] = chunks
+        context['chunks'] = chunks
+        context['testimonials'] = testimonials
         return context
 
 

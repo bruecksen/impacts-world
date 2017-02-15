@@ -2,12 +2,12 @@
 <div id="carousel-testimonials" class="carousel slide" data-ride="carousel" data-interval="false">
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
-		{% for chunk in testimonials %}
+		{% for chunk in chunks %}
 		<div class="item{% if forloop.first %} active{% endif %}">
 			<div class="container">
 				<div class="row">
 				{% for testimonial in chunk %}
-					<div class="col-md-4 text-center">
+					<div class="col-sm-4 text-center">
 						{% image testimonial.picture fill-120x120 %}
 						<blockquote>
 							<p>{{ testimonial.testimonial }}</p>
@@ -21,7 +21,6 @@
 		</div>
 		{% endfor %}
 	</div>
-	
 	{% if testimonials|length > 1 %}
 		<!-- Controls -->
 		<a class="left carousel-control" href="#carousel-testimonials" role="button" data-slide="prev">
