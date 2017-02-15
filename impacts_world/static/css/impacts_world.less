@@ -986,7 +986,7 @@ footer {
 		color: @color-white;
 		text-decoration: none;
 		display: inline-block;
-		+ h1, .h1, h2, .h2, h3, .h3, h4, .h4, p, a {
+		&:first-child:not(:last-child) {
 			margin-bottom: 5px;
 		}
 	}
