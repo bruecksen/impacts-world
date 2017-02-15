@@ -1,5 +1,5 @@
 {% load wagtailcore_tags wagtailimages_tags %}
-<div id="carousel-testimonials" class="carousel slide" data-ride="carousel" data-interval="false">
+<div id="carousel-testimonials" class="carousel slide hidden-xs" data-ride="carousel" data-interval="false">
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
 		{% for chunk in chunks %}
@@ -32,4 +32,16 @@
 		<span class="sr-only">Next</span>
 		</a>
 	{% endif %}
+</div>
+<div class="container hidden-sm hidden-md hidden-lg">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			{% image random_testimonial.picture fill-120x120 %}
+			<blockquote>
+				<p>{{ random_testimonial.testimonial }}</p>
+			</blockquote>
+			<h4><b>{{ random_testimonial.name }}</b><br>
+			{{ random_testimonial.institute }}</h4>
+		</div>
+	</div>
 </div>

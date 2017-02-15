@@ -1,3 +1,4 @@
+import random
 import uuid
 from django.conf import settings
 from django.utils.text import slugify
@@ -105,7 +106,7 @@ class Testimonials(StructBlock):
         # split testimonials in chunks of 3 to make it work with the slider
         chunks = [testimonials[i:i + 3] for i in range(0, len(testimonials), 3)]
         context['chunks'] = chunks
-        context['testimonials'] = testimonials
+        context['random_testimonial'] = random.choice(testimonials)
         return context
 
 
