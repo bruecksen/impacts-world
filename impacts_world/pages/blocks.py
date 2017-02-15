@@ -257,7 +257,7 @@ class PlenaryBlock(AbstractPanelBlock):
     plenary_page = PageChooserBlock(required=True, target_model='pages.PlenaryItemPage')
 
     class Meta:
-        label = 'Planery'
+        label = 'Plenary'
         template = 'blocks/programme-plenary-block.html'
         icon = 'user'
 
