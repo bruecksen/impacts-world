@@ -1,10 +1,17 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 <div class="widget-page-header">
 	<div class="container">
-		<h2>{% image icon fill-60x60 %}{{ title }}
+	<div class="header{% if icon %} header-with-icon{% endif %}">
+		{% if icon %}
+		<div class="icon">
+			{% image icon fill-60x60 %}
+		</div>
+		{% endif %}
+		<h2>{{ title }}
 			<a id="{{ title|slugify }}" class="headerlink anchor-scroll" href="#{{ title|slugify }}" title="Permalink to this headline"></a>
 		</h2>
-		{% if room %}<p>{{ room }}</p>{% endif %}
+	</div>
+		{% if room %}<p class="room">{{ room }}</p>{% endif %}
 		{{ description|richtext }}
 	</div>
 </div>

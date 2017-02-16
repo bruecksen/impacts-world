@@ -2,7 +2,7 @@
 {% for page in children %}
 	<div class="widget-plenary_workshops">
 		<div class="container">
-			<div class="header">
+			<div class="header{% if show_icon and page.specific.icon %} header-with-icon{% endif %}">
 				{% if show_icon %}
 					{% image page.specific.icon fill-60x60 %}
 				{% endif %}

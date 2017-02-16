@@ -245,10 +245,13 @@ ul {
 }
 
 a.anchor-scroll {
-    display: block;
-    position: relative;
-    top: -120px;
-    visibility: hidden;
+	display: block;
+	position: relative;
+	top: -120px;
+	visibility: hidden;
+	@media(max-width: 768px) {
+		top: -160px;
+	}
 }
 
 
@@ -857,7 +860,7 @@ footer {
 	}
 	@media(max-width: 768px) {
 		.panel-heading {
-			h4, p {
+			h4 {
 				max-width: 70%;
 			}
 		}
@@ -1225,11 +1228,34 @@ footer {
 }
 
 .widget-page-header {
+	.header {
+		&.header-with-icon {
+			h2 {
+				max-width: 87%;
+				float: left;
+				display: inline-block;
+			}
+		}
+	}
+	.icon {
+		display: inline-block;
+		float: left;
+		margin-right: 10px;
+		img {
+			height: auto;
+			width: 30px;
+		}
+	}
+	.rich-text,
+	.room {
+		clear: both;
+	}
 	.intro-text {
 		p {
 			font-size: 18px;
 		}
 	}
+
 	ul {
 		margin-top: 15px;
 		li {
@@ -1561,9 +1587,13 @@ footer {
 				margin-top: -5px;
 				margin-right: 8px;
 			}
+			&.header-with-icon {
+				.heading {
+					max-width: 87%;
+				}
+			}
 			.heading {
 				display: inline-block;
-				max-width: 87%;
 				h3 {
 					font-weight: 800;
 					margin-bottom: 5px;
@@ -1654,7 +1684,7 @@ footer {
 				line-height: 1.5;
 			}
 			.rich-text {
-				padding-left: 10%;
+				padding-left: 80px;
 				color: #9b9b9b;
 				font-weight: 300;
 				font-size: 14px;
@@ -1665,7 +1695,21 @@ footer {
 		}
 		.panel-body {
 			.rich-text {
-				padding-left: 10%;
+				padding-left: 80px
+			}
+		}
+	}
+	@media(max-width: 768px) {
+		.panel {
+			.panel-title {
+				.rich-text {
+					padding-left: 80px;
+				}
+			}
+			.panel-body {
+				.rich-text {
+					padding-left: 0;
+				}
 			}
 		}
 	}
