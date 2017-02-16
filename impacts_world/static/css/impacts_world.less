@@ -112,11 +112,6 @@ abbr[data-original-title], abbr[title] {
   height: auto;
 }
 
-.form-control,
-.help-block {
-	max-width: 50%;
-}
-
 .form-control {
   border-radius: 4px;
   border-width: 1px;
@@ -819,9 +814,6 @@ footer {
 			float: left;
 			min-width: 80px;
 		}
-		span.number {
-			width: 10%;
-		}
 		a,
 		a:hover,
 		a:active {
@@ -1354,6 +1346,7 @@ footer {
 .block-form {
 	// background-image: linear-gradient(177deg, #a9d4a6, #fcbc48);
 	padding: 30px;
+	.help-block, 
 	.form-control {
 		max-width: 50%;
 	}
@@ -1366,12 +1359,18 @@ footer {
 		margin-top: 40px;
 	}
 	label {
-	    display: inline-block;
-	    max-width: 100%;
-	    margin-bottom: 3px;
-	    font-weight: 400;
-	    margin-top: 5px;
-	    margin-left: 6px;
+		display: inline-block;
+		max-width: 100%;
+		margin-bottom: 3px;
+		font-weight: 400;
+		margin-top: 5px;
+		margin-left: 6px;
+	}
+	@media(max-width: 991px) {
+		.help-block,
+		.form-control {
+			max-width: 100%;
+		}
 	}
 }
 
@@ -1702,8 +1701,14 @@ footer {
 	@media(max-width: 768px) {
 		.panel {
 			.panel-title {
+				h4 {
+					display: block;
+					clear: both;
+				}
 				.rich-text {
-					padding-left: 80px;
+					display: block;
+					clear: both;
+					padding-left: 0;
 				}
 			}
 			.panel-body {
