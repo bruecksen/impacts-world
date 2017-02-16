@@ -11,7 +11,7 @@
 					{% if workshops %}
 						{% for workshop in workshops %}
 						<div class="row">
-							<div class="col-sm-8">
+							<div class="col-xs-12 col-sm-8">
 								<div class="icon">
 								{% image workshop.icon fill-40x40 %}
 								</div>
@@ -20,8 +20,8 @@
 									Convenor: {{workshop.name}}</p>
 								</div>
 							</div>
-							<div class="col-sm-4 text-right">
-								<span class="room">{{workshop.room}}</span>
+							<div class="col-xs-12 col-sm-4 room">
+								<span>{{workshop.room}}</span>
 							</div>
 						</div>
 						{% endfor %}

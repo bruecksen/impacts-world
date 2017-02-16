@@ -6,7 +6,7 @@
 			<li{% if entry.is_active %} class="page-active"{% endif %}>
 				<a href="{{ entry.url }}">{{ entry.name }}</a>
 				{% if entry.is_active and entry.children %}
-					<ul class="nav">
+					<ul class="nav hidden-xs">
 					{% for child in entry.children %}
 						<li><a href="#{{ child.url }}">{{ child.name }}</a></li>
 					{% endfor %}

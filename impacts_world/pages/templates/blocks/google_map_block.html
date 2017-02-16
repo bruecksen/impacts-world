@@ -9,6 +9,11 @@ function initialize() {
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
   var map=new google.maps.Map(document.getElementById("googleMap-{{ self.map_lat }}{{ self.map_long }}"),mapProp);
+  map.setOptions({draggable: false});
+  map.setOptions({mapTypeControl: false});
+  map.setOptions({zoomControl: false});
+  map.setOptions({streetViewControl: false});
+  map.setOptions({rotateControl: false});
   var marker = new google.maps.Marker({
           position: position,
           map: map
@@ -17,4 +22,6 @@ function initialize() {
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
+<a href="https://maps.google.de/maps?q={{ self.map_lat }},{{ self.map_long }}" target="_blank">
 <div id="googleMap-{{ self.map_lat }}{{ self.map_long }}" style="width:100%;height:280px;"></div>
+</a>
