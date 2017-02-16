@@ -1261,17 +1261,17 @@ footer {
 		li {
 			margin-bottom: 10px;
 			a {
-				background-image: none!important;
-				background-color: transparent!important;
+				background-image: none;
+				background-color: transparent;
 				color: @color-neutral;
-				text-decoration: none;
 				font-size: 14px;
 				font-weight: 500;
 				padding: 0;
-				&:hover {
-					text-decoration: underline;
-					background-image: none;
-					background-color: transparent;
+				display: inline-block;
+				border-bottom: 1px solid @color-neutral;
+				&:hover, &:focus {
+					color: @color-neutral;
+					background-color: @color-yellow;
 				}
 			}
 		}
