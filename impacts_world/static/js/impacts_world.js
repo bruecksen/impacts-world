@@ -32,3 +32,18 @@ if (is_sticky === false) {
 	document.onscroll = scroll;
 }
 });
+
+
+$(document).ready(function () {
+	var navbarMobile = $('.navbar-mobile');
+	$('.navbar-toggle').click(function() {
+		if ($(this).hasClass('collapsed')) {
+			$(this).removeClass('collapsed');
+			navbarMobile.show();
+		} else {
+			$(this).addClass('collapsed');
+			navbarMobile.hide();
+		}
+	});
+
+});

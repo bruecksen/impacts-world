@@ -399,7 +399,7 @@ class ContributionBlock(StructBlock):
     def get_context(self, value):
         context = super().get_context(value)
         context['title'] = value.get('title')
-        context['subtitle'] = "(%s, %s)" % (value.get('name'), value.get('institute'))
+        context['subtitle'] = "%s (%s)" % (value.get('name'), value.get('institute'))
         context['description'] = value.get('description')
         context['panel_id'] = uuid.uuid4()
         return context

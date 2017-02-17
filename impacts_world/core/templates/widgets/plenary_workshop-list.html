@@ -14,7 +14,7 @@
 					<p class="meta">{{ page.specific.date_time|date:'l d F' }}, {{ page.specific.date_time|date:'H:iA'|lower }}, {{ page.specific.room }}</p>
 				</div>
 				{% if page.specific.convenor_name %}
-				<p>Convenor: <b>{{ page.specific.convenor_name }}</b> ({{ page.specific.convenor_institute }})</p>
+				<p>Host: <b>{{ page.specific.convenor_name }}</b> ({{ page.specific.convenor_institute }})</p>
 				{% endif %}
 				<div class="intro-text">{{ page.specific.description|richtext }}</div>
 			</div>
