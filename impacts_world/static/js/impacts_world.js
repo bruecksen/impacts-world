@@ -36,7 +36,8 @@ if (is_sticky === false) {
 
 $(document).ready(function () {
 	var navbarMobile = $('.navbar-mobile');
-	$('.navbar-toggle').click(function() {
+	$('.navbar-toggle').click(function(event) {
+		event.preventDefault();
 		if ($(this).hasClass('collapsed')) {
 			$(this).removeClass('collapsed');
 			navbarMobile.show();

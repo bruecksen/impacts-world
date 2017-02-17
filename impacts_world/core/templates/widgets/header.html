@@ -41,18 +41,6 @@
 				{% if participate %}
 					<a class="hidden-xs hidden-md hidden-lg main participate{% if participate.active %} active{% endif %}" href="{{ participate.url }}">{{ participate.text }} <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
 				{% endif %}
-				<div class="navbar-mobile">
-					<ul class="nav navbar-nav">
-					{% for link in links %}
-						<li{% if link.active %} class="active"{% endif %}>
-							<a href="{{ link.url }}">{{ link.text }}</a>
-						</li>
-					{% endfor %}
-					{% if participate %}
-						<li><a class="{% if participate.active %} active{% endif %}" href="{{ participate.url }}">{{ participate.text }} <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></li>
-					{% endif %}
-					</ul>
-				</div>
 			</div><!-- navbar-collapse -->
 			<div class="navbar-footer">
 			&nbsp;
@@ -68,4 +56,16 @@
 			</div>
 		</div><!-- container -->
 	</nav>
+	<div class="navbar-mobile">
+		<ul class="nav navbar-nav">
+		{% for link in links %}
+			<li{% if link.active %} class="active"{% endif %}>
+				<a href="{{ link.url }}">{{ link.text }}</a>
+			</li>
+		{% endfor %}
+		{% if participate %}
+			<li><a class="{% if participate.active %} active{% endif %}" href="{{ participate.url }}">{{ participate.text }} <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></li>
+		{% endif %}
+		</ul>
+	</div>
 </div><!-- widget-header -->
