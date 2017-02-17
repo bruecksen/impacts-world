@@ -11,7 +11,7 @@
 						{{ page.title }}
 						<a id="{{ page.title|slugify }}" class="headerlink anchor-scroll" href="#{{ page.title|slugify }}" title="Permalink to this headline"></a>
 					</h3>
-					<p class="meta">{{ page.specific.date_time|date:'l d F' }}, {{ page.specific.date_time|date:'H:iA'|lower }}, {{ page.specific.room }}</p>
+					<p class="meta">{{ page.specific.date_time|date:'l d F' }}, {{ page.specific.date_time|date:'g:iA'|lower }}, {{ page.specific.room }}</p>
 				</div>
 				{% if page.specific.convenor_name %}
 				<p>Host: <b>{{ page.specific.convenor_name }}</b> ({{ page.specific.convenor_institute }})</p>
