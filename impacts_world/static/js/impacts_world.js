@@ -36,13 +36,6 @@ if (is_sticky === false) {
 }
 });
 
-$('body').on({
-	'touchmove': function(e) { 
-		scroll();
-	}
-});
-
-
 $(document).ready(function () {
 	var navbarMobile = $('.navbar-mobile');
 	$('.navbar-toggle').click(function(event) {
