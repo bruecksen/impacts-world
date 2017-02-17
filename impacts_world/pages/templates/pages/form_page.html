@@ -16,7 +16,9 @@
 		{% csrf_token %}
 		{# {% bootstrap_form form show_label=False %} #}
 		{{ form|crispy }}
+		{% if form.fields %}
 		<button type="submit" class="btn btn-primary">{{ page.button_name }}</button>
+		{% endif %}
 	</form>
 	</div>
 	<div class="form-page-bottom-content">{{ page.bottom_content }}</div>
