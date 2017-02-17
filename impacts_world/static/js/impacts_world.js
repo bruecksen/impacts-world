@@ -33,8 +33,13 @@ function scroll() {
 }
 if (is_sticky === false) {
 	document.onscroll = scroll;
-	document.ontouchmove = scroll;
 }
+});
+
+$('body').on({
+	'touchmove': function(e) { 
+		scroll();
+	}
 });
 
 
