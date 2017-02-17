@@ -717,6 +717,7 @@ hr {
 			margin-right: 0;
 			margin-bottom: 15px;
 			padding: 7px;
+			padding-top: 8px;
 			background-color: @color-neutral;
 			background-image: none;
 			border: 1px solid transparent;
@@ -725,13 +726,65 @@ hr {
 			right: -10px;
 			cursor: pointer;
 			z-index:99;
+			border: none;
+			width: 30px;
+			height: 30px;
+			&:hover {
+				// background: transparent !important;
+			}
+
 			.icon-bar {
-				width: 18px;
+				position: relative;
+				width: 16px;
+				transition: all 0.2s;
+				-webkit-transition: all 0.2s ease;
+				-moz-transition: all 0.2s ease;
+				-ms-transition: all 0.2s ease;
+				-o-transition: all 0.2s ease;
 				background-color: white;
+			}
+			.top-bar {
+				top: 6px;
+				transform: rotate(45deg);
+				-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+				-moz-transform: rotate(45deg); /* Firefox */
+				-ms-transform: rotate(45deg); /* IE 9 */
+			}
+			.middle-bar {
+				opacity: 0;
+			}
+			.bottom-bar {
+				top: -6px;
+				transform: rotate(-45deg);
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+			}
+
+			&.collapsed {
+				.top-bar {
+					top: 0;
+					transform: rotate(0);     
+					-webkit-transform: rotate(0);
+					-moz-transform: rotate(0);
+					-ms-transform: rotate(0);
+				}
+				.middle-bar {
+					top: 0;
+					opacity: 1;
+				}
+				.bottom-bar {
+					top: 0;
+					transform: rotate(0);
+					-webkit-transform: rotate(0);
+					-moz-transform: rotate(0);
+					-ms-transform: rotate(0);
+				}
 			}
 		}
 	}
 }
+
 
 .navbar-mobile {
 	display: none;
@@ -743,9 +796,11 @@ hr {
 	height: 100%;
 	z-index: 999;
 	ul.navbar-nav {
+		float: none;
 		margin-top: 20%;
 		> li {
 			text-align: center;
+			float: none;
 			> a {
 				font-weight: 700;
 				font-size: 19px;
@@ -828,7 +883,7 @@ hr {
 			min-width: inherit;
 		}
 		.navbar-footer {
-			background-image: url(/static/images/navbar-right.png);
+			background-image: url(/static/images/navbar-right-mobile.png);
 			width: 60px;
 			height: 60px;
 		}
