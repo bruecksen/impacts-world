@@ -31,37 +31,41 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="widget-header-{{ id }}">
-				<ul class="nav navbar-nav main">
+				<ul class="nav navbar-nav main hidden-xs hidden-sm">
 					{% for link in links %}
 						<li{% if link.active %} class="active"{% endif %}>
 							<a href="{{ link.url }}">{{ link.text }}</a>
-							{% if link.sublinks %}
-								<ul>
-								{% for sublink in link.sublinks %}
-									<li{% if sublink.active %} class="active"{% endif %}>
-										<a href="{{ sublink.url }}">{{ sublink.text }}</a>
-									</li>
-								{% endfor %}
-								</ul>
-							{% endif %}
 						</li>
 					{% endfor %}
 				</ul>
 				{% if participate %}
-					<a class="main participate{% if participate.active %} active{% endif %}" href="{{ participate.url }}">{{ participate.text }} <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+					<a class="hidden-xs hidden-md hidden-lg main participate{% if participate.active %} active{% endif %}" href="{{ participate.url }}">{{ participate.text }} <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
 				{% endif %}
-				<div class="navbar-footer">
+				<div class="navbar-mobile">
+					<ul class="nav navbar-nav">
+					{% for link in links %}
+						<li{% if link.active %} class="active"{% endif %}>
+							<a href="{{ link.url }}">{{ link.text }}</a>
+						</li>
+					{% endfor %}
 					{% if participate %}
-						<a class="participate{% if participate.active %} active{% endif %}" href="{{ participate.url }}">{{ participate.text }} <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+						<li><a class="{% if participate.active %} active{% endif %}" href="{{ participate.url }}">{{ participate.text }} <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a></li>
 					{% endif %}
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#widget-header-{{ id }}" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
+					</ul>
 				</div>
 			</div><!-- navbar-collapse -->
+			<div class="navbar-footer">
+			&nbsp;
+				{% if participate %}
+					<a class="participate{% if participate.active %} active{% endif %} hidden-xs hidden-sm" href="{{ participate.url }}">{{ participate.text }} <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+				{% endif %}
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#widget-header-{{ id }}" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
 		</div><!-- container -->
 	</nav>
 </div><!-- widget-header -->
