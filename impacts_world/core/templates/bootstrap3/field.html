@@ -31,6 +31,11 @@
 					{{ field.label|safe }}
 				</label>
 				{% include 'bootstrap3/layout/help_text_and_errors.html' %}
+			{% elif field|css_class == 'headingwidget' %}
+				<div class="controls {{ field_class }}">
+					{% crispy_field field %}
+					{% include 'bootstrap3/layout/help_text_and_errors.html' %}
+				</div>
 			{% else %}
 				<div class="controls {{ field_class }}">
 					{% include 'bootstrap3/layout/help_text_and_errors.html' %}
