@@ -1,5 +1,5 @@
 {% load crispy_forms_field %}
-
+{{ field|css_class}}
 {% if field.is_hidden %}
 	{{ field }}
 {% else %}
@@ -32,7 +32,6 @@
 				</label>
 				{% include 'bootstrap3/layout/help_text_and_errors.html' %}
 			{% elif field|css_class == 'headingwidget' %}
-			<h3>heading widget</h3>
 				<div class="controls {{ field_class }}">
 					{% crispy_field field %}
 					{% include 'bootstrap3/layout/help_text_and_errors.html' %}
