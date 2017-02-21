@@ -103,12 +103,6 @@ class FormPage(AbstractEmailForm):
     def get_submission_class(self):
             return CustomFormSubmission
 
-    def process_form_submission(self, form):
-        self.get_submission_class().objects.create(
-            form_data=json.dumps(form.cleaned_data, cls=DjangoJSONEncoder),
-            page=self
-        )
-
 
 class CustomFormSubmission(AbstractFormSubmission):
 
