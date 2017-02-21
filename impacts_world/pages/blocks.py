@@ -206,6 +206,23 @@ class Columns1To1To1Block(StructBlock):
         return context
 
 
+class Columns2To1To1Block(StructBlock):
+    left_column = StreamBlock(_COLUMNS_BLOCKS)
+    center_column = StreamBlock(_COLUMNS_BLOCKS)
+    right_column = StreamBlock(_COLUMNS_BLOCKS)
+
+    class Meta:
+        label = 'Columns 2:1:1'
+        template = 'blocks/columns-2-1-1.html'
+
+    def get_context(self, value):
+        context = super().get_context(value)
+        context['left_column'] = value.get('left_column')
+        context['center_column'] = value.get('center_column')
+        context['right_column'] = value.get('right_column')
+        return context
+
+
 class Columns1To1To1To1Block(StructBlock):
     first_column = StreamBlock(_COLUMNS_BLOCKS)
     second_column = StreamBlock(_COLUMNS_BLOCKS)
@@ -231,6 +248,7 @@ COLUMNS_BLOCKS = [
     ('columns_1_to_3', Columns1To3Block()),
     ('columns_2_to_1', Columns2To1Block()),
     ('columns_1_to_1_to_1', Columns1To1To1Block()),
+    ('columns_2_to_1_to_1', Columns2To1To1Block()),
     ('columns_1_to_1_to_1_to_1', Columns1To1To1To1Block()),
 ]
 

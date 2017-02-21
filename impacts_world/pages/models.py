@@ -4,6 +4,8 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.utils.text import slugify
 from django.db import models
 
+from wagtail.contrib.settings.registry import register_setting
+from wagtail.contrib.settings.models import BaseSetting
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField, StreamField
 from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel, RichTextFieldPanel, InlinePanel, FieldPanel, MultiFieldPanel
@@ -320,3 +322,12 @@ class PosterOverviewPage(AbstractOverviewPage):
         context = super().get_context(request, *args, **kwargs)
         context['sidebar_menu'] = self.get_parent().specific.get_sidebar_menu(self.content_type.model_class())
         return context
+
+
+@register_setting(icon='list-ul')
+class FooterSettings(BaseSetting):
+    content = StreamField(BASE_BLOCKS + COLUMNS_BLOCKS, null=True, blank=True)
+
+    panels = [
+        StreamFieldPanel('content'),
+    ]
