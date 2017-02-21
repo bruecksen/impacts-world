@@ -64,6 +64,7 @@ class FormPage(AbstractEmailForm):
     subpage_types = []
     timeline_snippet = models.ForeignKey(TimelineSnippet, null=True, blank=True, on_delete=models.SET_NULL, related_name='+')
     intro = RichTextField(null=True, blank=True)
+    content = StreamField(BASE_BLOCKS + COLUMNS_BLOCKS, null=True, blank=True)
     confirmation_text = RichTextField(default='The form was submitted successfully. We will get back to you soon.')
 
     form_title = models.CharField(max_length=500, verbose_name='Form title', null=True, blank=True)
@@ -72,6 +73,7 @@ class FormPage(AbstractEmailForm):
     content_panels = AbstractEmailForm.content_panels + [
         SnippetChooserPanel('timeline_snippet'),
         FieldPanel('intro'),
+        StreamFieldPanel('content'),
         MultiFieldPanel([
             FieldPanel('form_title'),
             InlinePanel('form_fields', label="Form fields"),

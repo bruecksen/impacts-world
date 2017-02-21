@@ -8,6 +8,7 @@
 		</div>
 	{% endif %}
 	{% include 'widgets/page-header.html' %}
+	{{ page.content }}
 	<div class="container">
 	<form action="{% pageurl page %}" method="POST" class="block-form gradient-background ">
 		{% if page.form_title %}
