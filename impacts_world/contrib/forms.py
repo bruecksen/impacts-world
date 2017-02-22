@@ -28,6 +28,11 @@ class HeadingWidget(Widget):
 
 class HeadingAbstractFormField(AbstractFormField):
     field_type = models.CharField(verbose_name=_('field type'), max_length=16, choices=FORM_FIELD_CHOICES)
+    choices = models.TextField(
+        verbose_name=_('choices'),
+        blank=True,
+        help_text=_('Semicolon separated list of choices. Only applicable in checkboxes, radio and dropdown.')
+    )
     max_length = models.PositiveIntegerField(
         verbose_name=_('max length'),
         blank=True,
@@ -63,11 +68,35 @@ class HeadingFormBuilder(FormBuilder):
             options['max_length'] = 255
         return django.forms.CharField(**options)
 
+    def create_dropdown_field(self, field, options):
+        options['choices'] = map(
+            lambda x: (x.strip(), x.strip()),
+            field.choices.split(';')
+        )
+        return django.forms.ChoiceField(**options)
+
+    def create_radio_field(self, field, options):
+        options['choices'] = map(
+            lambda x: (x.strip(), x.strip()),
+            field.choices.split(';')
+        )
+        return django.forms.ChoiceField(widget=django.forms.RadioSelect, **options)
+
+    def create_checkboxes_field(self, field, options):
+        options['choices'] = [(x.strip(), x.strip()) for x in field.choices.split(';')]
+        options['initial'] = [x.strip() for x in field.default_value.split(';')]
+        return django.forms.MultipleChoiceField(
+            widget=django.forms.CheckboxSelectMultiple, **options
+        )
+
     def __init__(self, fields):
         super(HeadingFormBuilder, self).__init__(fields)
         self.FIELD_TYPES.update({
             'heading': HeadingFormBuilder.create_heading_field,
             'singleline': HeadingFormBuilder.create_singleline_field,
+            'dropdown': HeadingFormBuilder.create_dropdown_field,
+            'radio': HeadingFormBuilder.create_radio_field,
+            'checkboxes': HeadingFormBuilder.create_checkboxes_field,
         })
 
     def get_field_options(self, field):
