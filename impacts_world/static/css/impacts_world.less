@@ -217,33 +217,6 @@ h1, .h1 {
 
 h2, .h2 {
 	font-size: 26px;
-	.headerlink {
-		color: @color-primary;
-		text-decoration: none;
-		opacity: 0;
-		transition: opacity 200ms ease-in-out;
-		-moz-transition: opacity 200ms ease-in-out;
-		-o-transition: opacity 200ms ease-in-out;
-		-webkit-transition: opacity 200ms ease-in-out;
-
-		&:hover {
-			opacity: 1;
-		}
-	}
-	&:hover > .headerlink {
-		opacity: 1;
-	}
-	&:before {
-		display: block;
-		content: " ";
-		margin-top: -80px;
-		height: 80px;
-		visibility: hidden;
-		// @media(max-width: 768px) {
-		// 	top: -160px;
-		// 	height: 160px;
-		// }
-	}
 }
 h3, .h3 {
 	font-size: 20px;
@@ -290,10 +263,10 @@ h3, .h3 {
 		margin-top: -80px;
 		height: 80px;
 		visibility: hidden;
-		// @media(max-width: 768px) {
-		// 	top: -160px;
-		// 	height: 160px;
-		// }
+		@media(max-width: 768px) {
+			top: -160px;
+			height: 160px;
+		}
 	}
 }
 
@@ -1385,17 +1358,15 @@ footer {
 .widget-page-header {
 	.header {
 		&.header-with-icon {
+			position: relative;
 			h2 {
-				max-width: 87%;
-				float: left;
-				display: inline-block;
+				padding-left: 40px;
 			}
 		}
 	}
 	.icon {
-		display: inline-block;
-		float: left;
-		margin-right: 10px;
+		position: absolute;
+		bottom: 0;
 		img {
 			height: auto;
 			width: 30px;
