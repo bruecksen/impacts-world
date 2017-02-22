@@ -212,44 +212,62 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 h1, .h1 {
-  font-size: 30px;
+	font-size: 30px;
 }
+
 h2, .h2 {
-  font-size: 26px;
+	font-size: 26px;
+	.headerlink {
+		color: @color-primary;
+		text-decoration: none;
+		opacity: 0;
+		transition: opacity 200ms ease-in-out;
+		-moz-transition: opacity 200ms ease-in-out;
+		-o-transition: opacity 200ms ease-in-out;
+		-webkit-transition: opacity 200ms ease-in-out;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+	&:hover > .headerlink {
+		opacity: 1;
+	}
+	&:before {
+		display: block;
+		content: " ";
+		margin-top: -80px;
+		height: 80px;
+		visibility: hidden;
+		// @media(max-width: 768px) {
+		// 	top: -160px;
+		// 	height: 160px;
+		// }
+	}
 }
 h3, .h3 {
-  font-size: 20px;
+	font-size: 20px;
 }
 h4, .h4 {
-  font-size: 18px;
+	font-size: 18px;
 }
 .super {
-  h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-	color: @color-white;
-  }
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+		color: @color-white;
+	}
 }
 .widget-heading-sm-two-lines {
-  // These headings have a minimum height of 2 lines.
-  @media(min-width:768px) {
-	min-height: 2.3em;
-  }
-  @media(min-width:992px) {
-	min-height: 0;
-  }
+	// These headings have a minimum height of 2 lines.
+	@media(min-width:768px) {
+		min-height: 2.3em;
+	}
+	@media(min-width:992px) {
+		min-height: 0;
+	}
 }
 
 ul {
 	padding-left: 15px;
-}
-
-a.anchor-scroll {
-	display: block;
-	position: relative;
-	top: -120px;
-	visibility: hidden;
-	@media(max-width: 768px) {
-		top: -160px;
-	}
 }
 
 

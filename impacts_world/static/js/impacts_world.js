@@ -1,5 +1,5 @@
 $(function() {
-  $('.affix a, .mobile-anchor-nav a').click(function() {
+  $('.affix a, .mobile-anchor-nav a, .headerlink.anchor-scroll').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');

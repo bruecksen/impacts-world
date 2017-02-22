@@ -1,8 +1,8 @@
 <div class="container">
-<h2 class="widget-heading">
+<h2 id="{{ slug }}" class="widget-heading">
 	{% if href %}<a href="{{ href }}">{% endif %}
 		{{ text }}
 	{% if href %}</a>{% endif %}
-	{% if slug %}<a id="{{ slug }}" class="headerlink anchor-scroll" href="#{{ slug }}" title="Permalink to this headline"></a>{% endif %}
+	{% if slug %}<a class="headerlink anchor-scroll" href="#{{ slug }}" title="Permalink to this headline"><i style="font-size:0.6em;" class="fa fa-link" aria-hidden="true"></i></a>{% endif %}
 </h2>
 </div>
