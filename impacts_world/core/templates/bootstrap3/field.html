@@ -26,11 +26,16 @@
 
 		{% if not field|is_checkboxselectmultiple and not field|is_radioselect %}
 			{% if field|is_checkbox and form_show_labels %}
+				{% include 'bootstrap3/layout/help_text_and_errors.html' %}
 				<label for="{{ field.id_for_label }}" class="{% if field.field.required %} requiredField{% endif %}">
 					{% crispy_field field %}
 					{{ field.label|safe }}
 				</label>
-				{% include 'bootstrap3/layout/help_text_and_errors.html' %}
+			{% elif field|css_class == 'headingwidget' %}
+				<div class="controls {{ field_class }}">
+					{% crispy_field field %}
+					{% include 'bootstrap3/layout/help_text_and_errors.html' %}
+				</div>
 			{% else %}
 				<div class="controls {{ field_class }}">
 					{% include 'bootstrap3/layout/help_text_and_errors.html' %}
