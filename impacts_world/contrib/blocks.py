@@ -49,8 +49,8 @@ class HeadingBlock(CharBlock):
         icon = 'title'
         template = 'widgets/heading.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(HeadingBlock, self).get_context(value, parent_context=parent_context)
         context['text'] = value
         context['slug'] = slugify(value, allow_unicode=True)
         return context
@@ -61,8 +61,8 @@ class SubHeadingBlock(CharBlock):
         icon = 'title'
         template = 'widgets/sub-heading.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(SubHeadingBlock, self).get_context(value, parent_context=parent_context)
         context['text'] = value
         return context
 
@@ -81,8 +81,8 @@ class ImageBlock(StructBlock):
         icon = 'image'
         template = 'widgets/image.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(ImageBlock, self).get_context(value, parent_context=parent_context)
         if value.get('is_circled_image'):
             context['url'] = value.get('image').get_rendition('fill-1200x1200').url
         else:
@@ -97,8 +97,8 @@ class ImageContainerBlock(ImageChooserBlock):
         icon = 'image'
         template = 'widgets/image-container.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(ImageContainerBlock, self).get_context(value, parent_context=parent_context)
         context['url'] = value.get_rendition('max-1200x1200').url
         context['name'] = value.title
         return context
@@ -109,8 +109,8 @@ class RichTextBlock(_RichTextBlock):
         icon = 'pilcrow'
         template = 'widgets/richtext_block.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(RichTextBlock, self).get_context(value, parent_context=parent_context)
         context['content'] = value
         return context
 
@@ -121,7 +121,7 @@ class RichTextContainerBlock(_RichTextBlock):
         template = 'widgets/richtext_container_block.html'
         label = 'Rich text'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(RichTextContainerBlock, self).get_context(value, parent_context=parent_context)
         context['content'] = value
         return context

@@ -266,6 +266,37 @@ h4, .h4 {
 	}
 }
 
+h2, .h2,
+h3, .h3 {
+	.headerlink {
+		color: @color-primary;
+		text-decoration: none;
+		opacity: 0;
+		transition: opacity 200ms ease-in-out;
+		-moz-transition: opacity 200ms ease-in-out;
+		-o-transition: opacity 200ms ease-in-out;
+		-webkit-transition: opacity 200ms ease-in-out;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+	&:hover > .headerlink {
+		opacity: 1;
+	}
+	&:before {
+		display: block;
+		content: " ";
+		margin-top: -80px;
+		height: 80px;
+		visibility: hidden;
+		// @media(max-width: 768px) {
+		// 	top: -160px;
+		// 	height: 160px;
+		// }
+	}
+}
+
 ul {
 	padding-left: 15px;
 }

@@ -4,7 +4,7 @@ from django.conf import settings
 from django.utils.text import slugify
 
 from wagtail.wagtailcore.blocks import StreamBlock, PageChooserBlock, StructBlock, CharBlock, \
-    TextBlock, ListBlock, TimeBlock, DateBlock, BooleanBlock
+    TextBlock, ListBlock, TimeBlock, DateBlock
 from wagtail.wagtailsnippets.blocks import SnippetChooserBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
@@ -22,8 +22,8 @@ class TimelineBlock(StructBlock):
         icon = 'date'
         template = 'blocks/timeline_block.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(TimelineBlock, self).get_context(value, parent_context=parent_context)
         context['timeline'] = value.get('snippet')
         return context
 
@@ -36,8 +36,8 @@ class TeaserBlock(StructBlock):
         icon = 'pick'
         template = 'blocks/teaser_block.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(TeaserBlock, self).get_context(value, parent_context=parent_context)
         context['text'] = value.get('text')
         if value.get('page'):
             context['page_url'] = value.get('page').url
@@ -52,8 +52,8 @@ class VideoTeaserBlock(StructBlock):
         icon = 'media'
         template = 'blocks/video_teaser_block.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(VideoTeaserBlock, self).get_context(value, parent_context=parent_context)
         context['text'] = value.get('text')
         context['video'] = value.get('video')
         return context
@@ -76,8 +76,8 @@ class ChallengesBlock(StructBlock):
         icon = 'grip'
         template = 'blocks/challenges_block.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(ChallengesBlock, self).get_context(value, parent_context=parent_context)
         context['intro'] = value.get('intro')
         context['challenge1'] = value.get('challenge1')
         context['challenge2'] = value.get('challenge2')
@@ -100,8 +100,8 @@ class Testimonials(StructBlock):
         icon = 'openquote'
         template = 'blocks/testimonials_block.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(Testimonials, self).get_context(value, parent_context=parent_context)
         testimonials = value.get('testimonials')
         # split testimonials in chunks of 3 to make it work with the slider
         chunks = [testimonials[i:i + 3] for i in range(0, len(testimonials), 3)]
@@ -120,8 +120,8 @@ class GoogleMapBlock(StructBlock):
         icon = 'tag'
         label = 'Google Map'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(GoogleMapBlock, self).get_context(value, parent_context=parent_context)
         context['GOOGLE_MAPS_V3_APIKEY'] = settings.GOOGLE_MAPS_V3_APIKEY
         return context
 
@@ -153,8 +153,8 @@ class ColumnsBlock(StructBlock):
     left_column = StreamBlock(_COLUMNS_BLOCKS)
     right_column = StreamBlock(_COLUMNS_BLOCKS)  # , form_classname='pull-right')
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(ColumnsBlock, self).get_context(value, parent_context=parent_context)
         context['left_column'] = value.get('left_column')
         context['right_column'] = value.get('right_column')
         return context
@@ -198,8 +198,8 @@ class Columns1To1To1Block(StructBlock):
         label = 'Columns 1:1:1'
         template = 'blocks/columns-1-1-1.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(Columns1To1To1Block, self).get_context(value, parent_context=parent_context)
         context['left_column'] = value.get('left_column')
         context['center_column'] = value.get('center_column')
         context['right_column'] = value.get('right_column')
@@ -215,8 +215,8 @@ class Columns2To1To1Block(StructBlock):
         label = 'Columns 2:1:1'
         template = 'blocks/columns-2-1-1.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(Columns2To1To1Block, self).get_context(value, parent_context=parent_context)
         context['left_column'] = value.get('left_column')
         context['center_column'] = value.get('center_column')
         context['right_column'] = value.get('right_column')
@@ -233,8 +233,8 @@ class Columns1To1To1To1Block(StructBlock):
         label = 'Columns 1:1:1:1'
         template = 'blocks/columns-1-1-1-1.html'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(Columns1To1To1To1Block, self).get_context(value, parent_context=parent_context)
         context['first_column'] = value.get('first_column')
         context['second_column'] = value.get('second_column')
         context['third_column'] = value.get('third_column')
@@ -258,8 +258,8 @@ class AbstractPanelBlock(StructBlock):
     class Meta:
         abstract = True
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(AbstractPanelBlock, self).get_context(value, parent_context=parent_context)
         description = value.get('description')
         context['is_collapsible'] = False
         if description:
@@ -281,8 +281,8 @@ class PlenaryBlock(AbstractPanelBlock):
         template = 'blocks/programme-plenary-block.html'
         icon = 'user'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(PlenaryBlock, self).get_context(value, parent_context=parent_context)
         plenary_page = value.get('plenary_page')
         context['time'] = plenary_page.date_time
         context['title'] = value.get('title', None) or plenary_page.title
@@ -304,8 +304,8 @@ class WorkshopBlock(AbstractPanelBlock):
         template = 'blocks/programme-workshop-block.html'
         icon = 'group'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(WorkshopBlock, self).get_context(value, parent_context=parent_context)
         workshop_page = value.get('workshop_page')
         date_time = workshop_page.date_time
         context['time'] = date_time
@@ -326,8 +326,8 @@ class PosterBlock(AbstractPanelBlock):
         template = 'blocks/programme-poster-block.html'
         icon = 'doc-full-inverse'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(PosterBlock, self).get_context(value, parent_context=parent_context)
         context['time'] = value.get('poster_page').date_time
         return context
 
@@ -373,8 +373,8 @@ class DayBlock(StructBlock):
         template = 'blocks/programme-day-block.html'
         icon = 'date'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(DayBlock, self).get_context(value, parent_context=parent_context)
         context['title'] = value.get('title')
         context['date'] = value.get('date')
         context['panels'] = value.get('panels')
@@ -393,8 +393,8 @@ class KeynoteBlock(StructBlock):
         template = 'blocks/keynote-block.html'
         icon = 'password'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(KeynoteBlock, self).get_context(value, parent_context=parent_context)
         context['title'] = value.get('title')
         context['description'] = value.get('description')
         context['name'] = value.get('name')
@@ -414,8 +414,8 @@ class ContributionBlock(StructBlock):
         template = 'blocks/contribution-block.html'
         icon = 'password'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(ContributionBlock, self).get_context(value, parent_context=parent_context)
         context['title'] = value.get('title')
         context['subtitle'] = "%s (%s)" % (value.get('name'), value.get('institute'))
         context['description'] = value.get('description')
@@ -434,8 +434,8 @@ class PosterContributionBlock(StructBlock):
         template = 'blocks/poster-contribution-block.html'
         icon = 'password'
 
-    def get_context(self, value):
-        context = super().get_context(value)
+    def get_context(self, value, parent_context=None):
+        context = super(PosterContributionBlock, self).get_context(value, parent_context=parent_context)
         context['number'] = value.get('number')
         context['title'] = value.get('title')
         context['authors'] = value.get('authors')
