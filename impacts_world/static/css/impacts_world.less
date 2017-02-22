@@ -239,8 +239,8 @@ h4, .h4 {
 	}
 }
 
-h2, .h2,
-h3, .h3 {
+h2.permalink,
+h3.permalink{
 	.headerlink {
 		color: @color-primary;
 		text-decoration: none;
@@ -925,6 +925,9 @@ footer {
 	margin: 60px auto 30px auto;
 	max-width: 85%;
 	font-size: 14px;
+	.col {
+		margin-bottom: 30px;
+	}
 }
 
 // collapsible element
@@ -1220,6 +1223,9 @@ footer {
 		background-color: @color-secondary-light;
 		padding-top: 30px;
 		padding-bottom: 20px;
+		h2, h3, h4 {
+			line-height: 1.5;
+		}
 		p {
 			font-size: 18px;
 		}
