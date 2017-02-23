@@ -921,18 +921,16 @@ hr {
 }
 
 footer {
-	margin: 60px auto 30px auto;
-	max-width: 85%;
+	.container {
+		padding-top: 30px;
+		border-top: 2px solid;
+		border-image-source: linear-gradient(to right, #a9d4a6, #fcbc48);
+		border-image-slice: 1;
+	}
+	margin: 30px auto 30px auto;
 	font-size: 14px;
 	.col {
 		margin-bottom: 30px;
-	}
-	@media (max-width: 768px) {
-		max-width: 100%;
-		.container-fluid {
-			padding-left: 0;
-			padding-right: 0;
-		}
 	}
 }
 
