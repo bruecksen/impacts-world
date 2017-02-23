@@ -241,6 +241,7 @@ h4, .h4 {
 
 h2.permalink,
 h3.permalink{
+	position: relative;
 	.headerlink {
 		color: @color-primary;
 		text-decoration: none;
@@ -249,7 +250,6 @@ h3.permalink{
 		-moz-transition: opacity 200ms ease-in-out;
 		-o-transition: opacity 200ms ease-in-out;
 		-webkit-transition: opacity 200ms ease-in-out;
-
 		&:hover {
 			opacity: 1;
 		}
@@ -257,11 +257,10 @@ h3.permalink{
 	&:hover > .headerlink {
 		opacity: 1;
 	}
-	&:before {
+	.anchor {
 		display: block;
-		content: " ";
-		margin-top: -80px;
-		height: 80px;
+		position: absolute;
+		top: -80px;
 		visibility: hidden;
 	}
 }
@@ -1357,23 +1356,29 @@ footer {
 	}
 }
 
-.widget-page-header {
-	.header {
-		&.header-with-icon {
-			position: relative;
-			h2 {
-				padding-left: 40px;
-			}
-		}
-	}
-	.icon {
-		position: absolute;
-		bottom: 0;
+&.header-with-icon {
+	h2, h3 {
+		position: relative;
 		img {
+			position: absolute;
+			top: 0;
+			left: 0;
 			height: auto;
 			width: 30px;
 		}
 	}
+	h2 {
+		padding-left: 40px;
+	}
+	h3 {
+		padding-left: 35px;
+		img {
+			top: -6px;
+		}
+	}
+}
+
+.widget-page-header {
 	.rich-text,
 	.room {
 		clear: both;
@@ -1396,10 +1401,10 @@ footer {
 				font-weight: 500;
 				padding: 0;
 				display: inline-block;
-				border-bottom: 1px solid @color-neutral;
+				text-decoration: underline;
 				&:hover, &:focus {
-					color: @color-neutral;
 					background-color: @color-yellow;
+					text-decoration: underline;
 				}
 			}
 		}
@@ -1714,30 +1719,14 @@ footer {
 		.header {
 			padding: 15px 10px 15px 10px;
 			background-color: @color-brown;
-			img {
-				width: 30px;
-				height: auto;
-				display: inline-block;
-				float: left;
-				margin-top: -5px;
-				margin-right: 8px;
+			h3 {
+				font-weight: 800;
+				margin-bottom: 5px;
 			}
-			&.header-with-icon {
-				.heading {
-					max-width: 87%;
-				}
-			}
-			.heading {
-				display: inline-block;
-				h3 {
-					font-weight: 800;
-					margin-bottom: 5px;
-				}
-				p.meta {
-					color: #9b9b9b;
-					font-weight: 300;
-					font-size: 16px;
-				}
+			p.meta {
+				color: #9b9b9b;
+				font-weight: 300;
+				font-size: 16px;
 			}
 		}
 		.row {

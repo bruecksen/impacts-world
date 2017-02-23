@@ -3,16 +3,15 @@
 	<div class="widget-plenary_workshops">
 		<div class="container">
 			<div class="header{% if show_icon and page.specific.icon %} header-with-icon{% endif %}">
-				{% if show_icon %}
-					{% image page.specific.icon fill-60x60 %}
-				{% endif %}
-				<div class="heading">
-					<h3 id="{{ page.title|slugify }}" class="permalink">
-						{{ page.title }}
-						<a class="headerlink anchor-scroll" href="#{{ page.title|slugify }}" title="Permalink to this headline"><i style="font-size:0.6em;" class="fa fa-link" aria-hidden="true"></i></a>
-					</h3>
-					<p class="meta">{{ page.specific.date_time|date:'l d F' }}, {{ page.specific.date_time|date:'g:iA'|lower }}, {{ page.specific.room }}</p>
-				</div>
+				<h3 class="permalink">
+					{% if show_icon %}
+						{% image page.specific.icon fill-60x60 %}
+					{% endif %}
+					{{ page.title }}
+					<a class="headerlink anchor-scroll" href="#{{ page.title|slugify }}" title="Permalink to this headline"><i style="font-size:0.6em;" class="fa fa-link" aria-hidden="true"></i></a>
+					<span class="anchor" id="{{ page.title|slugify }}"></span>
+				</h3>
+				<p class="meta">{{ page.specific.date_time|date:'l d F' }}, {{ page.specific.date_time|date:'g:iA'|lower }}, {{ page.specific.room }}</p>
 				{% if page.specific.convenor_name %}
 				<p>Host: <b>{{ page.specific.convenor_name }}</b> ({{ page.specific.convenor_institute }})</p>
 				{% endif %}
