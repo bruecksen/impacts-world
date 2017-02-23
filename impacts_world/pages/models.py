@@ -1,8 +1,6 @@
-import json
-
-from django.core.serializers.json import DjangoJSONEncoder
 from django.utils.text import slugify
 from django.db import models
+from django.shortcuts import render
 
 from wagtail.contrib.settings.registry import register_setting
 from wagtail.contrib.settings.models import BaseSetting
@@ -102,6 +100,33 @@ class FormPage(AbstractEmailForm):
 
     def get_submission_class(self):
             return CustomFormSubmission
+
+    def serve(self, request, *args, **kwargs):
+        context = self.get_context(request)
+        if request.method == 'POST':
+            form = self.get_form(request.POST, page=self, user=request.user)
+
+            if form.is_valid():
+                self.process_form_submission(form)
+
+                # render the landing_page
+                # TODO: It is much better to redirect to it
+                return render(
+                    request,
+                    self.get_landing_page_template(request),
+                    self.get_context(request)
+                )
+            else:
+                context['form_error'] = 'One of the fields below has not been filled out correctly. Please <strong>correct</strong> and <strong>resubmit</strong>.'
+        else:
+            form = self.get_form(page=self, user=request.user)
+
+        context['form'] = form
+        return render(
+            request,
+            self.get_template(request),
+            context
+        )
 
 
 class CustomFormSubmission(AbstractFormSubmission):

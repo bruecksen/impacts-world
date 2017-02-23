@@ -7,6 +7,13 @@
 		{% include 'blocks/timeline_block.html' with timeline=page.timeline_snippet %}
 		</div>
 	{% endif %}
+	{% if form_error %}
+	<div class="container">
+		<div class="alert alert-danger">
+			<p>{{ form_error|safe }}</p>
+		</div>
+	</div>
+	{% endif %}
 	{% include 'widgets/page-header.html' %}
 	{{ page.content }}
 	<div class="container">
