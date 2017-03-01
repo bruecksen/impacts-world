@@ -1,6 +1,9 @@
+import json
+
 from django.utils.text import slugify
 from django.db import models
 from django.shortcuts import render
+from django.core.serializers.json import DjangoJSONEncoder
 
 from wagtail.contrib.settings.registry import register_setting
 from wagtail.contrib.settings.models import BaseSetting
@@ -128,13 +131,25 @@ class FormPage(AbstractEmailForm):
             context
         )
 
+    def process_form_submission(self, form):
+        next_identifier = CustomFormSubmission.objects.filter(page=self).order_by('-identifier').first()
+        if next_identifier:
+            next_identifier = next_identifier.identifier + 1
+        else:
+            next_identifier = 1
+        self.get_submission_class().objects.create(
+            form_data=json.dumps(form.cleaned_data, cls=DjangoJSONEncoder),
+            page=self, identifier=next_identifier
+        )
+
 
 class CustomFormSubmission(AbstractFormSubmission):
+    identifier = models.PositiveIntegerField()
 
     def get_data(self):
         form_data = super(CustomFormSubmission, self).get_data()
         form_data.update({
-            'identifier': self.pk,
+            'identifier': self.identifier,
         })
 
         return form_data
