@@ -4,12 +4,14 @@ from django.utils.text import slugify
 from django.db import models
 from django.shortcuts import render
 from django.core.serializers.json import DjangoJSONEncoder
+from django.forms.widgets import EmailInput
 
 from wagtail.contrib.settings.registry import register_setting
 from wagtail.contrib.settings.models import BaseSetting
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField, StreamField
 from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel, RichTextFieldPanel, InlinePanel, FieldPanel, MultiFieldPanel
+from wagtail.wagtailadmin.utils import send_mail
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailforms.models import AbstractEmailForm, AbstractFormSubmission
@@ -69,6 +71,9 @@ class FormPage(AbstractEmailForm):
     intro = RichTextField(null=True, blank=True)
     content = StreamField(BASE_BLOCKS + COLUMNS_BLOCKS, null=True, blank=True)
     confirmation_text = RichTextField(default='The form was submitted successfully. We will get back to you soon.')
+    send_confirmation_email = models.BooleanField(default=False, verbose_name='Send confirmation email')
+    confirmation_email_subject = models.CharField(max_length=500, verbose_name='Confirmation email subject', null=True, blank=True)
+    confirmation_email_text = models.TextField(default='The form was submitted successfully. We will get back to you soon.', null=True, blank=True)
 
     form_title = models.CharField(max_length=500, verbose_name='Form title', null=True, blank=True)
     button_name = models.CharField(max_length=500, verbose_name='Button name', default='Submit')
@@ -82,6 +87,9 @@ class FormPage(AbstractEmailForm):
             InlinePanel('form_fields', label="Form fields"),
             FieldPanel('button_name'),
             FieldPanel('confirmation_text', classname="full"),
+            FieldPanel('send_confirmation_email'),
+            FieldPanel('confirmation_email_subject'),
+            FieldPanel('confirmation_email_text', classname="full"),
             MultiFieldPanel([
                 FieldPanel('to_address', classname="full"),
                 FieldPanel('from_address', classname="full"),
@@ -141,6 +149,16 @@ class FormPage(AbstractEmailForm):
             form_data=json.dumps(form.cleaned_data, cls=DjangoJSONEncoder),
             page=self, identifier=next_identifier
         )
+        if self.to_address:
+            self.send_mail(form)
+        if self.send_confirmation_email:
+            confirmation_email_address = None
+            for field in form:
+                if isinstance(field.field.widget, EmailInput):
+                    confirmation_email_address = field.value()
+                    break
+            if confirmation_email_address:
+                send_mail(self.confirmation_email_subject, self.confirmation_email_text, [confirmation_email_address, ], self.from_address,)
 
 
 class CustomFormSubmission(AbstractFormSubmission):
