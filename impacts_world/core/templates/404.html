@@ -1,9 +1,25 @@
 {% extends "base.html" %}
+{% load static header footer %}
 
 {% block title %}Page Not found{% endblock %}
 
-{% block content %}
-<h1>Page Not found</h1>
+{% block header %}
+	{% header show_banner=False fixed_top=True %}
+{% endblock %}
 
-<p>This is not the page you were looking for.</p>
-{% endblock content %}
+{% block content_container %}
+	<div class="container scrollable-container">
+		{% block content %}
+			<div class="widget-page-header">
+				<div class="container">
+					<h1>Oops, page Not found</h1>
+					<div class="intro-text"><p>Looks like the page or file you wanted went missing.<br>You can go back to our <a href="/">homepage</a>, or get in <a href="mailto:info[at]impactsworld2017.org">contact</a> and tell us what is missing.</p></div>
+				</div>
+			</div>
+		{% endblock %}
+	</div>
+{% endblock %}
+
+{% block footer %}
+{% footer %}
+{% endblock %}
