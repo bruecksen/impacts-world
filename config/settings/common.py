@@ -43,8 +43,6 @@ CMS_APPS = (
 LOCAL_APPS = (
     'impacts_world.contrib',
     'impacts_world.pages',
-    'impacts_world.styleguide',
-
     'impacts_world'
 )
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + CMS_APPS

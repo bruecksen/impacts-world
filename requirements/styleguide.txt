@@ -1,3 +1,0 @@
-# Styleguide dependencies go here
-django==1.10.4
-wagtail==1.8
