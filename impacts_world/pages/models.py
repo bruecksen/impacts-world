@@ -140,6 +140,7 @@ class FormPage(AbstractEmailForm):
         )
 
     def process_form_submission(self, form):
+        # add a incremental identifier to every form submission
         next_identifier = CustomFormSubmission.objects.filter(page=self).order_by('-identifier').first()
         if next_identifier:
             next_identifier = next_identifier.identifier + 1

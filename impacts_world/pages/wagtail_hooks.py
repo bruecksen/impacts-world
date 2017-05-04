@@ -3,6 +3,7 @@ from wagtail.wagtailcore import hooks
 
 @hooks.register('insert_editor_css')
 def editor_css():
+    # add some extra width to highly nested elements in the wagtail editor
     return """
         <style>
             li.sequence-member .struct-block .sequence-container {
