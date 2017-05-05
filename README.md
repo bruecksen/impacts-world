@@ -56,4 +56,4 @@ Feel free to contact me to discuss any issues, questions, or comments.
 My contact info can be found on my [GitHub page](https://github.com/bruecksen).
 
 ## License
-MIT License, ee license [file](https://github.com/bruecksen/impacts-world/blob/master/LICENSE)
+MIT License, see license [file](https://github.com/bruecksen/impacts-world/blob/master/LICENSE)
