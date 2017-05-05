@@ -193,13 +193,6 @@ ADMIN_URL = env('DJANGO_ADMIN_URL', default='admin')
 WAGTAIL_SITE_NAME = 'Impacts World'
 # WAGTAIL_ENABLE_UPDATE_CHECK = False
 
-TWITTER_CREDENTIALS = env.list('DJANGO_TWITTER_CREDENTIALS', default=[None,None,None,None])
-TWITTER_TIMELINE = {
-    'consumer_key': TWITTER_CREDENTIALS[0],
-    'consumer_secret': TWITTER_CREDENTIALS[1],
-    'access_token': TWITTER_CREDENTIALS[2],
-    'access_token_secret': TWITTER_CREDENTIALS[3]
-}
 GOOGLE_MAPS_V3_APIKEY = env('GOOGLE_MAPS_V3_APIKEY', default=None)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
