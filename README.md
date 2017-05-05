@@ -9,6 +9,7 @@ This [Django](https://docs.djangoproject.com/en/stable/) and [Wagtail CMS](http:
 - Wagtail CMS
 - Django crispy forms
 - Django environ
+- Twitter bootstrap
 
 ## Getting started
 This project is based on the "Two Scoops of Django" best practices [project template](https://github.com/twoscoops/django-twoscoops-project). The installation assumes a working PostgreSQL (with table creation rights) database and python 3.x environment. To use this project follow these steps:
@@ -35,4 +36,24 @@ For production:
 
 ### Migrate
 Run any migrations required:
+
     python manage.py migrate
+
+## Running the application
+
+In the root project folder, run:
+
+    python manage.py runserver
+
+## Credits
+- https://github.com/wagtail/wagtail
+- https://github.com/django/django
+- https://github.com/twoscoops/django-twoscoops-project
+
+## Contact
+Feel free to contact me to discuss any issues, questions, or comments.
+
+My contact info can be found on my [GitHub page](https://github.com/bruecksen).
+
+## License
+MIT License, ee license [file](https://github.com/bruecksen/impacts-world/blob/master/LICENSE)
