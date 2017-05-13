@@ -19,7 +19,7 @@ from modelcluster.fields import ParentalKey
 
 from impacts_world.pages.blocks import (
     BASE_BLOCKS, FULL_WIDTH_BLOCKS, COLUMNS_BLOCKS, DayBlock, KeynoteBlock, ContributionBlock, PosterContributionBlock)
-from impacts_world.contrib.forms import HeadingFormBuilder, HeadingAbstractFormField
+from impacts_world.contrib.forms import HeadingFormBuilder, HeadingAbstractFormField, HeadingWidget
 from impacts_world.core.models import TimelineSnippet
 
 
@@ -153,13 +153,25 @@ class FormPage(AbstractEmailForm):
         if self.to_address:
             self.send_mail(form)
         if self.send_confirmation_email:
+            # quick hack sending a confirmation email to the user
             confirmation_email_address = None
+            # check for confirmation email address and filter headings
+            filtered_fields = []
             for field in form:
                 if isinstance(field.field.widget, EmailInput):
                     confirmation_email_address = field.value()
-                    break
+                elif isinstance(field.field.widget, HeadingWidget):
+                    continue
+                filtered_fields.append(field)
             if confirmation_email_address:
-                send_mail(self.confirmation_email_subject, self.confirmation_email_text, [confirmation_email_address, ], self.from_address,)
+                extra_content = ['', ]
+                for field in filtered_fields:
+                    value = field.value()
+                    if isinstance(value, list):
+                        value = ', '.join(value)
+                    extra_content.append('{}: {}'.format(field.label, value))
+                extra_content = '\n'.join(extra_content)
+                send_mail(self.confirmation_email_subject, self.confirmation_email_text + extra_content, [confirmation_email_address, ], self.from_address,)
 
 
 class CustomFormSubmission(AbstractFormSubmission):
