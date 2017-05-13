@@ -211,7 +211,7 @@ class ProgramOverviewPage(Page):
             for child_child in child.get_children():
                 children.append({
                     'name': child_child.title,
-                    'url': slugify(child_child.title),
+                    'url': child_child.slug,
                     'is_active': False,
                 })
             sidebar_menu.append({
@@ -328,9 +328,10 @@ class WorkshopOverviewPage(AbstractOverviewPage):
         for page in pages:
             workshops.append({
                 'title': page.title,
+                'slug': page.slug,
                 'name': page.convenor_name,
                 'institute': page.convenor_institute,
-                'url': '%s#%s' % (page.get_parent().get_parent().url, slugify(page.title)),
+                'url': '%s#%s' % (page.get_parent().get_parent().url, page.slug),
                 'icon': page.icon or page.get_parent().specific.workshop_icon,
                 'room': page.room,
             })

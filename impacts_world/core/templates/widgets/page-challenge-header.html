@@ -7,8 +7,8 @@
 				{% image icon fill-60x60 %}
 			{% endif %}
 			{{ title }}
-			<a class="headerlink anchor-scroll" href="#{{ title|slugify }}" title="Permalink to this headline"><i style="font-size:0.6em;" class="fa fa-link" aria-hidden="true"></i></a>
-			<span class="anchor" id="{{ title|slugify }}"></span>
+			<a class="headerlink anchor-scroll" href="#{{ slug }}" title="Permalink to this headline"><i style="font-size:0.6em;" class="fa fa-link" aria-hidden="true"></i></a>
+			<span class="anchor" id="{{ slug }}"></span>
 		</h2>
 	</div>
 		{% if room %}<p class="room">{{ room }}</p>{% endif %}

@@ -288,7 +288,7 @@ class PlenaryBlock(AbstractPanelBlock):
         context['title'] = value.get('title', None) or plenary_page.title
         keynotes = plenary_page.get_keynotes()
         context['keynotes'] = keynotes
-        context['plenary_url'] = "%s#%s" % (plenary_page.get_parent().url, slugify(plenary_page.title))
+        context['plenary_url'] = "%s#%s" % (plenary_page.get_parent().url, plenary_page.slug)
         if keynotes:
             context['is_collapsible'] = True
         return context

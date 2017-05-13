@@ -8,8 +8,8 @@
 						{% image page.specific.icon fill-60x60 %}
 					{% endif %}
 					{{ page.title }}
-					<a class="headerlink anchor-scroll" href="#{{ page.title|slugify }}" title="Permalink to this headline"><i style="font-size:0.6em;" class="fa fa-link" aria-hidden="true"></i></a>
-					<span class="anchor" id="{{ page.title|slugify }}"></span>
+					<a class="headerlink anchor-scroll" href="#{{ page.slug }}" title="Permalink to this headline"><i style="font-size:0.6em;" class="fa fa-link" aria-hidden="true"></i></a>
+					<span class="anchor" id="{{ page.slug }}"></span>
 				</h3>
 				<p class="meta">{{ page.specific.date_time|date:'l d F' }}, {{ page.specific.date_time|date:'g:iA'|lower }}, {{ page.specific.room }}</p>
 				{% if page.specific.convenor_name %}
