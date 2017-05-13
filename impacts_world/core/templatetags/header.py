@@ -43,4 +43,4 @@ def header(context, *args, **kwargs):
     context['links'] = links
     context.update(kwargs)
     template = 'widgets/header.html'
-    return render_to_string(template, context=context)
+    return render_to_string(template, context=context.flatten())

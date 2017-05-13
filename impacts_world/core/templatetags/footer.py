@@ -13,4 +13,4 @@ def footer(context, *args, **kwargs):
     context['footer'] = settings.content
     context.update(kwargs)
     template = 'widgets/footer.html'
-    return render_to_string(template, context=context)
+    return render_to_string(template, context=context.flatten())
