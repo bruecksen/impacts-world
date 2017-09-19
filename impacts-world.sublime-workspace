@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"ful",
+				"fulfillableTooltipText"
+			],
+			[
+				"NODE",
+				"NODE_TYPE_EXPERIMENT\tstatement"
+			],
+			[
+				"Ex",
+				"ExperimentCreate"
+			],
+			[
+				"curr",
+				"currentGoalId"
+			],
+			[
+				"ME",
+				"METRIC_SHOW"
+			],
+			[
+				"SIDE",
+				"SIDEBAR_CREATE"
+			],
+			[
+				"pare",
+				"parentNodeId"
+			],
+			[
+				"toggle",
+				"toggleShowNode"
+			],
+			[
 				"Poster",
 				"PosterContributionBlock\tclass"
 			],
@@ -482,86 +514,37 @@
 			[
 				"Choi",
 				"ModelChoiceField  (class)"
-			],
-			[
-				"deal_av",
-				"deal_availability_sql"
-			],
-			[
-				"tables",
-				"tables_from_inv"
-			],
-			[
-				"stor",
-				"storage_prefix  (variable)"
-			],
-			[
-				"identi",
-				"identifier_filter"
-			],
-			[
-				"avail",
-				"availabilities"
-			],
-			[
-				"changese",
-				"changesets_update"
-			],
-			[
-				"changes",
-				"changesets_update"
-			],
-			[
-				"contr",
-				"contract_date"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "impacts_world/pages/models.py",
-			"settings":
-			{
-				"buffer_size": 14677,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "impacts_world/contrib/forms.py",
-			"settings":
-			{
-				"buffer_size": 3964,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/wagtail/wagtailforms/models.py",
-			"settings":
-			{
-				"buffer_size": 9554,
-				"line_ending": "Unix"
-			}
-		}
 	],
-	"build_system": "Packages/Processing/Processing.sublime-build",
+	"build_system": "",
 	"build_system_choices":
 	[
 	],
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 375.0,
-		"last_filter": "package",
+		"height": 203.0,
+		"last_filter": "markdown ",
 		"selected_items":
 		[
 			[
-				"package",
-				"Package Control: Install Package"
+				"markdown ",
+				"Markdown Preview: Preview in Browser"
 			],
 			[
 				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"package",
 				"Package Control: Install Package"
 			],
 			[
@@ -577,7 +560,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 471.0
+		"width": 453.0
 	},
 	"console":
 	{
@@ -597,18 +580,75 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/brx/Sites/impacts-world",
-		"/Users/brx/Sites/impacts-world/config",
-		"/Users/brx/Sites/impacts-world/impacts_world",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/pages",
-		"/Users/brx/Sites/impacts-world/requirements",
-		"/Users/brx/.environments/impacts-world/lib/python3.4/site-packages"
+		"/Users/bruecksen/Sites/impacts-world"
 	],
 	"file_history":
 	[
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/public/index.html",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/legacy/StrategyMap.css",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/SmartList.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/Goal.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/GoalCreate.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/StrategyMapContainer.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/api/serializers.py",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/Home.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/NC.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/SF.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/Sidebar.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/strategyMap/svgElementAppenders.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/strategyMap/simulation.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/SFCreate.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/NCCreate.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/ExperimentCreate.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/Experiment.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/strategyMap/data.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/MetricListView.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/strategyMap/StrategyMap.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/Experiment.actions.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/Home.actions.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/api/models.py",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/css/StrategyMap.css",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/api/views.py",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/NC.actions.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/Priority.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/MetricEdit.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/GoalModalContainer.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/package.json",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/css/Sidebar.css",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/NotificationContainer.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/api/routers.py",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/EditTextComponent.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/SF.actions.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/SFModal.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/Priority.actions.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/CommentsContainer.actions.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/CommentsContainer.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/Goal.actions.js",
+		"/Users/bruecksen/Sites/agile42/ETF/etf.sublime-project",
+		"/Users/bruecksen/Sites/impacts-world/impacts-world.sublime-project",
+		"/Users/bruecksen/Sites/agile42/ETF/etf.sublime-workspace",
+		"/Users/bruecksen/Sites/agile42/ETF/env.example",
+		"/Users/bruecksen/Sites/agile42/ETF/README.md",
+		"/Users/bruecksen/Sites/agile42/ETF/.gitignore",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/css/Home.css",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/api/admin.py",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/clients/management/commands/create_tenant.py",
+		"/Users/bruecksen/Sites/agile42/ETF/config/settings/development.py",
+		"/Users/bruecksen/Sites/agile42/ETF/setup-environment.sh",
+		"/Users/bruecksen/Sites/agile42/ETF/config/settings/common.py",
+		"/Users/bruecksen/Sites/agile42/ETF/.env",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/core/apps.py",
+		"/Users/bruecksen/Sites/agile42/ETF/manage.py",
+		"/Users/bruecksen/Sites/agile42/ETF/fabfile.py",
+		"/Users/bruecksen/Sites/agile42/ETF/config/urls.py",
+		"/Users/bruecksen/Sites/agile42/ETF/config/settings/production.py",
+		"/Users/bruecksen/Sites/agile42/ETF/config/wsgi.py",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/api/urls.py",
+		"/Users/bruecksen/Sites/agile42/ETF/etf/api/tests.py",
+		"/Users/bruecksen/Sites/agile42/ETF/requirements/production.txt",
+		"/Users/bruecksen/Sites/agile42/ETF/requirements/base.txt",
+		"/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/wagtail/wagtailforms/models.py",
+		"/Users/brx/Sites/impacts-world/requirements/base.txt",
 		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/plenary_workshop-list.html",
 		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/pages/workshop_page.html",
 		"/Users/brx/Sites/impacts-world/impacts_world/pages/blocks.py",
@@ -616,7 +656,6 @@
 		"/Users/brx/Sites/impacts-world/impacts_world/contrib/blocks.py",
 		"/Users/brx/Sites/impacts-world/impacts_world/pages/models.py",
 		"/Users/brx/Sites/impacts-world/config/settings/common.py",
-		"/Users/brx/Sites/impacts-world/requirements/base.txt",
 		"/Users/brx/Sites/impacts-world/impacts_world/core/templatetags/header.py",
 		"/Users/brx/Sites/impacts-world/impacts_world/core/templatetags/footer.py",
 		"/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/django/template/library.py",
@@ -635,7 +674,6 @@
 		"/Users/brx/Sites/impacts-world/impacts_world/styleguide/data.py",
 		"/Users/brx/Sites/impacts-world/config/settings/development.py",
 		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/base.html",
-		"/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/wagtail/wagtailforms/models.py",
 		"/Users/brx/Sites/impacts-world/impacts_world/static/css/impacts_world.less",
 		"/Users/brx/Sites/impacts-world/impacts_world/contrib/forms.py",
 		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/pages/form_page.html",
@@ -673,80 +711,22 @@
 		"/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/django/contrib/gis/templates/gis/google/google-map.html",
 		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/bootstrap3/layout/help_text.html",
 		"/Users/brx/Downloads/export (1).csv",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/pages/form_page_confirmation.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/bootstrap3/layout/checkboxselectmultiple.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/bootstrap3/layout/radioselect.html",
-		"/Users/brx/Sites/impacts-world/templates/crispy_forms//field.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/programme-day-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/poster_contribution.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/poster-contribution-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/list-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/contribution-block.html",
-		"/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/wagtail/wagtailcore/blocks/struct_block.py",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/plenary-list.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/plenary-header.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/programme-poster-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/programme-legend.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/migrations/0019_auto_20170207_1244.py",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/plenary-list-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/collapse-body.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templatetags/timestamp.py",
-		"/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/wagtail/wagtailcore/blocks/base.py",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/day-list-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/contrib/templatetags.py",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/programme-refreshment-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/programme-special-event-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/pages/programme_page.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/plenary-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/special-event-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/refreshment-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/workshop-block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/poster-block.html",
-		"/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/bootstrap3/renderers.py",
-		"/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/django/forms/widgets.py",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/image.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/sub-heading.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/sidebar-page-header.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/toc.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/pages/home_page.html",
-		"/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/wagtail/wagtailimages/migrations/0012_copy_image_permissions_to_collections.py",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/image-container.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/richtext_container_block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/widgets/richtext_block.html",
-		"/Users/brx/Sites/impacts-world/.env",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/columns-2-1.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/teaser_block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/video_teaser_block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/static/vendor/css/open-sans.less",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/migrations/0001_initial.py",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/richtext_block.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/pages/home_page-bak.html",
-		"/Users/brx/Downloads/pad.sinnwerkstatt.com",
-		"/Users/brx/Sites/impacts-world/impacts_world/static/vendor/fonts/montserrat_bold_macroman/stylesheet.css",
-		"/Users/brx/Sites/impacts-world/requirements/production.txt",
-		"/Users/brx/Downloads/open-sans-condensed-fontfacekit (1)/web fonts/opensanscondensed_bold_macroman/stylesheet.css",
-		"/Users/brx/Sites/impacts-world/config/settings/production.py",
-		"/Users/brx/Sites/impacts-world/impacts_world/static/css/impacts_world.css",
-		"/Users/brx/Downloads/open-sans-condensed-fontfacekit/web fonts/opensanscondensed_bold_macroman/stylesheet.css",
-		"/Users/brx/Downloads/open-sans-condensed-fontfacekit/web fonts/opensanscondensed_light_macroman/stylesheet.css",
-		"/Users/brx/Sites/impacts-world/impacts_world/styleguide/templates/styleguide/base.html",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/apps.py",
-		"/Users/brx/Sites/impacts-world/impacts_world/contrib/sites/migrations/0002_set_site_domain_and_name.py",
-		"/Users/brx/Sites/impacts-world/requirements/styleguide.txt",
-		"/Users/brx/Sites/impacts-world/impacts_world/core/apps.py",
-		"/Users/brx/Sites/impacts-world/impacts_world/static/css/isi_mip.less",
-		"/Users/brx/Sites/impacts-world/impacts_world/static/js/isi_mip.js",
-		"/Users/brx/Sites/billing/fabfile.py"
+		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/pages/form_page_confirmation.html"
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
 		"height": 95.0,
 		"where_history":
 		[
+			"/Users/bruecksen/Sites/agile42/ETF, -*/build/*, -*/node_modules/*, -*/static-collected/*",
+			"/Users/bruecksen/Sites/agile42/ETF, -*/build/*, -*/node_modules/*",
+			"/Users/bruecksen/Sites/agile42/ETF, -*/build/*",
+			"/Users/bruecksen/Sites/agile42/ETF",
+			"/Users/brx/Sites/agile42/etf/",
 			"/Users/brx/Sites/impacts-world",
 			"/Users/brx/Sites/billing/templates",
 			"/Users/brx/Sites/billing",
@@ -785,6 +765,116 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"body",
+			"bldy",
+			"font-family:",
+			"rect",
+			"isLatest",
+			"fulfillableTooltipText",
+			"fullfilled",
+			"update",
+			"fulfilled",
+			"RichTextComponent",
+			"wrapIntoOverlayTrigger",
+			"showCreateNodeSidebar",
+			"node_type",
+			"appendLinksTo",
+			"createNodesAndLinks",
+			"save_one_node",
+			"createNodesAndLinks",
+			"node_type",
+			"node_type_experiment",
+			"title",
+			"NC",
+			"descriptionClick",
+			"NC",
+			"nc",
+			"NC",
+			"showCreateNodeSidebar",
+			"currentParentNodeId",
+			"SFCreate",
+			"toggleShowNodeSidebar",
+			"nodeCreatedCallback",
+			"currentGoalId",
+			"toggleShowNodeSidebar",
+			"nodeCreatedCallback",
+			"goalId",
+			"current",
+			"currentNodeId",
+			"currentNodeType",
+			"editing",
+			"GoalCreate",
+			"appendAddSymbolTo",
+			"shallow",
+			"this.state",
+			"componentDidUpdate",
+			"componentWillUpdate",
+			"save",
+			"    \n",
+			"PropTypes",
+			"toggleSidebar",
+			"METRIC_",
+			"METRIC_CREATE",
+			"METRIC_",
+			"METRIC_SHOW",
+			"fetchGoal",
+			"goalChangeCallback",
+			"goal",
+			"save",
+			"key",
+			"editing",
+			"edit",
+			"onRichTextChangeCallback",
+			"create a new goal",
+			"create",
+			"CreateGoal",
+			"CreateNode",
+			"Goal",
+			"showCreateNodeSidebar",
+			"append",
+			"showCreateNodeSidebar",
+			"toggleSFModal",
+			"SF",
+			"title",
+			"CommentsContainerActions",
+			"description",
+			"NODE_TYPE_PSF",
+			"createValueFromString",
+			"RichTextEditor",
+			"formc",
+			";",
+			"allowedPriorities",
+			"SmartList",
+			"zoom-to-fit",
+			"goalid",
+			"PSF",
+			"Goal",
+			"wrapIntoOverlayTrigger",
+			"this.props.editable",
+			"handleSmartToggleCallback",
+			"GoalActions",
+			"save",
+			"MetricSerializer",
+			"goalChangeCallback",
+			"comment",
+			"goal",
+			"create new goal",
+			"ClientSerializer",
+			"ClientViewset",
+			"static_precompiler",
+			"compressor",
+			"DJANGO_ALLOWED_HOSTS",
+			"'])\n",
+			"hosts",
+			"DEFAULT_FILE_STORAGE",
+			"tenant",
+			"tenant_model",
+			"shared",
+			"SHARED_APPS",
+			"shared_apps",
+			"a42",
+			"GOOGLE_MAPS_V3_APIKEY",
+			"last-child",
 			"is_instance",
 			"slugify",
 			"render_to_string",
@@ -802,117 +892,7 @@
 			"Convenor",
 			".in",
 			"992",
-			"50%",
-			"15%",
-			"1200px",
-			";\n",
-			"Planery",
-			";\n",
-			"bootstrap3",
-			"BaseForm",
-			"ContributionBlock",
-			"ProgramOverviewPage",
-			"ProgrammeOverviewPage",
-			"list-block.html",
-			";\n",
-			"PosterItemPage",
-			"979797",
-			"get_unique_identifier",
-			"plenary-heading",
-			"@color-brown-light",
-			";\n",
-			"timeline_typ",
-			"page",
-			"PlenaryBlock",
-			"programmepage",
-			"rich-text",
-			"neutral",
-			".fa",
-			"timelinepage",
-			"required",
-			"is_widget_required_attribute",
-			"required",
-			"WIDGETS_NO_FORM_CONTROL",
-			"):\n",
-			"WIDGETS_NO_FORM_CONTROL",
-			"bootstrap3",
-			"render_form",
-			"btn",
-			"linear-",
-			"label",
-			"force_text",
-			"AbstractFormField",
-			"FORM_FIELD_CHOICES",
-			"font-size: 14",
-			"anchor-scroll",
-			"@color-secondary-light",
-			"color-secondar",
-			"intro",
-			"active",
-			"boolea",
-			"challenge",
-			"block-teaser",
-			":hover",
-			"font",
-			"navbar-brand",
-			"nvabar-brand",
-			"url",
-			"navbar-header",
-			"BlogIndexPage",
-			"font-size",
-			"block-timeline",
-			"HeaderLinks",
-			"banner_second_intro",
-			"75px",
-			"margin-bottom: 75",
-			"navbar",
-			"database_url",
-			"js",
-			"types",
-			"logo",
-			"open_sans_cond",
-			"email_obfuscator",
-			"DJANGO_SENTRY_DSN",
-			"alert",
-			"btn",
-			"\"",
-			"img",
-			"3333",
-			";\n",
-			"top",
-			";\n",
-			"color-secondary-strong",
-			"dark",
-			"\n",
-			"django.core.context_processors",
-			"isi_mip",
-			"p ",
-			"isi_mip",
-			"POSTGRE",
-			"font-size",
-			"Kaffeesatz",
-			"sinnvoice",
-			"avatar",
-			"raven",
-			"sentry",
-			"get_avatar_url",
-			"collaborators",
-			"collaborator",
-			"director",
-			"leader",
-			"lead",
-			"sentry",
-			"celery",
-			"delete",
-			"RoomItem",
-			"RunningOrderItem",
-			"item",
-			"artist",
-			"DancefloorEvent",
-			"dancefloorevent_item",
-			"source",
-			"destination",
-			"Program"
+			"50%"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -920,6 +900,26 @@
 		"regex": false,
 		"replace_history":
 		[
+			"fulfilled",
+			"Experiment",
+			"experiment",
+			"Experiment",
+			"NCCreate",
+			"nodeId",
+			"nodeType",
+			"edit",
+			"SFCreate",
+			"this.props",
+			"NODE_",
+			"edit",
+			"GoalCreate",
+			"CreateGoal",
+			"CreateNode",
+			"NC",
+			"Priority",
+			"SF",
+			"PSF",
+			"this.state.editing",
 			";",
 			"'",
 			"impacts_world",
@@ -1027,27 +1027,7 @@
 			"columns",
 			" == column",
 			"investment_size",
-			"intention",
-			"investor_name",
-			"item.target_region",
-			"item.target_country",
-			"investment_size",
-			"deal_count",
-			"intention",
-			"",
-			" == ",
-			"update primary_investors set name = 'Unknown ($1)' where id = $2;",
-			"update primary_investors set name = 'Unknown ($1)' where id = $2",
-			"update primary_investors set name = '$1' where id = $2",
-			")' w",
-			"= 'Unknown (",
-			";\n= 'Unknown (",
-			";\n",
-			"' where id = ",
-			"}, \n",
-			"\\n",
-			"",
-			"\n"
+			"intention"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1058,101 +1038,14 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "impacts_world/pages/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14677,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6501,
-								6501
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2530.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "impacts_world/contrib/forms.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3964,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								602,
-								602
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/wagtail/wagtailforms/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9554,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9185,
-								9440
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 4811.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -1197,7 +1090,7 @@
 	"project": "impacts-world.sublime-project",
 	"replace":
 	{
-		"height": 66.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1206,6 +1099,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"smartlist",
+				"ETF/etf/frontend/src/SmartList.js"
+			],
+			[
+				"less",
+				"impacts-world/impacts_world/static/css/impacts_world.less"
+			],
 			[
 				"plenary",
 				"impacts-world/impacts_world/core/templates/widgets/plenary_workshop-list.html"
@@ -1245,10 +1146,6 @@
 			[
 				"base.html",
 				"impacts-world/impacts_world/core/templates/base.html"
-			],
-			[
-				"less",
-				"impacts-world/impacts_world/static/css/impacts_world.less"
 			],
 			[
 				"impact",
@@ -1713,10 +1610,6 @@
 			[
 				"requi",
 				"sinntern/requirements.txt"
-			],
-			[
-				"projectsmode",
-				"sinntern/projects/models.py"
 			]
 		],
 		"width": 0.0
@@ -1755,11 +1648,11 @@
 	"settings":
 	{
 	},
-	"show_minimap": false,
+	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 257.0,
+	"side_bar_width": 331.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

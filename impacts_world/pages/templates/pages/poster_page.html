@@ -5,7 +5,7 @@
 	<div class="block-sidebar_page">
 		{% include 'widgets/page-header.html' %}
 		{% for challenge in self.get_children %}
-			{% include 'widgets/page-challenge-header.html' with icon=challenge.specific.icon title=challenge.title description=challenge.specific.description room=challenge.specific.room %}
+			{% include 'widgets/page-challenge-header.html' with icon=challenge.specific.icon title=challenge.title description=challenge.specific.description room=challenge.specific.room slug=challenge.slug %}
 			{% include 'widgets/poster_contribution.html' with blocks=challenge.specific.content %}
 		{% endfor %}
 	</div>
