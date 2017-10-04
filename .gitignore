@@ -12,5 +12,4 @@ emails/
 whoosh_index/
 !.coveragerc
 !.gitignore
-*.sublime-project
 *.sublime-workspace
