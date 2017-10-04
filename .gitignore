@@ -12,4 +12,4 @@ emails/
 whoosh_index/
 !.coveragerc
 !.gitignore
-impacts-world.sublime-workspace
+*.sublime-workspace
