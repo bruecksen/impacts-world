@@ -12,6 +12,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/bruecksen/.virtualenvs/iw/lib/python3.5/site-packages/"
 		}
 	]
 }

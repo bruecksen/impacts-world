@@ -5,7 +5,7 @@ from django.utils.html import strip_tags
 from django.utils.text import slugify
 from wagtail.wagtailcore import blocks
 from wagtail.wagtailcore.blocks import StructBlock, FieldBlock, PageChooserBlock, CharBlock, StreamBlock, BooleanBlock, \
-    RichTextBlock as _RichTextBlock
+    RichTextBlock as _RichTextBlock, URLBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 
@@ -76,6 +76,8 @@ class HRBlock(StreamBlock):
 class ImageBlock(StructBlock):
     image = ImageChooserBlock(required=True)
     is_circled_image = BooleanBlock(required=False, default=False)
+    link = URLBlock(required=False)
+    open_new_tab = BooleanBlock(required=False, default=True, label="Open link in new tab")
 
     class Meta:
         icon = 'image'
@@ -87,6 +89,8 @@ class ImageBlock(StructBlock):
             context['url'] = value.get('image').get_rendition('fill-1200x1200').url
         else:
             context['url'] = value.get('image').get_rendition('max-1200x1200').url
+        context['link'] = value.get('link')
+        context['open_new_tab'] = value.get('open_new_tab')
         context['name'] = value.get('image').title
         context['is_circled_image'] = value.get('is_circled_image')
         return context
