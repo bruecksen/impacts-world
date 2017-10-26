@@ -528,16 +528,6 @@
 			}
 		},
 		{
-			"contents": "Searching 197 files for \"header-with-icon\"\n\n0 matches\n\nSearching 285 files for \"header-with-icon\"\n\n/Users/bruecksen/Sites/impacts-world/impacts_world/core/templates/widgets/page-challenge-header.html:\n    2  <div class=\"widget-page-header\">\n    3  \t<div class=\"container\">\n    4: \t<div class=\"header{% if icon %} header-with-icon{% endif %}\">\n    5  \t\t<h2 class=\"permalink\">\n    6  \t\t\t{% if icon %}\n\n/Users/bruecksen/Sites/impacts-world/impacts_world/core/templates/widgets/plenary_workshop-list.html:\n    3  \t<div class=\"widget-plenary_workshops\">\n    4  \t\t<div class=\"container\">\n    5: \t\t\t<div class=\"header{% if show_icon and page.specific.icon %} header-with-icon{% endif %}\">\n    6  \t\t\t\t<h3 class=\"permalink\">\n    7  \t\t\t\t\t{% if show_icon %}\n\n/Users/bruecksen/Sites/impacts-world/impacts_world/static/css/impacts_world.less:\n 1364  }\n 1365  \n 1366: &.header-with-icon {\n 1367  \th2, h3 {\n 1368  \t\tposition: relative;\n\n/Users/bruecksen/Sites/impacts-world/static-collected/css/impacts_world.css:\n 1345    height: 380px;\n 1346  }\n 1347: .header-with-icon h2,\n 1348: .header-with-icon h3 {\n 1349    position: relative;\n 1350  }\n 1351: .header-with-icon h2 img,\n 1352: .header-with-icon h3 img {\n 1353    position: absolute;\n 1354    top: 0;\n ....\n 1357    width: 30px;\n 1358  }\n 1359: .header-with-icon h2 {\n 1360    padding-left: 40px;\n 1361  }\n 1362: .header-with-icon h3 {\n 1363    padding-left: 35px;\n 1364  }\n 1365: .header-with-icon h3 img {\n 1366    top: -6px;\n 1367  }\n\n10 matches across 4 files\n\n\nSearching 285 files for \"page-challenge-header\"\n\n/Users/bruecksen/Sites/impacts-world/impacts_world/pages/templates/pages/poster_page.html:\n    6  \t\t{% include 'widgets/page-header.html' %}\n    7  \t\t{% for challenge in self.get_children %}\n    8: \t\t\t{% include 'widgets/page-challenge-header.html' with icon=challenge.specific.icon title=challenge.title description=challenge.specific.description room=challenge.specific.room %}\n    9  \t\t\t{% include 'widgets/poster_contribution.html' with blocks=challenge.specific.content %}\n   10  \t\t{% endfor %}\n\n/Users/bruecksen/Sites/impacts-world/impacts_world/pages/templates/pages/workshop_page.html:\n    6  \t\t{% include 'widgets/page-header.html' %}\n    7  \t\t{% for challenge in self.get_children %}\n    8: \t\t\t{% include 'widgets/page-challenge-header.html' with icon=challenge.specific.challenge_icon title=challenge.title description=challenge.specific.description slug=challenge.slug %}\n    9  \t\t{% include 'widgets/plenary_workshop-list.html' with children=challenge.get_children show_icon=False %}\n   10  \t\t{% endfor %}\n\n/Users/bruecksen/Sites/impacts-world/impacts_world/static/css/impacts_world.less:\n 1030  .widget-toc,\n 1031  .widget-page-header,\n 1032: .widget-page-challenge-header {\n 1033  \tmargin-top: 60px;\n 1034  \t@media(max-width: 768px) {\n\n/Users/bruecksen/Sites/impacts-world/static-collected/css/impacts_world.css:\n  981  .widget-toc,\n  982  .widget-page-header,\n  983: .widget-page-challenge-header {\n  984    margin-top: 60px;\n  985  }\n  ...\n 1003    .widget-toc,\n 1004    .widget-page-header,\n 1005:   .widget-page-challenge-header {\n 1006      margin-top: 40px;\n 1007    }\n ....\n 1024    .widget-toc .widget-toc,\n 1025    .widget-page-header .widget-toc,\n 1026:   .widget-page-challenge-header .widget-toc {\n 1027      margin-top: 25px;\n 1028    }\n\n6 matches across 4 files\n",
-			"settings":
-			{
-				"buffer_size": 3347,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
 			"file": "impacts_world/pages/templates/pages/poster_page.html",
 			"settings":
 			{
@@ -547,18 +537,19 @@
 			}
 		},
 		{
-			"file": ".gitignore",
-			"settings":
-			{
-				"buffer_size": 174,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "fabfile.py",
 			"settings":
 			{
 				"buffer_size": 2712,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/urls.py",
+			"settings":
+			{
+				"buffer_size": 1678,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -650,6 +641,7 @@
 	],
 	"file_history":
 	[
+		"/Users/bruecksen/Sites/impacts-world/.gitignore",
 		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/public/index.html",
 		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/legacy/StrategyMap.css",
 		"/Users/bruecksen/Sites/agile42/ETF/etf/frontend/src/SmartList.js",
@@ -776,8 +768,7 @@
 		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/blocks/google_map_block.html",
 		"/Users/brx/.environments/impacts-world/lib/python3.4/site-packages/django/contrib/gis/templates/gis/google/google-map.html",
 		"/Users/brx/Sites/impacts-world/impacts_world/core/templates/bootstrap3/layout/help_text.html",
-		"/Users/brx/Downloads/export (1).csv",
-		"/Users/brx/Sites/impacts-world/impacts_world/pages/templates/pages/form_page_confirmation.html"
+		"/Users/brx/Downloads/export (1).csv"
 	],
 	"find":
 	{
@@ -1105,7 +1096,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1127,126 +1118,18 @@
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": false,
+							"git_gutter_is_enabled": true,
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3347,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										313,
-										329
-									],
-									[
-										652,
-										668
-									],
-									[
-										856,
-										872
-									],
-									[
-										1040,
-										1056
-									],
-									[
-										1069,
-										1085
-									],
-									[
-										1137,
-										1153
-									],
-									[
-										1170,
-										1186
-									],
-									[
-										1287,
-										1303
-									],
-									[
-										1355,
-										1371
-									],
-									[
-										1423,
-										1439
-									],
-									[
-										1777,
-										1798
-									],
-									[
-										2280,
-										2301
-									],
-									[
-										2721,
-										2742
-									],
-									[
-										2947,
-										2968
-									],
-									[
-										3082,
-										3103
-									],
-									[
-										3245,
-										3266
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								1785,
-								1785
-							]
-						],
-						"settings":
-						{
-							"default_dir": "/Users/bruecksen/Sites/impacts-world",
-							"detect_indentation": false,
-							"git_gutter_is_enabled": false,
-							"line_numbers": false,
-							"output_tag": 3,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 954.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "impacts_world/pages/templates/pages/poster_page.html",
 					"semi_transient": false,
 					"settings":
@@ -1271,40 +1154,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": ".gitignore",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 174,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								174,
-								174
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
+					"buffer": 2,
 					"file": "fabfile.py",
 					"semi_transient": false,
 					"settings":
@@ -1322,18 +1176,47 @@
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": false,
+							"git_gutter_is_enabled": true,
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
 						},
 						"translation.x": 16.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 3,
+					"file": "config/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1678,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1678,
+								1678
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "impacts_world/core/templates/widgets/page-challenge-header.html",
 					"semi_transient": false,
 					"settings":
@@ -1368,7 +1251,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1390,10 +1273,10 @@
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 444.0,
+						"translation.y": 428.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1463,12 +1346,16 @@
 		"selected_items":
 		[
 			[
-				"fabfile",
-				"fabfile.py"
-			],
-			[
 				"git",
 				".gitignore"
+			],
+			[
+				"url",
+				"config/urls.py"
+			],
+			[
+				"fabfile",
+				"fabfile.py"
 			],
 			[
 				"smartlist",
@@ -1969,10 +1856,6 @@
 			[
 				"project",
 				"sinntern/projects/models.py"
-			],
-			[
-				"list",
-				"sinntern/projects/templates/projects/project_list.html"
 			]
 		],
 		"width": 0.0
