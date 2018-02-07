@@ -13,3 +13,4 @@ whoosh_index/
 !.coveragerc
 !.gitignore
 *.sublime-workspace
+*.sublime-project
